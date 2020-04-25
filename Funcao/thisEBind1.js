@@ -8,5 +8,5 @@ pessoa.falar()      //sem o "this" "saudacao" nao vai estar definida
 const falar = pessoa.falar
 falar() //conflito entre paradigmas: funcional e OO
 
-const falarDePessoa = pessoa.falar.bind(pessoa) //amarra um objeto pra ser o dono da execucao. 
+const falarDePessoa = pessoa.falar.bind(pessoa) //amarra um objeto pra ser o dono da execucao. É onde o "this" vai fazer referencia
 falarDePessoa()
