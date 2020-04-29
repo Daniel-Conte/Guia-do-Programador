@@ -3,6 +3,7 @@ function jurosSimples(capital, taxa, tempo) {
 }
 function jurosComposto(capital, taxa, tempo) {
     return (capital * Math.pow((1 + taxa / 100), tempo)).toFixed(2)
+    //return (capital * (1 + taxa / 100)** tempo).toFixed(2)
 }
 
 console.log(jurosSimples(1000, 2.5, 12))
