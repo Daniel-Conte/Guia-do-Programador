@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Pouco de CSS</title>
+        <style> 
+            h1 {    
+                font-size: 20px;
+            }
+
+            #textoPrincipal {
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            .fundoVermelho {
+                background-color: #C00;
+            }
+
+            .negrito {
+                font-weight: bold;
+            }
+        </style>
+        <!-- elementos(h1) são chamados somente pelo nome -> h1 -->
+        <!-- id(textoPrincipal) é chamado com "#" no inicio -> #textoPrincipal -->
+        <!-- classes(fundoVermelho, negrito) são chamadas com "." no inicio -> .fundoVermelho  .negrito -->
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <span id="textoPrincipal">Texto 1</span><br><br><br>    <!-- "id" faz uma identificacao UNICA. "br" faz uma quebra de linha-->
+        <span class="fundoVermelho negrito">Texto 2</span><br><br><br>  <!-- "class" faz uma identificacao compartilhada. Há 2 classes nessa linha "fundoVermelho" e "negrito" -->
+        <span class="fundoVermelho">Texto 3</span>  <!-- Quando a class "fundoVermelho" for chamada no CSS, TODAS as classes com esse nome vao ser chamadas -->
+        <!-- "span" nao representa nada. Pode ser usado para frases -->
+    </body>
+</html>

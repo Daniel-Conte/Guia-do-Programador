@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href="exercicios/teste.html">00 - Teste</a> |
+    <!--<a href wm-nav="exercicios/teste.html">00 - Teste</a>   Atribui o link à "wm-nav". Metodo mais especifico-->
+        <a href="exercicios/texto1.html">01 - Texto 1</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        <br>
+        Curso de Web Moderno
+    </footer>
+    <script>    //Usando JS para comportamento. Interceptar o link para EU fazer a requisicao e nao o browser. Mostrar o conteudo do link nessa pagina ao inves de uma nova
+        document.querySelectorAll('a').forEach(link => {    //"querySelectorAll" seleciona todos os links da tag "a"
+      //document.querySelectorAll('[wm-nav]').forEach(link => {   Metodo especifico
+            const conteudo = document.getElementById('conteudo')    //armazena o conteudo da id "conteudo" dentro da const conteudo
+
+            link.onclick = function(e) {
+                e.preventDefault()  //Previne que uma acao normal ocorra. Nesse caso previne que o browser abra o link em uma nova pagina com o conteudo
+                fetch(link.href)    //faz uma requisicao AJAX em cima do atributo "href" que da o link
+              //fetch(link.getAttribute('wm-nav'))  Metodo especifico
+                    .then(resp => resp.text())  //pega o conteudo HTML da pagina que fez requisicao
+                    .then(html => conteudo.innerHTML = html)    //joga o conteudo HTML dentro de "conteudo"
+            }
+        })
+    </script>
+</body>
+</html>
