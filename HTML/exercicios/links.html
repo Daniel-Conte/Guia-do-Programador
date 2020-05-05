@@ -1,0 +1,20 @@
+<h1>Links</h1>
+
+<!-- URL Absoluta -->
+<a id="inicio" href="https://www.google.com.br">Google 1</a><br>    <!-- Vai abrir o link na mesma pagina ao clicar nele -->
+<a href="https://www.google.com.br" target="_blank">Google 2</a><br><br>    <!-- "target="_blank" vai abrir uma nova aba quando clicar no link -->
+
+<!-- URL Relativa -->
+<a href="index.html">Voltar 1</a><br>   <!-- Ao clicar vai procurar esse arquivo(index.html) dentro da pasta atual -->
+<a href="/index.html">Voltar 2</a><br>  <!-- Ao clicar vai procurar esse arquivo na raiz da aplicação -->
+<a href="../index.html">Voltar 3</a><br><br>    <!-- Ao clicar vai procurar esse arquivo na pasta anterior. "../" volta uma pasta (pode usar quantas vezes quiser)-->
+
+<a href="emailto:email@empresa.com.br">Entre em contato</a><br><br>     <!-- Link para mandar um email diretamente. "emailto:" e depois o email -->
+
+<div id="noticia" style="position:absolute;top:2000px;"><!-- Se digitar "div#noticia" vai resultar na div id completa. Pode ser usada com outras tags. "." para class, "#" para id-->
+    <h1>Notícia Buemba!</h1>
+    <p>Nao era nada... :)</p>
+    <a href="#inicio">Ir para o inicio</a>
+</div>
+
+<a href="#noticia">Ir para notícia</a>  <!-- Cria um link para navegar dentro da pagina. Precisa usar o identificador da class ou id e o nome -->
