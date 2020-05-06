@@ -1,34 +1,44 @@
-<p>
-    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"  
-        alt="Muro da Cidade"
-        width="513" height="342"
-        title="Muro da Cidade por Tasso Bessa">    <!-- "src"= source, "alt"= se a imagem não carregar vai mostrar essa mensagem, "title"= mostra ao deixar o ponteiro em cima -->
-</p>
-
-<p>
-    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
-        alt="Intro Cod3r" height="342">
-</p>
-
-<p class="circular">
-    <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
-        alt="Rio de Janeiro" height="342">
-</p>
-
-<p class="texto">
-    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
-        alt="Avatar" height="50" align="left">
-    Texto hadhaahsd asdhasdhadhsalk adshasdahsjkd asdahksjdh 
-    ahjdasdhasdjlah asdhasdjahdsja asdhasjdkhasdjk asdhasjdkhasd
-    hasdahdklçh ashdaksdhaslkd ahdaksdhaskljdh adskjahdal 
-    udhgaklsdhaslkd asdhalskdhasl asdhkasdh ahsdjk has asda asd 
-    asdas asdasdsa adsasd a sasdasd dasd asd adsadas asda d sda 
-    asdasdasd asdasdas asdasdas asdasd ad asda qrqw rqrasfdqaf 
-    asdasda afafa asdadfa wweft fsadfa afdasdadadq zxcfdasf fqaf
-</p>
-
-<p class="cidade"></p>
-
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"  
+            alt="Muro da Cidade"
+            width="513" height="342"
+            title="Muro da Cidade por Tasso Bessa">    <!-- "src"= source, "alt"= se a imagem não carregar vai mostrar essa mensagem, "title"= mostra ao deixar o ponteiro em cima -->
+    </p>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+            alt="Intro Cod3r" height="342">
+    </p>
+    
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+            alt="Rio de Janeiro" height="342">
+    </p>
+    
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+            alt="Avatar" height="50" align="left">
+        Texto hadhaahsd asdhasdhadhsalk adshasdahsjkd asdahksjdh 
+        ahjdasdhasdjlah asdhasdjahdsja asdhasjdkhasdjk asdhasjdkhasd
+        hasdahdklçh ashdaksdhaslkd ahdaksdhaskljdh adskjahdal 
+        udhgaklsdhaslkd asdhalskdhasl asdhkasdh ahsdjk has asda asd 
+        asdas asdasdsa adsasd a sasdasd dasd asd adsadas asda d sda 
+        asdasdasd asdasdas asdasdas asdasd ad asda qrqw rqrasfdqaf 
+        asdasda afafa asdadfa wweft fsadfa afdasdadadq zxcfdasf fqaf
+    </p>
+    
+    <p class="cidade"></p>
+    
+    <p>
+        <picture>   <!-- Pode colocar varias imagens e criterios em cima dessas imagens (condiçoes para exibir) -->
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+                media="(min-width: 600px)"> <!-- Só vai exibir essa imagem se a largura do display em que ela for exibida for maior que 600px(largura minima) -->
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png"
+                alt="Logo">     <!-- Se não for atendido o criterio acima, vai ser mostrada essa imagem -->
+        </picture>
+    </p>
+</div>
 <style>
     .circular {
         width: 513px;
