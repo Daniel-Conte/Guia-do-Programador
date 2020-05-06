@@ -1,6 +1,49 @@
 <h1>Formulário</h1>         <!-- REVER ESSA AULA DEPOIS DE VER O BACKEND -->
 
-<form action="http://localhost:3003/usuarios" method="POST">
-    <input type="text" name="nome"> <!-- cria uma caixa pra colocar texto. "name" vai ser o nome que vai aparecer no backend -->
-    <button>Incluir</button>    <!-- Cria um botao -->
+<form method="POST">    <!-- Metodo "POST" não coloca os valores na url(USE). O "GET" mostra na url -->
+    <input type="hidden" name="id" value="3">   <!-- Nao é mostrado na tela. É usado pra mandar o valor pro backend -->
+    <input type="text" name="nome"> <!-- cria uma caixa pra colocar uma linha de texto. "name" vai ser o nome que vai aparecer no backend -->
+    <input type="password" name="senha"> <!-- Cria uma caixa pra por senha -->
+    <textarea name="bio" cols="30" rows="10"></textarea>    <!-- Cria uma caixa de texto. cols = colunas, rows = linhas -->
+    <div>   <!-- Cria um "grupo" -->
+        <input type="radio" name="tipo" value="admin"> Admin    <!-- Cria uma caixinha pra marcar essa opcao -->
+        <input type="radio" name="tipo" value="regular"> Regular    <!-- "value" é o valor que vai mandar pro backend ao selecionar essa opcao -->
+        <input type="radio" name="tipo" value="professor"> Professor    <!-- Só pode marcar uma opção dentre as opçoes -->
+    </div>
+    <div>
+        <input type="checkbox" name="ativo"> Ativo  <!-- Cria uma caixa para marcar. Pode marcar quantas opçoes quiser -->
+    </div>
+
+    <select name="estado">  <!-- cria uma lista para escolher uma opção-->
+        <option value="">Selecionar</option>    <!-- Cria opçoes para a lista -->
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="ce">Ceará</option>
+    </select>
+
+    <select name="interesses" multiple size="7">     <!-- Cria uma lista para selecoes multiplas(tem que usar "ctrl" ou "shift"). "size" é o tamanho vertical da lista -->
+        <option value="js">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go">Go</option>
+        <option value="c">C</option>
+    </select>
+
+    <button formaction="http://localhost:3003/usuarios">Incluir</button><!--Cria um botao."formaction" seta a url do programa que vai processar as informacoes submetidas pelo botao-->
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 </form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: inline;
+    }
+</style>
