@@ -61,4 +61,55 @@
         background-repeat: no-repeat;
         background-size: 200%;
     }
+
+    p {
+        display: none;
+        position: absolute;
+    }
 </style>
+
+<script>    //Fazer com que as imagens atravessem a tela
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo  
+        if(novoInicio >= fim) {     //Loop até a imagem atravessar
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+    /*const p = document.querySelector('[wm-slider] > p') //Seleciona a primeira tag "p"
+    p.style.display = 'block'
+    mover(p, 1500, -520, 5, () => {
+        console.log('Terminouu!!')
+    })*/
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p') //Seleciona todos os elementos "p" dentro de "wm-slider"
+        const slides = Array.from(elementos)    //O querySelectorAll retorna os valores como "NodeList", entao para transformar em Array usa-se "Array.from()"
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+
+        const inicio = innerWidth   //Dá a largura da pagina
+        const fim = -slide.clientWidth  //"clientWidth" dá a largura da tag "p"(largura do slide). Valor negativo, dá o "fim"
+        
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 5, () => {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+
+    }
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+            
+    slider()
+    
+</script>
