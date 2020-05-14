@@ -8,7 +8,7 @@ const aula2 = new Aula('Até Breve', 456)
 console.log(aula1, aula2)
 
 //Simulando o new
-function novo(f, ...params) { //"..." é o operador spread and hash. Nesse caso ele concatena todos os parametros dentro de um array
+function novo(f, ...params) {
     const obj = {}
     obj.__proto__ = f.prototype
     f.apply(obj, params)
