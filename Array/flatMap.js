@@ -27,7 +27,7 @@ console.log(notas1)
 console.log([].concat([8.1, 9.3], [8.9, 7.3])) //FlatMap basicamente é mostrar isso. Concatenar arrays dentro de arrays
 
 Array.prototype.flatMap = function(callback) {
-    return Array.prototype.concat.apply([], this.map(callback))
+    return Array.prototype.concat.apply([], this.map(callback)) //O "[]" será o this da funcao a ser chamada
 }
 
 const notas2 = escola.flatMap(getNotaDaTurma)
