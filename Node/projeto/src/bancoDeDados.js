@@ -19,4 +19,10 @@ function getProdutos() { //Chama todos os produtos
     return Object.values(produtos) //Retorna só os valores dos atributos
 }
 
-module.exports = { salvarProduto, getProduto, getProdutos } //Exportando as funcoes
+function excluirProduto(id) { //Exclui um produto específico
+    const produto = produtos[id]
+    delete produtos[id]
+    return produto
+}
+
+module.exports = { salvarProduto, getProduto, getProdutos, excluirProduto } //Exportando as funcoes
