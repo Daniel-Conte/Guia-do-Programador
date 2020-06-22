@@ -6,11 +6,11 @@ const getTurma = (letra, callback) => {
     http.get(url, res => { //pega os dados da url
         let resultado = ''
 
-        res.on('data', dados => { //Pega os dados da response
+        res.on('data', dados => { //Pega os dados da response. Sinaliza cada vez que recebe dados
             resultado += dados //Concatena eles aqui. Os dados não vem inteiros, então precisa concatenar
         })
 
-        res.on('end', () => { //"Terminou de vir os dados"
+        res.on('end', () => { //Sinaliza o fim do recebimento de dados
             callback(JSON.parse(resultado)) //Passa o resultado(convertido para objeto) para a callback
         })
     })
