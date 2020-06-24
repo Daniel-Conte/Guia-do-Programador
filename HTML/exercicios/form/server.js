@@ -1,8 +1,8 @@
-const express = require('express')              // REVER A AULA DE FORMULARIOS
+const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
+//const bodyParser = require('body-parser') O express já faz o bodyParser a partir da V4.0
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }))
 
 app.post('/usuarios', (req, resp) => {
     console.log(req.body)
