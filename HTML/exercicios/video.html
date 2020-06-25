@@ -1,9 +1,9 @@
-<video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload"> <!--"controls" adiciona os botões de video. "controlsList" remove o botao de download-->
+<video id="meuVideo" width="800" height="450" controls autoplay muted controlsList="nodownload"> <!--"controls" adiciona os botões de video. "controlsList" remove o botao de download. Atualmente o "autoplay" só funciona junto com "muted". -->
     <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
     Seu browser não suporta a tag de vídeo  <!-- Caso o video nao carregue, mostra essa mensagem -->
 </video>
 
-<div wm-progresso="meuVideo" class="progresso">
+<div wm-progresso="meuVideo" class="progresso"> <!-- Passando um mesmo ID('meuVideo') pra vários atributos(wm-progresso, wm-play...) pode-se isolar o funcionamento somente para um vídeo específico que tenha esses IDs. Pode ser usado para outros vídeos, porem precisa ter o ID diferente -->
     <div></div>
 </div>
 
@@ -43,7 +43,7 @@
             const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
             valorDiv.style.width = `${percentual}%`
             valorDiv.innerHTML = `${percentual.toFixed(1)}%`
-        },500)
+        },500) //Dispara a cada meio segundo, ou seja, fica atualizando a progressbar e o valor
     }
 
     configurarVideo('meuVideo')
