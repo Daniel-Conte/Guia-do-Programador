@@ -5,7 +5,28 @@
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
     <style>
-        /* ... */
+        .selector {
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /* mutiplos valores */
+            border: solid 5px navy; /* shorthand property "acesso mais rapido" */
+            font-family: Helvetica, sans-serif; /* Caso a primeira não funcionar, a segunda vai ser usada */
+            /* funcoes */
+            width: calc(100% - 40px); /* calcula o tamanho. Tira 40px da largura total */
+            background-color: rgb(34, 153, 189);
+        }
+
+        /* Usando uma pseudo-classe ":" */
+        .selector:hover { /* Muda a cor quando passa o mouse encima */
+            background-color: orangered;
+        }
+
+        /* Usando um pseudo-elemento "::" */
+        .selector::first-letter { /* Muda a primeira letra da primeira palavra */
+            font-size: 60px;
+            font-weight: bold;
+        }
     </style>
 </head>
 

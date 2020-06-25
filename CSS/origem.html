@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
-    <style>
-        /* ... */
-    </style>
+    <style> /* Interno */
+        body {
+            background-color: aquamarine;
+        }
+        </style>
+        <link rel="stylesheet" href="css/externo.css"> <!-- Externo -->
+        <!-- Entre Interno e Externo a preferencia é do código processado por último. "rel" = RELation -->
 </head>
 
-<body>
+<body style="background-color: coral;"> <!-- Inline. Tem preferencia sobre os outros -->
     <h1>E agora?</h1>
 </body>
 
