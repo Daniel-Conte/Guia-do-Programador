@@ -6,7 +6,42 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* * {} ----- Seletor UNIVERSAL ----- */
+
+        /* .tag {} ----- Seletor de CLASSE ----- */
+
+        /* #aprovados {} ----- Seletor de ID ----- */
+
+        /* #aninhado > div {} ----- Seletor de FILHO DIRETO -----   Seleciona os elementos FILHOS de "aninhado" (olha o html abaixo)  */
+
+            /* #aninhado > section {} ----- Não funciona -----   "section" não é FILHO de "aninhado" */
+
+        /* #aninhado section {} ----- Seletor de DESCENDENTE -----   Seleciona qualquer descendente de "aninhado" */
+
+        /* p + ul {} ----- Seletor de IRMÃO ADJACENTE -----   Seleciona o elemento "ul" logo abaixo de "p" */
+
+            /* p + ol {} ----- Não funciona -----   "ol" não é irmão adjacente de "p". "ol" não está logo abaixo de "p" */
+
+        /* p ~ ol {} ----- Seletor de IRMÃO GERAL -----   Seleciona qualquer irmão. Pode estar tanto separado quanto junto */
+
+        /* [feira] {} ----- Seletor de PROPRIEDADE -----   Seleciona os elementos que tem a propriedade "feira" */
+
+            /* [feira='casa'] {} ----- Seleciona os elementos que tem o valor "casa" na propriedade "feira" ----- */
+
+            /* [feira='empresa'] {} ----- Não funciona -----   Existe um elemento com essa propriedade que possui o valor "empresa", porem essa propriedade tem outro valor junto "[feira='escritorio empresa']" */
+
+            /* [feira~='empresa'] {} ----- Selecionar os elementos com a propriedade "feira" e com o valor "empresa", mesmo que haja outro valor junto ----- */
+
+            /* [feira*='sa'] {} ----- Seleciona os elementos com a propriedade "feira" que possuam "sa" em qualquer parte do valor ----- */
+
+        /* span:nth-child(1) {} ----- Seletor de PRIMEIRO FILHO -----   Seleciona os elementos "span" que sejam o primeiro filho direto de alguem (nesse codigo precisa ter a classe "noLabel" no PAI) */
+
+        /* section > :nth-child(odd) {} ----- Seletor de FILHOS ÍMPARES -----   Seleciona todos os elementos que sejam filhos de "section" e que sejam filhos ímpares */
+
+        /* section > :nth-child(even) {} ----- Seletor de FILHOS PARES -----   Seleciona todos os elementos que sejam filhos de "section" e que sejam filhos pares */
+
+        /* section > span:nth-of-type(2) {} ----- Seleciona o segundo elemento do TIPO "span" que seja filho de "section" */
+
     </style>
 </head>
 
@@ -27,9 +62,9 @@
                 <li>Pedro</li>
                 <li>Ana</li>
             </ol>
-            <div id='aninhado' class='tag'>
-                <div class="tag">
-                    <section class='tag'>
+            <div id='aninhado' class='tag'> <!-- Pai  *NESSE CASO* -->
+                <div class="tag"> <!-- Filho "Filho direto" -->
+                    <section class='tag noLabel'> <!-- Neto -->
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
