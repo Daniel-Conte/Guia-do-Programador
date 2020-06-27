@@ -4,8 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Herança</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <style>
-        /* ... */
+        body {
+            /* Essas caracteristicas são passadas naturalmente como herança para os filhos */
+            font-family: 'Oswald', sans-serif;
+            color: orangered;
+            font-size: 40px;
+
+            /* Essas não são passadas naturalmente */
+            border: solid 3px red;
+            padding: 50px;
+        }
+
+        /* Para herdar uma caracteristica do pai que não é passada naturalmente precisa usar "inherit" */
+        div {
+            border: inherit;
+            padding: inherit;
+        }
     </style>
 </head>
 
