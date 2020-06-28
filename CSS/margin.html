@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>Margin</title>
     <style>
+
+        /* "margin colapse" é a sobreposição das "margin". Naturalmente, se uma margin "encontrar" outra, elas ficarão sobrepostas (não se somarão) */
+
         body {
             margin: 0;
             font-size: 40px;
@@ -27,7 +30,8 @@
             margin-top: 30px;
         }
 
-        /* 
+        /* Essas propriedades não permitem o "margin-colapse", ou seja, se 2 margin se encontrarem, elas se somarão
+
             float: left / right
             position: absolute
             display: inline-block
@@ -37,7 +41,7 @@
 
 <body>
     <div class="m30">Conteúdo 1</div>
-    <div class="m30" style="border: none"></div>
+    <div class="m30" style="border: none"></div> <!-- Se houver um elemento vazio, este não irá influenciar nas margin de outros elementos (fica invisível) -->
     <div class="m30">Conteúdo 2</div>
     <div class="mb30">Conteúdo 3</div>
     <div class="mt30">Conteúdo 4</div>

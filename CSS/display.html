@@ -5,16 +5,37 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul { padding: 0; } /* Tira o simbolo do "list-item" */
+        div { background-color: seagreen; }
+        span { background-color: dodgerblue; }
+        li { background-color: purple; }
+
+        div, span, li {
+            width: 50%; /* Seta metade do tamanho original */
+            width: 200px;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center; /* Alinha horizontalmente */
+            /* display: inline; */ /* Organiza os elementos na mesma linha. IGNORA "WIDTH" e "HEIGHT". Só ACEITA "PADDING" */
+            display: block; /* Organiza os elementos para que cada um tenha sua própria linha(um embaixo do outro). ACEITA modificação de tamanho */
+            display: inline-block; /* Organiza os elementos na mesma linha(inline). ACEITA modificação de tamanho(block) */
+        }
+
     </style>
 </head>
 
 <body>
-    <div>Texto 1</div>
-    <span>Texto 2</span>
+    <div>Texto 1</div> <!-- "div" tem por padrão "display: block" -->
+    <span>Texto 2</span> <!-- "span" tem por padrão "display: inline" -->
     <span>Texto 3</span>
     <ul>
-        <li>Item 1</li>
+        <li>Item 1</li> <!-- "li" tem por padrão "display: list-item" -->
         <li>Item 2</li>
         <li>Item 3</li>
     </ul>

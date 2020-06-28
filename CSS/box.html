@@ -5,7 +5,25 @@
     <meta charset="UTF-8">
     <title>Box Model</title>
     <style>
-        /* ... */
+        body { font-size: 80px; }
+        .c1 { background-color: orange; }
+        .c2 { background-color: skyblue; }
+        .c3 { background-color: tomato; }
+
+        div {
+            float: left; /* Joga o conteudo pra esquerda */
+
+            padding-top: 100px; /* "padding" é o espaçamento entre a borda do elemento e o conteudo (espaçamento interno) */
+            padding: 10px 50px 100px 150px; /* Aplica no TOP, RIGHT, BOTTOM e LEFT, respectivamente */
+            padding: 150px 100px 50px; /* Aplica no TOP, RIGHT & LEFT e BOTTOM, respectivamente*/
+            padding: 100px 50px; /* Aplica no TOP & BOTTOM e RIGHT & LEFT, respectivamente */
+            padding: 50px; /* Aplica em todos os lados */
+
+            margin: 0px 20px; /* O mesmo se aplica ao "margin". "margin" é o espaçamento entre os elementos (espaçamento externo) */
+
+            border: solid 15px black;
+        }
+
     </style>
 </head>
 
