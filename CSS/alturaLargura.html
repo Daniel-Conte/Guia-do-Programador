@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
             font-size: 40px;
             background-color: coral;
+            height: 100%;
+            margin: 0px; /* Tira a margin padrao do "body" */
         }
 
         div {
@@ -17,12 +23,23 @@
         span {
             background-color: dodgerblue;
         }
+
+        /* "block" usa 100% do comprimento da linha, então se usar largura relativa(%) vai funcionar. Já a altura relativa não funciona, pois a altura do "body" vai de acordo com a quantidade de elementos ou altura fixa(px) */
+        /* Altura relativa leva em consideração a altura do pai, ou seja, para funcionar a altura relativa abaixo, é necessário usar "height: 100%;" no "body" e no "html" */
+        div, span {
+            width: 50%;
+            height: 250px; /* Altura fixa. Funciona */
+            height: 50%; /* Altura relativa */
+            display: inline-block; /* Para funcionar o "inline-block" e deixar as 2 caixas lado a lado, é necessário tirar o espaço entre a div e a span abaixo */
+        }
+
+
     </style>
 </head>
 
 <body>
-    <div>Título</div>
-    <span>Subtítulo</span>
+    <div>Título</div><!-- Usando "comentário" desse jeito, resolve o bug do espaço do "inline-block" 
+    --><span>Subtítulo</span>
 </body>
 
 </html>
