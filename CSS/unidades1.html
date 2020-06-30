@@ -5,7 +5,30 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        .unidades-absolutas {
+            position: absolute; /* Não tem nada a ver com "unidades absolutas". É só pra funcionar o dimensionamento */
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* Pouco usado */
+            height: 20mm; /* Pouco usado */
+            top: 150px; /* Seta a distância do TOPO da página */
+            left: 200px; /* Seta a distância da ESQUERDA da página */
+        }
+
+        .unidades-relativas {
+            position: absolute;
+            font-size: 4rem; /* Tamanho relativo ao tamanho da fonte do elemento RAIZ. 4rem = 4x o tamanho do elemento raiz */
+            font-size: 4em; /* Tamanho relativo ao tamanho da fonte do elemento. 4em = 4x o tamanho do elemento */
+            padding: 5%;
+            border: solid 1vw #222;
+            margin: .8%; /* = 0.8% */
+            width: 20vw; /* Viewport Width. 20% da largura total da janela */
+            height: 15vh; /* Viewport Height. 15% da altura total da janela */
+            bottom: 5%;
+            right: 5%;
+        }
     </style>
 </head>
 
