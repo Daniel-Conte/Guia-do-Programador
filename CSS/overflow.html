@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <title>Overflow</title>
     <style>
+        /* "overflow" é quando alguma coisa (ex: um texto) estrapola o tamanho do elemento */
         div {
             font-size: 40px;
             height: 100px;
             width: 260px;
             border: solid 3px;
+            overflow: hidden; /* Esconde tudo o que estrapolar o tamanho do elemento */
+            /* overflow: scroll; */ /* Esconde tudo o que estrapolar, porém adiciona barras de rolagem para visualizar o conteudo */
+            overflow-y: scroll; /* Barra de rolagem somente no eixo-Y. Precisa usar junto com "overflow: hidden;" ou "overflow-x: hidden;" */
         }
     </style>
 </head>

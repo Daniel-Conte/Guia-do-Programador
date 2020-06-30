@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        * { /* "box-sizing" não é passado por herança naturalmente */
+            box-sizing: content-box; /* "width" e "height" vão mudar somente o tamanho do CONTEUDO do elemento. "border" e "padding" vão somar seus "px" com os do conteudo */
+            box-sizing: border-box; /* "width" e "height" vão mudar o tamanho TOTAL do elemento. "border" e "padding" vão ficar dentro desse limite, o "conteudo" vai ajustar seu tamanho conforme necessário  */
+        }
+
         body {
             font-size: 45px;
+            margin: 0;
         }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            /* Com "border-box" o "padding" e a "border" vão ficar dentro do limite da altura e largura e não vão somar seus "px" */
+            padding: 100px;
+            border: solid black 20px;
+        }
+
     </style>
 </head>
 <body>

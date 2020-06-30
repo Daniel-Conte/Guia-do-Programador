@@ -5,24 +5,37 @@
     <meta charset="UTF-8">
     <title>Float</title>
     <style>
+        /* "float" vai jogar os elementos para a direita, esquedra, fim ou inicio. Os elementos que estavam abaixo vão subir e ocupar o espaço disponível */
         body {
             background-color: #222;
         }
 
         .c1 {
             background-color: red;
+            float: right; /* Move este elemento para a direita. Os elementos que estão na esquerda vão subir e tomar o lugar */
         }
 
         .c2 {
             background-color: green;
+            float: left; /* Move este elemento para a esquerda. Os elementos que já estavam na esquerda vão subir e ficar debaixo dele */
+            clear: right; /* Limpa os efeitos gerados pelo "float: right;" no lado ESQUERDO. O elemento na direita continua lá, mas os elementos na esquerda vão voltar para suas posições de origem, como se o elemento na direita tivesse voltado para seu lugar de origem  */
         }
         
         .c3 {
             background-color: blue;
+            float: right;
+            clear: left; /* Pode ser usado no mesmo lado que está este elemento. Os elementos que já estavam neste lado vão voltar para suas posições de origem */
         }
 
         .c4 {
             background-color: orange;
+            float: left;
+            clear: both; /* Limpa tanto a esquerda quanto a direita */
+        }
+
+        div {
+            width: 150px;
+            height: 150px;
         }
     </style>
 </head>
