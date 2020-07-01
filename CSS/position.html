@@ -5,7 +5,31 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+
+        .static { /* "position" padrão */
+            top: 100px; /* Ignora esses espaçamentos */
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed { 
+            position: fixed; /* Fica FIXA na tela, quando você rolar a página o elemento vai rolar junto */
+            bottom: 30px;
+            right: 0px;
+            background-color: tomato;
+        }
+
+        .relative1 {
+            position: relative; /* Leva em consideração os elementos ao redor */
+            left: 50px; /* Esses espaçamentos levam em consideração os elementos ao redor */
+            top: 5px;
+            background-color: seagreen;
+        }
     </style>
 </head>
 
