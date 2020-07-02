@@ -7,20 +7,26 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        .logo, .menu, li, ul, .autenticacao, .autenticacao a, .cabecalho {
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .logo, .menu, li, .autenticacao, .autenticacao a, .cabecalho {
             display: inline-block;
             border: solid #222 1px;
         }
 
         .cabecalho {
-            /* background-color: rgb(50, 50, 50); */
-            border-bottom: solid skyblue 5px; 
+            background-color: rgb(50, 50, 50);
+            position: relative;
+            border-bottom: solid skyblue 4px;
+            width: 100vw;
         }
 
         .menu {
-            position: relative;
-            top: -9px;
-            left: 20px;
+            vertical-align: middle;
+            margin: 5px 40px;
         }
 
         .menu ul {
@@ -30,25 +36,43 @@
 
         .menu li {
             background-color: rgb(50, 50, 50);
-            padding: 20px;
+            padding: 15px;
         }
 
-        .menu a {
+        .menu a, .autenticacao a {
             color: white;
             text-decoration: none;
         }
 
         .logo img {
-            height: 55px;
+            height: 50px;
         }
 
         .logo {
             position: relative;
-            top: 8px;
-            left: 8px;
+            vertical-align: middle;
+            left: 5px;
         }
 
+        .autenticacao { 
+            position: absolute;
+            top: 11px;
+            right: 10px;
+        }
 
+        .autenticacao a {
+            margin: 0px 5px;
+        }
+
+        .destaque {
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: red;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
     </style>
 </head>
 
