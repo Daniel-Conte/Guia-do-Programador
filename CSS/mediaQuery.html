@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"> <!-- !!!!!!!SEMPRE USAR ESSA LINHA!!!!!!! Sem ela não funciona a responsividade -->
     <title>Media Query</title>
     <style>
         div {
@@ -11,6 +11,18 @@
             background-color: coral;
             border: solid 5px;
             display: none;
+        }
+
+        @media (max-width: 600px) { /* SE a largura da tela for no máximo 600px faça... */
+            .muito-pequeno { display: block; }
+        }
+
+        @media (max-width: 1000px), (orientation: landscape) { /* SE a largura for no máximo 1000px OU(',') a tela estiver deitada faça... */
+            .pequeno-retrato { display: block; }
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) { /* SE a largura for no mínimo 500px E a largura for no máximo 1000px faça... */
+            .intervalo { display: block; }
         }
     </style>
 </head>

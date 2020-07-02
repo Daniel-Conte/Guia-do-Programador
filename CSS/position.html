@@ -11,24 +11,56 @@
             border: solid 5px #222;
         }
 
-        .static { /* "position" padrão */
+        .static { /* "position" padrão. Fluxo normal no documento(leva em consideração outros elementos ao redor) */
             top: 100px; /* Ignora esses espaçamentos */
             left: 100px;
             background-color: steelblue;
         }
 
         .fixed { 
-            position: fixed; /* Fica FIXA na tela, quando você rolar a página o elemento vai rolar junto */
+            position: fixed; /* Fica FIXA na tela, quando você rolar a página o elemento vai rolar junto. É retirado do fluxo normal no documento */
             bottom: 30px;
             right: 0px;
             background-color: tomato;
         }
 
         .relative1 {
-            position: relative; /* Leva em consideração os elementos ao redor */
+            position: relative; /* Leva em consideração os elementos ao redor. Fluxo normal no documento */
             left: 50px; /* Esses espaçamentos levam em consideração os elementos ao redor */
             top: 5px;
             background-color: seagreen;
+        }
+
+        .absolute1 {
+            position: absolute; /* Fica de forma ABSOLUTA na tela. Ignora outros elementos, não muda de tamanho nem se adapta quando mudar o tamanho da janela. É retirado do fluxo normal no documento */
+            left: 350px;
+            top: 120px;
+            width: 200px;
+            background-color: violet;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategrey;
+        }
+
+        .absolute2 { /* Dentro de uma div com "position: relative;" uma div absoluta se comporta de maneira absoluta em relação à div pai */
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky {
+            position: sticky; /* Se move normal pela tela, mas quando o elemento vai sair ele fica preso no topo da tela e anda junto com o scroll (tipo um "fixed"). Fluxo normal no documento */
+            background-color: #777;
+            top: 10px;
         }
     </style>
 </head>
