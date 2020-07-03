@@ -7,14 +7,14 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        body {
+        /* Meu código */
+        /*body {
             margin: 0;
             font-family: 'Oswald', sans-serif;
         }
 
-        .logo, .menu, li, .autenticacao, .autenticacao a, .cabecalho {
+         .logo, .menu, li, a, .autenticacao, .autenticacao a, .cabecalho {
             display: inline-block;
-            border: solid #222 1px;
         }
 
         .cabecalho {
@@ -34,9 +34,9 @@
             padding: 0;
         }
 
-        .menu li {
-            background-color: rgb(50, 50, 50);
+        .menu a {
             padding: 15px;
+            background-color: rgb(50, 50, 50);
         }
 
         .menu a, .autenticacao a {
@@ -51,7 +51,7 @@
         .logo {
             position: relative;
             vertical-align: middle;
-            left: 5px;
+            margin: 5px;
         }
 
         .autenticacao { 
@@ -72,6 +72,146 @@
 
         .menu-toggle {
             display: none;
+        }
+
+        .menu a:hover {
+            background-color: skyblue;
+            color: black;
+        }
+
+        .menu a:focus {
+            background-color: skyblue;
+            color: black;
+        }
+
+        .active {
+            display: none;
+            background-color: skyblue;
+            color: black;
+        }
+
+        @media (max-width: 800px) {
+            .autenticacao { display: none; }
+        }
+
+        @media (max-width: 650px) {
+            .menu { display: none; }
+            .menu-toggle {
+                display: block;
+                float: right;
+                padding: 11px 18px;
+                margin: 14px;
+                border: 0;
+                border-radius: 5px;
+                color: white;
+                background-color: rgb(90, 90, 90);
+            }
+        } */
+
+        /* Código do professor */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
+        }
+
+        .cabecalho {
+            background: #333;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+            box-sizing: content-box;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        .menu-toggle {
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px 15px;
+        }
+
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline-block;
+        }
+
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+        }
+
+        .menu a {
+            padding: 15px;
+        }
+
+        .autenticacao {
+            float: right;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu a:hover,
+        .menu a.selected {
+            background-color: #4faddb;
+            color: #000;
+        }
+
+        .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+        }
+
+        .destaque {
+            background-color: #f50a31;
+            color: #fff;
+        }
+
+        @media(min-width: 679px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media(max-width: 680px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        @media(max-width: 910px) {
+            .autenticacao {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -109,7 +249,16 @@
     </header>
 
     <script>
-        // ...
+        //Código do professor
+        window.onhashchange = function(e) { //Na mudança no hash(#) na url
+            const oldURL = e.oldURL.split('#')[1] //Pega o nome depois da hash. Tem que usar "oldURL" e "newURL"
+            const newURL = e.newURL.split('#')[1]
+            console.log(oldURL, newURL)
+            const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`) //pega o link 'a'
+            const newLink = document.querySelector(`.menu a[href='#${newURL}']`)
+            oldLink && oldLink.classList.remove('selected') //Faz uma verificação pra ver se existe. if(oldLink) { oldLink.classList.remove('selected') }
+            newLink && newLink.classList.add('selected')
+        }
     </script>
 </body>
 
