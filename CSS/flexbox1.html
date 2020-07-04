@@ -6,22 +6,40 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .big {
+            font-size: 1.5em;
+        }
+
+        /* Flex é unidirecional, a direção setada vai ser a "Main axis" enquanto a outra vai ser a "Cross axis" */
+        .flex-container { /* O elemento que possuir "display: flex" vai ser o "flex-container", enquanto os filhos desse elemento vão ser os "flex-itens" */
+            display: flex;
+            flex-direction: column; /* Organiza os itens um embaixo do outro(tipo block). Nesse caso "column" é a "Main axis" e a "row" é a "Cross axis". A direção padrão é "row" */
+            flex-direction: column-reverse; /* Organiza os itens um embaixo do outro, inverte a ORDEM dos elementos(html) e joga os elementos pro outro lado(tipo float) */
+            flex-direction: row-reverse; /* Organiza os itens em uma linha, inverte a ORDEM dos elementos e joga os elementos pro outro lado */
+            flex-direction: row; /* Organiza os itens em uma linha(tipo inline) */
+            width: 35%;
+            flex-wrap: wrap; /* Caso der um Overflow, faz uma quebra de linha. Padrão é "nowrap" */
+            flex-wrap: wrap-reverse; /* Caso der um Overflow, faz uma quebra de linha e inverte a ORDEM das linhas */
+            flex-flow: row wrap; /* "flex-flow" JUNTA "flex-direction" com "flex-wrap". Nesse caso seta a "Main axis" como "row" e faz quebra de linha */
+            height: 200px;
+            flex-flow: column-reverse wrap; /* Caso der Overflow, faz uma quebra de linha(coluna), inverte a ORDEM dos elementos e joga os elementos para a direção contrária(tipo float) */
+            flex-flow: row wrap;
+        }
     </style>
 </head>
 
 <body>
-    <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel big">3</div>
-        <div class="tag nolabel">4</div>
-        <div class="tag nolabel">5</div>
-        <div class="tag nolabel">6</div>
-        <div class="tag nolabel">7</div>
-        <div class="tag nolabel">8</div>
-        <div class="tag nolabel">9</div>
-        <div class="tag nolabel">10</div>
+    <div class="flex-container tag noLabel">
+        <div class="tag noLabel">1</div>
+        <div class="tag noLabel">2</div>
+        <div class="tag noLabel big">3</div>
+        <div class="tag noLabel">4</div>
+        <div class="tag noLabel">5</div>
+        <div class="tag noLabel">6</div>
+        <div class="tag noLabel">7</div>
+        <div class="tag noLabel">8</div>
+        <div class="tag noLabel">9</div>
+        <div class="tag noLabel">10</div>
     </div>
     <script src="js/tag.js"></script>
 </body>
