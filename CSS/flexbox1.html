@@ -24,6 +24,25 @@
             height: 200px;
             flex-flow: column-reverse wrap; /* Caso der Overflow, faz uma quebra de linha(coluna), inverte a ORDEM dos elementos e joga os elementos para a direção contrária(tipo float) */
             flex-flow: row wrap;
+
+            /* Tudo abaixo só funciona com "display: flex" */
+
+            /* Baseado no "Main Axis" */
+            /* Modifica TODO o conteudo do container */
+            justify-content: flex-start; /* Alinha os itens no inicio do eixo */
+            justify-content: flex-end; /* Alinha os itens no final do eixo */
+            justify-content: center; /* Alinha os itens no centro do eixo */
+            justify-content: space-around; /* Espalha os itens o mais longe um do outro pelo eixo. Aplica espaçamento tanto no lado direito quanto no lado esquedo do elemento */
+            flex-direction: row-reverse;
+            justify-content: space-between; /* Espalha os elementos o mais longe um do outro pelo eixo. Aplica espaçamento somente ENTRE os elementos */
+
+            /* Baseado no "Cross Axis" */
+            /* "align-items" modifica  */
+            height: 400px;
+            align-items: stretch; /* Os itens ocupam toda a altura disponível. Padrão */
+            align-items: baseline; /* Alinha os itens de acordo com a BASE da fonte, ou seja, o limite inferior da fonte */
+            align-items: flex-start;
+            align-items: flex-end;
         }
     </style>
 </head>
@@ -35,9 +54,9 @@
         <div class="tag noLabel big">3</div>
         <div class="tag noLabel">4</div>
         <div class="tag noLabel">5</div>
-        <div class="tag noLabel">6</div>
+        <div class="tag noLabel big">6</div>
         <div class="tag noLabel">7</div>
-        <div class="tag noLabel">8</div>
+        <div class="tag noLabel big">8</div>
         <div class="tag noLabel">9</div>
         <div class="tag noLabel">10</div>
     </div>
