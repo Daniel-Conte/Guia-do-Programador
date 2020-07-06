@@ -6,16 +6,61 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container div {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            order: 1; /* Ordem dos itens. Mostra os itens de acordo com seu número de ordem. Mostra os itens na ordem crescente(independentemente da ordem no html) */
+            order: 0; /* Número de ordem padrão. A ordem vai de acordo com o html */
+            order: -1;
+
+            /* Baseado no "Cross Axis" */
+            /* Modifica itens INDIVIDUAIS */
+            align-self: center; /* Meio */
+            align-self: flex-start; /* Inicio */
+            align-self: flex-end; /* Fim */
+            align-self: stretch; /* Estica o item até o limite */
+        }
+
+        .flex-container div {
+            width: 100px;
+            /* O container tem 600px de largura e os itens ocupam 400px, então sobrando 200px */
+            /* "flex-grow" pega essa sobra de espaço e divide entre os itens de acordo com um 'peso' */
+            flex-grow: 0; /* Peso 0 não recebe nada */
+            flex-grow: 1; /* Cada item tem peso 1. Tem 4 itens, então 4 pesos. A sobra de 200px dividido por 4 pesos é 50px, então cada item vai receber 50px de largura. Margin pega uns px */
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 2; /* 3 itens com peso 1 e este com peso 2, total de 5 pesos. Dividindo 200px por 5 partes dá 40px para cada parte. Quem tem peso 1 recebe 1 parte, quem tem peso 2 recebe 2 partes. */
+        }
+
+        .flex-container {
+            width: 300px;
+            /* "flex-shrink" é o mesmo sistema que o "flex-grow" só que trabalha com a falta de px ao invés da sobra. */
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5; /* Divide a falta de px(100) pelo peso total(8). Peso 1 diminui em 1 parte, peso 5 diminui em 5 partes */
+        }
     </style>
 </head>
 
 <body>
-    <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel">3</div>
-        <div class="tag nolabel">4</div>
+    <div class="flex-container tag noLabel">
+        <div class="tag noLabel">1</div>
+        <div class="tag noLabel">2</div>
+        <div class="tag noLabel">3</div>
+        <div class="tag noLabel">4</div>
     </div>
     <script src="js/tag.js"></script>
 </body>

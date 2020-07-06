@@ -25,25 +25,35 @@
             flex-flow: column-reverse wrap; /* Caso der Overflow, faz uma quebra de linha(coluna), inverte a ORDEM dos elementos e joga os elementos para a direção contrária(tipo float) */
             flex-flow: row wrap;
 
-            /* Tudo abaixo só funciona com "display: flex" */
+            /* !!!!!Tudo abaixo só funciona com "display: flex"!!!!! */
 
             /* Baseado no "Main Axis" */
-            /* Modifica TODO o conteudo do container */
-            justify-content: flex-start; /* Alinha os itens no inicio do eixo */
-            justify-content: flex-end; /* Alinha os itens no final do eixo */
-            justify-content: center; /* Alinha os itens no centro do eixo */
-            justify-content: space-around; /* Espalha os itens o mais longe um do outro pelo eixo. Aplica espaçamento tanto no lado direito quanto no lado esquedo do elemento */
+            /* Modifica o conteudo dentro de cada linha/coluna do container. Leva em consideração o tamanho(limite) da linha/coluna */
+            justify-content: flex-start; /* Alinha os itens no inicio da linha/coluna */
+            justify-content: flex-end; /* Alinha os itens no final da linha/coluna */
+            justify-content: center; /* Alinha os itens no centro da linha/coluna */
+            justify-content: space-around; /* Espalha os itens o mais longe um do outro pela linha/coluna. Aplica espaçamento nos lados direito-esquedo/cima-embaixo do elemento */
             flex-direction: row-reverse;
-            justify-content: space-between; /* Espalha os elementos o mais longe um do outro pelo eixo. Aplica espaçamento somente ENTRE os elementos */
+            justify-content: space-between; /* Espalha os elementos o mais longe um do outro pela linha/coluna. Aplica espaçamento somente ENTRE os elementos */
 
             /* Baseado no "Cross Axis" */
-            /* "align-items" modifica  */
+            /* Modifica o conteudo dentro de cada linha/coluna do container. Leva em consideração o tamanho(limite) de cada linha/coluna */
             height: 400px;
-            align-items: stretch; /* Os itens ocupam toda a altura disponível. Padrão */
-            align-items: baseline; /* Alinha os itens de acordo com a BASE da fonte, ou seja, o limite inferior da fonte */
-            align-items: flex-start;
-            align-items: flex-end;
+            align-items: stretch; /* Os itens ocupam toda a altura/largura da linha/coluna. Padrão */
+            align-items: baseline; /* Alinha os itens de acordo com a BASE da fonte. */
+            align-items: flex-start; /* Alinha os itens no inicio da linha/coluna */
+            align-items: flex-end; /* Alinha os itens no fim da linha/coluna */
+            align-items: center; /* Alinha os itens no meio da linha/coluna */
+
+            /* Baseado no "Cross Axis" */
+            /* Modifica todo o conteudo do container. Ignora o tamanho(limite) das linhas/colunas */
+            align-content: flex-start; /* Alinha todo o conteudo no inicio do container */
+            align-content: flex-end; /* Alinha todo o conteudo no fim do container */
+            align-content: center; /* Alinha todo o conteudo no meio do container */
+            align-content: space-around; /* Espalha os itens o mais longe um do outro pelas linhas/colunas e pelo container. Aplica espaçamento em todos os lados dos elementos */
+            align-content:space-between; /* Espalha os elementos o mais longe um do outro pela linha/coluna e pelo container. Aplica espaçamento somente ENTRE os elementos */
         }
+
     </style>
 </head>
 
@@ -54,9 +64,9 @@
         <div class="tag noLabel big">3</div>
         <div class="tag noLabel">4</div>
         <div class="tag noLabel">5</div>
-        <div class="tag noLabel big">6</div>
+        <div class="tag noLabel">6</div>
         <div class="tag noLabel">7</div>
-        <div class="tag noLabel big">8</div>
+        <div class="tag noLabel">8</div>
         <div class="tag noLabel">9</div>
         <div class="tag noLabel">10</div>
     </div>
