@@ -55,12 +55,22 @@
         /* Solução com Flex Box */
         /* ==================== */
 
-        .cabecalho, .menu ul {
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu {
+            flex-grow: 10; /* Tanto faz o número do peso. Como é só 1 item, ele vai receber tudo */
+        }
+
+        .menu ul {
             display: flex;
         }
 
-        .cabecalho {
-            align-items: center;
+        .menu li {
+            margin: 0 10px;
         }
     </style>
 </head>

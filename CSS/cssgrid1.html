@@ -22,6 +22,20 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        body {
+            display: grid;
+            grid-template-columns: 50% 50%; /* Seta quantas colunas quer junto com a largura. Cada número é largura da sua coluna. 2 colunas com 50% de largura em cada uma */
+            grid-template-columns: 20% 50% 30%; /* Setando 3 colunas. A primeira com 20% de largura, a segunda com 50% e a terceira com 30%. */
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /* Repete("quantas vezes", "largura da coluna"). Nesse caso vai ter 12 colunas com 8.33% de largura cada uma */
+            grid-template-columns: repeat(12, 8.33%); /* Mesmo resultado que a linha acima */
+            grid-template-columns: repeat(11, 100px) 100px; /* Pode adicionar mais colunas depois do "repeat". Adiciona 11 colunas de 100px e adiciona mais uma de 100px */
+            /* minmax(100px, 300px). Largura mínima e máxima */
+            grid-template-columns: 200px 20% 1fr; /* 1 coluna de 200px, outra com 20% e a última de 1 FRAGMENTO. Fragmento é uma "parte", pode dividir a tela em 10 partes(fr) iguais e atribuir pra alguma coluna. Nesse caso, 1fr vai pegar todo o espaço da tela que sobrar das outras 2 colunas, vai se ajustando com o tamanho da tela */
+            grid-template-columns: 3fr 6fr 3fr; /* Divide a tela em 12 fragmentos iguais e distribui entre as colunas */
+
+            grid-template-rows: ;
+        }
     </style>
 </head>
 
