@@ -34,7 +34,35 @@
             grid-template-columns: 200px 20% 1fr; /* 1 coluna de 200px, outra com 20% e a última de 1 FRAGMENTO. Fragmento é uma "parte", pode dividir a tela em 10 partes(fr) iguais e atribuir pra alguma coluna. Nesse caso, 1fr vai pegar todo o espaço da tela que sobrar das outras 2 colunas, vai se ajustando com o tamanho da tela */
             grid-template-columns: 3fr 6fr 3fr; /* Divide a tela em 12 fragmentos iguais e distribui entre as colunas */
 
-            grid-template-rows: ;
+            grid-template-rows: 50% 25% 12.5% 12.5%; /* Mesma funcionalidade que o "grid-template-columns" só que com as linhas */
+            grid-template-rows: 100px 1fr; /* Existem 4 linhas, mas aqui está definido a altura só de 2. Nesse caso a primeira linha fica com 100px, a terceira e a quarta ficam com o tamanho do seu conteudo POIS a segunda linha é 1fr, então ela pega todo o espaço que conseguir */
+            grid-template-rows: 100px auto; /* A primeira linha tem 100px de altura e as outras vão dividir o espaço que sobrar entre elas. Com ou sem "auto" dá no mesmo */
+        }
+
+        .d8 {
+            /* Formas para mesclar células */
+            /* "grid-column-start" e "grid-column-end" funcionam a partir das linhas verticais que delimitam as colunas. Nesse caso existem 4 linhas */
+            grid-column-start: 2; /* A celula vai começar a partir da linha 2 */
+            grid-column-end: 4; /* E vai terminar na linha 4, ou seja, mesclou 2 celulas */
+            grid-column-end: span 2; /* Pega as 2 celulas depois do "start". Tem o mesmo efeito que a linha acima */
+
+            /* Funcionam da mesma forma que a "column" só que com as linhas horizontais que delimitam as linhas*/
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-row-end: span 2;
+        }
+
+        .d10,
+        .d11 {
+            /* Podem se sobrepor */
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: span 1; /* Padrão */
+        }
+
+        .d10 {
+            z-index: 10; /* Camada de sobreposição. Quanto maior, maior é a preferência para ficar na frente, quanto menor, menor. Nesse caso vai sobrepor o ".d11", vai aparecer em cima dele */
         }
     </style>
 </head>
