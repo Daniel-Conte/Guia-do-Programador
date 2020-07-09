@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        document.getElementById('primeiro').classList.add('destaque') /* Seleciona o id "primeiro"(como tá selecionando "id" não precisa usar "#"). Adiciona a classe "destaque" no id. Como vai ser selecionado somente 1 elemento dá pra fazer direto, sem percorrer. */
+
+        const divs = document.getElementsByTagName('div') /* Pega todas as tags com nome "div". Retorna uma HTMLCollection */
+        Array.from(divs).forEach(e => e.classList.remove('destaque')) /* Transforma o HTMLCollection em Array e remove a classe "destaque" de todas as divs */
+
+        const divsArray = [...divs] /* Outra forma de transformar HTMLCollection em Array. Usando Spread */
+        divsArray.forEach(e => e.classList.add('destaque')) /* Adiciona a classe "destaque" em todas divs */
+
+        const ultimosElementos = document.getElementsByClassName('ultimo') /* Pega os elementos que tem a classe "ultimo" */
+        for(let e of ultimosElementos) { /* Percorre os valores. Funciona com HTMLCollection */
+            e.classList.remove('destaque') /* Remove a classe "destaque" dos elementos com a classe "ultimo" */
+        }
+    </script>
+</body>
+</html>

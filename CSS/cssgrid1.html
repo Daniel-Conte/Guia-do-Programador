@@ -42,6 +42,8 @@
         .d8 {
             /* Formas para mesclar células */
             /* "grid-column-start" e "grid-column-end" funcionam a partir das linhas verticais que delimitam as colunas. Nesse caso existem 4 linhas */
+            /* Se usar somente "grid-column-start" vai pegar só a celula após a linha digitada. Mas use "grid-column" para selecionar só 1 celula */
+            /* Para selecionar da direita pra esquerda use números negativos para as linhas */
             grid-column-start: 2; /* A celula vai começar a partir da linha 2 */
             grid-column-end: 4; /* E vai terminar na linha 4, ou seja, mesclou 2 celulas */
             grid-column-end: span 2; /* Pega as 2 celulas depois do "start". Tem o mesmo efeito que a linha acima */
@@ -64,6 +66,8 @@
         .d10 {
             z-index: 10; /* Camada de sobreposição. Quanto maior, maior é a preferência para ficar na frente, quanto menor, menor. Nesse caso vai sobrepor o ".d11", vai aparecer em cima dele */
         }
+
+        /* No Grid também tem o "order" usado no Flex. */
     </style>
 </head>
 

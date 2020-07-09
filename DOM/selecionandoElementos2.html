@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+        document.querySelector('#primeiro').classList.add('destaque') /* "querySelector" é um seletor "universal" que seleciona 1 elemento. Pode selecionar ids, classes, tags, atributos... Mas precisa especificar o tipo(ex: '#id', '.class', '[atributo]'). Retorna uma NodeList em vez de HTMLCollection. NodeList funciona no "forEach()", mas não em outras funcoes de array */
+
+        const selecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque')) /* "querySelectorAll" Seleciona todos os elementos. Atribuindo uma função à uma variavel pra adicionar a classe "destaque" */
+
+        const deselecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque')) /* Atribuindo uma função à uma variavel pra remover a classe "destaque" */
+
+        selecionar('*') /* Seleciona tudo */
+        deselecionar('*')
+
+        selecionar('.terceiro.ultimo') /* Seleciona os elementos com as classes "terceiro" e "ultimo" */
+        deselecionar('*')
+        
+        selecionar(':not(#primeiro)') /* Seleciona tudo MENOS "#primeiro". Pseudo-classe de negação */
+        deselecionar('*')
+
+        selecionar(':nth-child(1)') /* Seleciona o primeiro filho de alguem */
+        deselecionar('*')
+
+        selecionar('div:nth-of-type(1)') /* Seleciona o primeiro elemento do tipo "div" */
+        deselecionar('*')
+
+        selecionar('[wb-attrib]') /* Seleciona os elementos com o atributo "wb-attrib" */
+    </script>
+</body>
+</html>
