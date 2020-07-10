@@ -22,16 +22,24 @@
 
 <body class="conteudo exercicio">
     <h1>Formulário</h1>
-    <form name="pesquisa" action="http://www.google.com.br/search">
-        <input type="text" name="q" placeholder="Digite o termo...">
-        <select name="hl">
-            <option value="pt-br">Português (Brasil)</option>
+    <form name="pesquisa" action="http://www.google.com.br/search"> <!-- "action" é uma url que vai processar o conteudo do formulario. Nesse caso vai pesquisar no google -->
+        <input type="text" name="q" placeholder="Digite o termo..."> <!-- name="q" é o nome do parametro para pesquisa(q = 'Query'). O que for digitado aqui vai ser o valor de "q"  -->
+        <select name="hl"> <!-- nome do parametro que vai guardar o idioma pra procurar o assunto (hl = HostLanguage) -->
+            <option value="pt-br">Português (Brasil)</option> <!-- Valor para o parametro "hl" -->
             <option value="en-us">Inglês (Americano)</option>
         </select>
         <button>Pesquisar</button>
+        <!-- EX: "https://www.google.com.br/search?q=paas&hl=pt-br". "?" separa a url dos parametros. "q=(valor digitado)" é o que vai ser pesquisado. "&" separa os parametros. "hl=(idioma pra fazer a pesquisa)". Nesse caso os nomes precisam ser esses para funcionar -->
     </form>
     <script>
-        // ...
+        console.log(document.forms) /* Lista todos os elementos "form". Retorna HTMLCollection */
+        console.log(document.forms[0])
+        console.log(document.getElementsByName('pesquisa')) /* Pega os elementos pelo valor do atributo "name". Retorna NodeList */
+        console.log(document.pesquisa) /* Pode acessar o nome do form diretamente */
+        console.log(document.pesquisa.q) /* Retorna o elemento que possui o nome "q" dentro do form "pesquisa" */
+        document.pesquisa.q.value = 'Linux Brasil' /* Acessando o valor de "q". Já deixa setado o valor no formulario */
+        document.pesquisa.hl.value = 'en-us' /* Já deixa marcada essa opção no formulario */
+        console.log(document.pesquisa.hl.selectedIndex) /* Retorna o valor do indice que está selecionado. Dentro de "hl" tem 2 opções: "Português (Brasil)" de indice "0" e "Inglês (Americano)" de indice "1" */
     </script>
 </body>
 

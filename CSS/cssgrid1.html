@@ -37,6 +37,8 @@
             grid-template-rows: 50% 25% 12.5% 12.5%; /* Mesma funcionalidade que o "grid-template-columns" só que com as linhas */
             grid-template-rows: 100px 1fr; /* Existem 4 linhas, mas aqui está definido a altura só de 2. Nesse caso a primeira linha fica com 100px, a terceira e a quarta ficam com o tamanho do seu conteudo POIS a segunda linha é 1fr, então ela pega todo o espaço que conseguir */
             grid-template-rows: 100px auto; /* A primeira linha tem 100px de altura e as outras vão dividir o espaço que sobrar entre elas. Com ou sem "auto" dá no mesmo */
+
+            grid-template: 1fr 2fr 2fr 1fr / 3fr 6fr 3fr; /* Shorthand */
         }
 
         .d8 {

@@ -22,7 +22,33 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        function log() { /* Criando uma função para simplificar o "console.log()" */
+            console.log(this)
+        }
+
+        /* Adicionando a funcao "log" no prototype para poder chamar direto */
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul') /* Selecionando a tag "ul" dentro de "div" */
+        lista.parentNode.log() /* "parentNode" retorna o pai do elemento. Nesse caso vai retornar a "div" que é pai de "ul". Usando a forma simplificada .log() */
+        lista.childNodes.log() /* "childNodes" retorna todos os filhos do elemento. Vai retornar também uns "text" que são os espaços entre os elementos. Nesse caso retorna as "li" que são os filhos de "lista" e uns "text" . Não é muito interessante usar */
+
+        const primeiro = lista.firstChild /* "firstChild" retorna o primeiro filho do elemento. Nesse caso retorna um "text" */
+        primeiro.log()
+        primeiro.nextSibling.log() /* "nextSibling" retorna o próximo irmão do elemento. Nesse caso retorna a primeira "li" */
+
+        const ultimo = lista.lastChild /* "lastChild" retorna o último filho do elemento. Nesse caso retorna um "text" */
+        ultimo.log()
+        ultimo.previousSibling.log() /* "previousSibling" retorna o irmão antecessor do elemento. Nesse caso retorna a última "li" */
+
+        lista.children.log() /* Retorna todos os filhos do elemento. Nesse caso não retorna os "text". É bem mais interessante de usar */
+        lista.firstElementChild.log() /* Retorna o primeiro filho do elemento. Nesse caso retorna a primeira "li" */
+        lista.lastElementChild.log() /* Retorna o último filho do elemento. Nesse caso retorna a última "li" */
+        lista.parentNode.previousElementSibling.log() /* Retorna o irmão antecessor do pai do elemento. Nesse caso retorna a div com a tag "p" escrita "Início" */
+        lista.parentNode.nextElementSibling.log() /* Retorna o próximo irmão do pai do elemento. Nesse caso retorna a div com a tag "p" escrito "Fim" */
     </script>
 </body>
 
