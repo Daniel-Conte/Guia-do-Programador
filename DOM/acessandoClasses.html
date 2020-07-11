@@ -12,7 +12,27 @@
         Classes
     </div>
     <script>
-        // ...
+        const div = document.querySelector('div')
+        const classes = div.classList /* "classList" retorna uma lista de todas as classes. Do tipo DOMTokenList */
+
+        console.log(classes) /* "div" não tem nenhuma classe aplicada diretamente */
+        classes.add('destaque') /* Adiciona uma classe */
+        classes.remove('destaque') /* Remove uma classe */
+        classes.toggle('destaque') /* Alterna entre add e remover uma classe. Se a classe já estiver adicionada ele vai removê-la, se ela não existir ele vai adicioná-la. Nesse caso vai adicionar */
+        console.log(classes.contains('destaque')) /* Verifica se a classe está contida ou nao */
+        console.log(classes.length) /* Retorna a quantidade de classes. Nesse caso "1" */
+        classes.toggle('destaque') /* Agora vai remover a classe */
+        console.log(classes.length) /* Como a classe 'destaque' foi removida vai retornar "0" */
+
+        classes.add('destaque1')
+        classes.add('destaque2')
+        console.log(classes.length)
+
+        for(let c of classes) { /* "for of" retorna o conteudo. Nesse caso retorna o nome das classes. Funciona com DOMTokenList */
+            console.log(c)
+        }
+
+        classes.forEach(c => console.log(c)) /* "forEach" tambem funciona com DOMTokenList */
     </script>
 </body>
 

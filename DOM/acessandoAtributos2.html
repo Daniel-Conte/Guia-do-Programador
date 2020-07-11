@@ -9,7 +9,7 @@
 
 <body class='conteudo exercicio'>
     <div>
-        <label for="compras">Compras</label>
+        <label for="compras">Compras</label> <!-- "for" faz um match da label com o primeiro elemento que possuir um "id" com o mesmo valor -->
         <ul id="compras" destino='escritório' data-urgencia="5">
             <li>Café</li>
             <li>Água</li>
@@ -17,7 +17,27 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]') /* Retorna a "ul" que tem a propriedade/atributo 'destino="escritório"' dentro de uma div */
+        console.log('Elemento "ul"........')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino) /* Notação ponto para acessar um atributo diretamente só funciona se for um atributo já existente no html. Nesse caso é um atributo personalizado, então não funciona */
+        console.log('getAttribute', lista.getAttribute('destino')) /* "getAttribute" pega qualquer atributo/propriedade, não importa se for já do html ou se for personalizado */
+        console.log('hasAttribute', lista.hasAttribute('destino')) /* Faz uma verificação se tem ou não tal atributo */
+        
+        lista.setAttribute('destino', 'empresa') /* "setAttribute" pode adicionar ou alterar atributos. Nesse caso altera o valor do atributo "destino" para "empresa" */
+        lista.setAttribute('status', 'aberto') /* Adiciona um novo atributo "status" com valor "aberto" */
+        lista.removeAttribute('destino') /* Remove um atributo */
+
+        console.log(lista.dataset) /* "dataset" retorna uma lista de todos os atributos personalizados que começam com "data-" no nome. Nesse caso retorna 'urgencia="5"' (retorna sem "data-") */
+        console.log(lista.dataset.urgencia) /* Acessando diretamente */
+        lista.dataset.urgencia = 4 /* Pode modificar o valor do atributo */
+        console.log(lista.getAttribute('data-urgencia'))
+
+        //Cuidado
+        const label = document.querySelector('label')
+        console.log(label.for) /* "for" já existe dentro do html, mas não dá pra acessar diretamente dessa maneira pois "for" é uma palavra reservada no JS */
+        console.log(label.htmlFor) /* Esse é o jeito para acessar diretamente */
+        console.log(label.getAttribute('for')) /* Assim também funciona */
     </script>
 </body>
 

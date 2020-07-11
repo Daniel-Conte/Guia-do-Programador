@@ -16,7 +16,17 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('#compras')
+
+        console.log(lista.attributes) /* Retorna uma lista dos atributos */
+        console.log(lista.attributes[0]) /* Dá pra acessar um atributo através do indice */
+        console.log(lista.attributes.id) /* Dá pra acessar pela notação ponto */
+        console.log(lista.attributes[1])
+        console.log(lista.attributes.destino) /* Dá pra acessar um atributo personalizado pela notação ponto dentro de "attributes" */
+        console.log(lista.attributes[2])
+        console.log(lista.attributes['data-urgencia']) /* Outra forma de acessar. Não dá pra acessar através da notacao ponto pois o JS não aceita "-". */
+
+        lista.attributes.destino.value = 'casa' /* Método para mudar o valor de um atributo */
     </script>
 </body>
 
