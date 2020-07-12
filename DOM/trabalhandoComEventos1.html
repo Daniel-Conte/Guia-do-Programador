@@ -9,9 +9,26 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- 'onclick="navegarEm5s(event)"' Chama a função direto na tag(EVITE). Precisa passar "event" como parametro pra funcionar -->
+        <!-- Mais recomendável usar um atributo personalizado para usar no JS para chamar a funcao. Assim tu sinaliza que vai acontecer alguma coisa e não precisa chamar a funcao na tag -->
+        <a href="https://google.com.br" espera-um-pouco>Google</a>
     </div>
     <script>
-        // ...
+        function navegarEm5s(e) {
+            e.preventDefault() /* Previne o funcionamento padrão. O que iria acontecer não vai mais */
+            console.log('Saindo em 5s....')
+            setTimeout(() => {
+                const link = e.target /* "e.target" retorna o elemento que disparou o evento. Nesse caso retorna o elemento da tag "a" */
+                window.location.href = link.href /* "window.location.href" vai retornar a URL da página. "link.href" atribuindo o valor do atributo "href"(URL do google) do elemento à URL da página, assim direcionando a página */
+            }, 5000)
+        }
+
+        //Chamando a funcao pelo JS
+        /* const a = document.querySelector('a')
+        a.onclick = navegarEm5s */
+
+        //Chamando a funcao pelo JS usando um atributo personalizado(USE)
+        const a = document.querySelector('[espera-um-pouco]')
+        a.onclick = navegarEm5s
     </script>
 </body>

@@ -10,6 +10,15 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+        const item = document.querySelector('div')
+        item.style.position = 'absolute' /* Mudando a position da div pra poder mover ela de forma absoluta */
+
+        item.onmousemove = e => { /* "onmousemove" executa quando passar o ponteiro do mouse sobre o elemento */
+            item.style.cursor = 'move' /* Muda o formato do ponteiro do mouse. Nesse caso muda pra forma de "mover" alguma coisa */
+            if(e.buttons) { /* "buttons" retorna um valor que indica qual botao do mouse está sendo clicado. 0 = nenhum botao | 1 = botao esquerdo | 2 = botao direito | 4 = bolinha | 8 = botao de voltar | 16 = botao de avancar. Nesse caso vai funcionar com qualquer botao já que qualquer valor diferente de zero é "true" */
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px` /* Seta o valor "top" do elemento. "clientY" retorna a coordenada do eixo Y(vertical) do ponteiro do mouse no momento da ação. Nesse caso com o "if", retorna a coordenada continuamente enquanto um botao estiver clicado. "clientHeight" é a altura do elemento, está dividida por 2 para centralizar o mouse no elemento */
+                item.style.left = `${e.clientX - (item.clientWidth / 2)}px` /* Seta o valor "left" do elemento. "clientX" retorna a coordenada do eixo X(horizontal) do ponteiro do mouse no momento da ação. "clientWidth" é a largura do elemento, está dividida por 2 para centralizar o mouse no elemento */
+            }
+        }
     </script>
 </body>

@@ -9,7 +9,31 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector('body')
+
+        const div1 = document.createElement('div') /* Cria um elemento do tipo "div" */
+        div1.classList.add('destaque') /* Adicionando uma classe ao novo elemento */
+        div1.innerHTML = 'Primeiro' /* Colocando conteudo dentro do elemento */
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor') /* Adicionando um atributo e seu valor */
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p') /* Criando uma tag "p" */
+        p.innerHTML = 'Terceiro'
+        const div3 = document.createElement('div')
+        div3.appendChild(p) /* Adiciona o elemento "p" à "div3". O elemento vai ser adicionado no final (ultima child) */
+
+        body.appendChild(div1) /* Adicionando as divs dentro do body do html pra aparecer */
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        const texto = document.createTextNode('Antes....') /* "createTextNode" cria um nó de texto pra por no elemento. É adicionado como elemento filho, o "innerHTML" substitui tudo no elemento */
+        div3.insertBefore(texto, div3.childNodes[0]) /* Insere o texto antes do primeiro nó filho da div3. ("o que inserir", "antes do que?") */
+
+        const div4 = div3.cloneNode(true) /* Cria um clone da div3. true = clona os filhos da div3 junto | false = não clona os filhos */
+        body.appendChild(div4)
+        body.removeChild(div3) /* Remove um filho */
     </script>
 </body>
 

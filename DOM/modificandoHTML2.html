@@ -12,7 +12,17 @@
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        const div = document.querySelector('div')
+        div.innerHTML = 'Texto Alterado' /* "innerHTML" substitui TUDO dentro do elemento pelo novo valor */
+        //div.outerHTML = 'Texto Alterado' /* "outerHTML" substitui o proprio elemento em si pelo novo valor */
+
+        div.insertAdjacentHTML('beforebegin', '<p>Antes Início</p>') /* Adiciona logo ANTES de começar o elemento */
+        div.insertAdjacentHTML('afterbegin', '<p>Depois Início</p>') /* Adiciona logo DEPOIS de começar o elemento */
+        div.insertAdjacentHTML('beforeend', '<p>Antes Fim</p>') /* Adiciona logo ANTES de terminar o elemento */
+        div.insertAdjacentHTML('afterend', '<p>Depois Fim</p>') /* Adiciona logo DEPOIS de terminar o elemento */
+
+        console.log(div.innerHTML) /* Mostra o conteudo dentro do elemento (com as tags) */
+        console.log(div.innerText) /* Mostra o texto dentro do elemento (texto puro, sem tags) */
     </script>
 </body>
 
