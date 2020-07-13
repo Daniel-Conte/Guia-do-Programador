@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf')
+}
+
+[wm-flappy] {
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
+    background-color: deepskyblue;
+    overflow: hidden;
+}
+
+.passaro {
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 30px); /* pra ficar exatamente no meio. Se usar somente "50%" a borda esquerda da img vai ficar exatamente no meio, assim fica o centro da img. */
+    bottom: 50%;
+}
+
+.par-de-barreiras {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.barreira {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barreira .borda { /* Tampa do tubo */
+    height: 30px;
+    width: 140px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border: 2px solid #000;
+}
+
+.barreira .corpo { /* Tubo */
+    height: 130px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.progresso {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: Pixel;
+    font-size: 70px;
+}
