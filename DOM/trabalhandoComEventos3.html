@@ -45,7 +45,24 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        const items = document.querySelectorAll('[wm-dropzone] .item') /* Selecionando os elementos com a classe "item" onde tem o atributo "wm-dropzone" */
+        items.forEach((item, index) => {
+            item.draggable = true /* Permite mover os elementos. Só move, não muda de posição nem nada. Precisa disso pra fazer operações Drag and Drop */
+            item.id = item.id || `draggable-item-${index}` /* Se o id não existir, adiciona um */
+            item.ondragstart = e => /* Executa quando um elemento começa a ser arrastado */
+                e.dataTransfer.setData('item-id', e.target.id) /* "dataTranfer" guarda os dados que estão sendo arrastados. "setData('tipo de dado', 'dados')" seta o tipo de dado e os dados que estão sendo arrastados. Nesse caso o "e.target" é o elemento que esta sendo arrastado, se usar "item.id" no lugar não vai conseguir arrastar os elementos que estão dentro do outro */
+        })
+
+        const dropzones = document.querySelectorAll('[wm-dropzone]')
+        dropzones.forEach(dropzone => {
+            dropzone.ondragover = e => e.preventDefault() /* "ondragover" especifica onde o elemento pode ser dropado. Por padrao não pode ser dropado em outros elementos, então precisa usar o "preventDefault" pra tirar isso */
+            dropzone.ondrop = function(e) { /* "ondrop" executa quando o elemento é dropado */
+                const id = e.dataTransfer.getData('item-id') /* "getData('tipo de dado')" pega os dados do "setData". Precisa ser o mesmo tipo de dado pra funcionar, pode ser nome personalizado(mas tem que ser igual) */
+                const item = document.getElementById(id)
+                //e.target.appendChild(item) /* Joga o elemento arrastado. Nesse caso "e.target" é qualquer elemento em que o elemento for dropado. Pode por elementos um dentro do outro */
+                dropzone.appendChild(item) /* Nesse caso só pode dropar o elemento dentro dos elementos da dropzone */
+            }
+        })
     </script>
 </body>
 
