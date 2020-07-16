@@ -123,7 +123,7 @@ setInterval(() => {
 }, 20) */
 
 function estaoSobrepostos(elementoA, elementoB) {
-    const a = elementoA.getBoundingClientRect() /* Pega o retangulo associoado ao elemento A. Retorna o tamanho(height e width) e a posicao(top, left, right, bottom, x, y) do elemento */
+    const a = elementoA.getBoundingClientRect() /* Pega o retangulo associoado ao elemento A. Retorna o tamanho(height e width) e a posicao(top, left, right, bottom, x, y) do elemento em relaçao ao viewport */
     const b = elementoB.getBoundingClientRect() /* Pega o retangulo associoado ao elemento B */
 
     const horizontal = a.left + a.width >= b.left && b.left + b.width >= a.left /* "a.left + a.width" é o limite direito do elemento. Detecta colisao horizontal entre os elementos */
@@ -165,7 +165,7 @@ function FlappyBird() {
             barreiras.animar()
             passaro.animar()
 
-            if(colidiu(passaro, barreiras)) {
+            if(colidiu(passaro, barreiras)) { /* Vai fazer a verificacao no mesmo intervalo que a animação */
                 clearInterval(temporizador)
             }
         }, 20)
