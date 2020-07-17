@@ -1,0 +1,4 @@
+[ "git status" ] -> Mostra algumas informações sobre o estado atual do repositório
+
+[ "git init" ] -> Inicia um repositório
+

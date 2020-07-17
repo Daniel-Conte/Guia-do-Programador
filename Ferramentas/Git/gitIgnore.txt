@@ -1,0 +1,5 @@
+- O que colocar dentro do arquivo ".gitignore" vai ser ignorado pelo monitoramento do git
+- Pode colocar nomes de arquivos, diretorios, extensoes...
+
+Ex:
+teste.txt    - Vai ignorar esse arquivo especifico
