@@ -1,5 +1,26 @@
 - O que colocar dentro do arquivo ".gitignore" vai ser ignorado pelo monitoramento do git
 - Pode colocar nomes de arquivos, diretorios, extensoes...
+#comentario
 
 Ex:
-teste.txt    - Vai ignorar esse arquivo especifico
+teste.txt       - Ignora os arquivos com esse nome e extensao
+
+pasta/          - "/" Ignora o diretorio com esse nome.
+
+*.txt           - "*" Ignora os arquivos que terminam com esses caracteres
+
+tes*            - Ignora todos os arquivos que iniciam com esses caracteres
+
+!teste.txt      - Nega um arquivo que seria ignorado(não é mais ignorado). Não da pra fazer isso com um arquivo dentro de um diretorio ignorado
+
+*               - Ignora todos os arquivos
+
+**              - Ignora todos os arquivos
+
+**/pasta        - Ignora todos os diretorios ou arquivos com o nome "pasta"
+
+**/pasta/*.txt  - Ignora todos os arquivos ".txt" dentro dos diretorios com o nome "pasta"
+
+pasta/**/*.txt  - Ignora todos os arquivos ".txt" dentro do diretorio "pasta", independentemente de seus subdiretorios
+
+pasta/**        - Ignora todos os arquivos dentro do diretorio "pasta"

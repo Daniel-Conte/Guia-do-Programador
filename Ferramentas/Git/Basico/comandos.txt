@@ -2,3 +2,14 @@
 
 [ "git init" ] -> Inicia um repositório
 
+[ "git config user.name "<seuNome>"" ] -> Adiciona um nome para as outras pessoas saberem que é você quem esta modificando o projeto. Isso vale SÓ para o repositório local
+
+[ "git config user.email "<seuEmail>"" ] -> Adiciona um email para outras pessoas entrarem em contato com voce. Isso vale SÓ para o repositório local
+
+[ "git config --global user.email "<seuEmail>"" ] -> Adiciona um email de forma global(Adiciona esse email para TODOS os seus repositórios). Pode ser usado com "nome"
+
+[ "git config user.nome" ] -> Mostra o nome do usuario local
+
+[ "git config user.email" ] -> Mostra o email do usuario local
+
+[ "git add <nomeDoArquivo>" ] -> Adiciona o arquivo para o monitoramento do git. O arquivo pode ser "Untracked" ou "Modified"

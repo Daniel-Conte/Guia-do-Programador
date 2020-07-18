@@ -1,0 +1,7 @@
+Untracked - O arquivo não está sendo monitorado pelo git. Para monitorar use "git add". Aparece a letra "U"
+
+Tracked - O arquivo esta sendo monitorado pelo git. Aparece a letra "A"(Added)
+
+Modified - Quando modifica um arquivo "Tracked". Para deixar "Tracked" novamente, use "git add". Aparece a letra "M"
+
+Staged - O arquivo está pronto. Só pode passar para este estagio se o arquivo for "Tracked"

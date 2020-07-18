@@ -1,0 +1,6 @@
+- Todo repositorio tem a pasta ".git" na raiz do projeto
+    - Dentro dessa pasta tem o arquivo "config" com as configurações do repositorio
+
+- SEMPRE que iniciar um novo repositorio, lembre-se de adicionar seu nome e email para as outras pessoas saberem quem está modificando
+    - O nome e email ficam no arquivo "config"
+    - Se usar gitHub desktop, usa o nome da conta do gitHub automaticamente
