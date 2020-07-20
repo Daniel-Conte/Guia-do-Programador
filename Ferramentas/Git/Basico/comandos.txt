@@ -1,15 +1,52 @@
 [ "git status" ] -> Mostra algumas informações sobre o estado atual do repositório
 
+[ "git help" ] -> Mostra comandos gerais e uma ajuda
+
 [ "git init" ] -> Inicia um repositório
 
-[ "git config user.name "<seuNome>"" ] -> Adiciona um nome para as outras pessoas saberem que é você quem esta modificando o projeto. Isso vale SÓ para o repositório local
+[ "git config user.name "<seuNome>"" ] -> Adiciona um nome para as outras pessoas saberem que é você quem esta modificando o projeto
+    - Isso vale SÓ para o repositório local
 
-[ "git config user.email "<seuEmail>"" ] -> Adiciona um email para outras pessoas entrarem em contato com voce. Isso vale SÓ para o repositório local
+[ "git config user.email "<seuEmail>"" ] -> Adiciona um email para outras pessoas entrarem em contato com voce
+    - Isso vale SÓ para o repositório local
 
-[ "git config --global user.email "<seuEmail>"" ] -> Adiciona um email de forma global(Adiciona esse email para TODOS os seus repositórios). Pode ser usado com "nome"
+[ "git config --global user.email "<seuEmail>"" ] -> Adiciona um email de forma global(Adiciona esse email para TODOS os seus repositórios)
+    - Pode ser usado com "nome"
 
 [ "git config user.nome" ] -> Mostra o nome do usuario local
 
 [ "git config user.email" ] -> Mostra o email do usuario local
 
-[ "git add <nomeDoArquivo>" ] -> Adiciona o arquivo para o monitoramento do git. O arquivo pode ser "Untracked" ou "Modified"
+[ "git add <nomeDoArquivo>" ] -> Adiciona o arquivo para o estado "Staged"
+    - O arquivo pode ser "Untracked"(o git começa a monitorar) ou "Modified"
+
+[ "git add ." ] -> Adiciona todos os arquivos
+
+[ "git commit -m "<nomeDoCommit>"" ] -> Comita os arquivos
+    - Manda uma cópia do seu projeto para o repositório local com um nome para distinguir
+
+[ "git log" ] -> Mostra todos os commits feitos
+    - O commit que aparecer "(HEAD -> 'branch atual')" é o commit que está sendo usado agora
+    - O comportamento depende do comando "pager" da pasta "config".
+        - Se for "cat" todos os commits vão aparecer normalmente 
+        - Se for "less"(padrao) vão aparecer commits até "encher" o tamanho do terminal, não mostrando os outros e aparecendo ":" na linha de digitar do terminal
+            - Se digitar "/" e alguma letra/nome irá pesquisar o nome dos commits
+            - Se digitar "q"(quit) vai sair e voltar ao normal
+            - Se digitar "b"(back) vai voltar um passo
+    - Para mudar de comportamento digite [ "git config core.pager <nome>" ]
+
+[ "git log -3" ] -> Mostra os 3 ultimos commits
+
+[ "git log --oneline" ] -> Mostra os commits resumidos, cada um em uma linha
+
+[ "git log --before="<ano-mes-dia>"" ] -> Mostra os commits feitos antes dessa data
+
+[ "git log --after="<ano-mes-dia>"" ] -> Mostra os commits feitos depois dessa data
+
+[ "git log --since="2 days ago"" ] -> Mostra os commits feitos nos últimos 2 dias
+
+[ "git log --before="1 month ago"" ] -> Mostra os commits feitos antes de 1 mes atras
+
+[ "git log --author="<nome>"" ] -> Mostra os commits feitos por tal autor(não precisa digitar o nome completo)
+
+[ "git help log" ] -> Mostra comandos relacionados com o "log"

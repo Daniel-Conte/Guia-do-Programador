@@ -1,7 +1,27 @@
-Untracked - O arquivo não está sendo monitorado pelo git. Para monitorar use "git add". Aparece a letra "U"
+Unstaged - O arquivo não está pronto para fazer commit
+    - O diretorio do arquivo fica vermelho no "git status"
+    - Para monitorar e deixar "Staged" use "git add"
 
-Tracked - O arquivo esta sendo monitorado pelo git. Aparece a letra "A"(Added)
+    Untracked - O arquivo não está sendo monitorado pelo git
+        - Aparece a letra "U"(Untracked)
 
-Modified - Quando modifica um arquivo "Tracked". Para deixar "Tracked" novamente, use "git add". Aparece a letra "M"
+    Modified - Quando modifica um arquivo "Staged" ou "Unmodified"
+        - Aparece a letra "M"(Modified)
 
-Staged - O arquivo está pronto. Só pode passar para este estagio se o arquivo for "Tracked"
+----------------
+
+Staged - O arquivo está pronto para fazer commit
+    - Quando é usado um "git add"
+    - O diretorio do arquivo fica verde no "git status"
+    - É adicionado no Index(pronto para commit)
+    - Aparece a letra "A"(Index Added) quando o arquivo nunca foi comitado antes
+    - Aparece a letra "M"(Index Modified) quando um arquivo "Unmodified" é modificado e é adicionado(git add)
+
+----------------
+
+Unmodified - Quando um arquivo é comitado
+    - Não Aparece nenhuma letra nem cor diferente
+
+-------------------------------------------------
+
+Quando é realizado um commit, é comitado somente os arquivos "Staged"

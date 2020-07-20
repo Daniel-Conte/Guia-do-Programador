@@ -1,6 +1,9 @@
+- Existe um repositorio local na sua maquina que armazena seus commits antes de envia-los para o repositorio remoto
+
 - Todo repositorio tem a pasta ".git" na raiz do projeto
     - Dentro dessa pasta tem o arquivo "config" com as configurações do repositorio
 
 - SEMPRE que iniciar um novo repositorio, lembre-se de adicionar seu nome e email para as outras pessoas saberem quem está modificando
     - O nome e email ficam no arquivo "config"
-    - Se usar gitHub desktop, usa o nome da conta do gitHub automaticamente
+    - Verifique se já tem um nome e email pelos comandos
+    - Ao trocar/adicionar o nome e email, isto só afetará os futuros commits
