@@ -54,3 +54,15 @@
 [ "git checkout <IDdoCommit>" ] -> Volta no tempo para o commit desejado
     - Pode usar o ID completo ou o resumido
     - Se usar [ "git switch -" ] volta para o estado anterior
+    - Fica no estado "detached HEAD" pois a HEAD(versão mais recente da branch) assume uma versão que não é a mais recente
+        - Todas as alterações e commits feitos no estado "detached HEAD" vão ser experimentais(não estão associados à nenhuma branch), e, vão ser descartadas quando trocar de branch
+            - Para salvar essas alterações é preciso criar uma nova branch [ "git switch -c <nomeDaNovaBranch> ]
+
+[ "git mv <nomeDoArquivo> <novoNome>" ] -> Renomeia um arquivo
+    - Bem melhor renomear pelo Git, pois depois de renomeado o arquivo já está pronto para commit
+        - Se renomear pela interface gráfica o Git vai reconhecer o arquivo como novo(Untracked) e o nome antigo como um arquivo deletado
+            - Precisa add os 2 arquivos pra "Staged"(tem que add o arquivo "deleted" pro Git reconhecer como deletado)
+        
+[ "git rm <nomeDoArquivo>" ] -> Remove um arquivo
+    - Bem melhor deletar pelo Git, pois depois de deletado o arquivo está pronto para commit
+        - Se deletar pela interface gráfica, vai precisar add o arquivo deletado pra poder fazer commit

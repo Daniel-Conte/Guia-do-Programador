@@ -7,3 +7,5 @@
     - O nome e email ficam no arquivo "config"
     - Verifique se já tem um nome e email pelos comandos
     - Ao trocar/adicionar o nome e email, isto só afetará os futuros commits
+
+- Faça commits frequentemente, evite fazer commits quando você modificou muito o projeto
