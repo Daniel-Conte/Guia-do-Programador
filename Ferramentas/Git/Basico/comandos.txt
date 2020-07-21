@@ -50,3 +50,7 @@
 [ "git log --author="<nome>"" ] -> Mostra os commits feitos por tal autor(não precisa digitar o nome completo)
 
 [ "git help log" ] -> Mostra comandos relacionados com o "log"
+
+[ "git checkout <IDdoCommit>" ] -> Volta no tempo para o commit desejado
+    - Pode usar o ID completo ou o resumido
+    - Se usar [ "git switch -" ] volta para o estado anterior
