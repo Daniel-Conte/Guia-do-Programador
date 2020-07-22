@@ -66,3 +66,17 @@
 [ "git rm <nomeDoArquivo>" ] -> Remove um arquivo
     - Bem melhor deletar pelo Git, pois depois de deletado o arquivo está pronto para commit
         - Se deletar pela interface gráfica, vai precisar add o arquivo deletado pra poder fazer commit
+
+[ "git diff <algumaCoisa>" ] -> Compara o commit atual com alguma coisa
+    - Mostra as linhas e o que foi modificado nos arquivos
+    - Se aparecer ":" na linha de digitação vai apertando "enter" até aparecer "(END)" para ver todas as linhas modificadas
+        - Isso acontece quando tem muitas linhas
+        - Cada "enter" vai mostrando 1 linha
+
+[ "git diff --staged" ] -> Compara o commit atual com os arquivos "Staged"
+
+[ "git diff <IDdoCommit>" ] -> Compara o commit atual com um commit desejado
+
+[ "git diff <IDdoCommit1>..<IDdoCommit2>" ] -> Compara um commit mais velho com um mais novo
+    - ".." Significa "até"
+    - O primeiro commit precisa ser mais velho do que o segundo
