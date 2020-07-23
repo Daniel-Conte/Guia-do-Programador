@@ -58,6 +58,13 @@
         - Todas as alterações e commits feitos no estado "detached HEAD" vão ser experimentais(não estão associados à nenhuma branch), e, vão ser descartadas quando trocar de branch
             - Para salvar essas alterações é preciso criar uma nova branch [ "git switch -c <nomeDaNovaBranch> ]
 
+[ "git checkout <nomeDoArquivo>" ] -> Desfaz todas as alterações não comitadas do arquivo
+
+[ "git reset HEAD --hard" ] -> Remove todas as alterações feitas no commit atual
+    - Arquivos "Untracked" não são removidos, pois não estão sendo monitorados pelo Git
+
+[ "git reset HEAD^ --hard" ] -> Remove o commit atual e volta para o ultimo commit
+
 [ "git mv <nomeDoArquivo> <novoNome>" ] -> Renomeia um arquivo
     - Bem melhor renomear pelo Git, pois depois de renomeado o arquivo já está pronto para commit
         - Se renomear pela interface gráfica o Git vai reconhecer o arquivo como novo(Untracked) e o nome antigo como um arquivo deletado
@@ -80,3 +87,8 @@
 [ "git diff <IDdoCommit1>..<IDdoCommit2>" ] -> Compara um commit mais velho com um mais novo
     - ".." Significa "até"
     - O primeiro commit precisa ser mais velho do que o segundo
+
+[ "git commit --amend -m "<nomeDoCommit>"" ] -> "--amend" serve para sobrescrever o commit atual
+    - Caso você se esqueceu de add um arquivo no commit ou escreveu o nome do commit errado, você pode comitar novamente(do jeito certo agora) usando "--amend", isso vai sobrescrever o commit atual
+
+[ "git restore --staged <nomeDoArquivo>" ] -> Tira um arquivo do estado "Staged"
