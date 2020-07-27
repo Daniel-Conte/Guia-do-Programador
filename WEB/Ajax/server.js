@@ -7,4 +7,28 @@ app.use(bodyParser.urlencoded({ extended: true })) //Se vier uma requisicao com 
 app.use(bodyParser.json()) //Se vier um JSON na requisicao, vai transformar em objeto
 
 app.get('/teste', (req, res) => res.send('Ok')) //Quando receber uma requisicao do tipo "get" com a url "/teste" vai enviar de volta "Ok"
+
+const multer = require('multer') // Serve para lidar com form-data e upload de arquivos
+
+const storage = multer.diskStorage({ // "diskStorage()" recebe um object para configurar o diretorio do arquivo que foi feito upload e o seu nome
+    destination: function(req, file, callback) { // Define o diretorio para armazenar o arquivo
+        callback(null, './upload') // (erro, diretorio). "." significa "nesta pasta onde está este arquivo aqui"
+    },
+    filename: function(req, file, callback) { // Define o nome do arquivo
+        callback(null, `${Date.now()}_${file.originalname}`) // (erro, nome do arquivo). "Date.now()" retorna a data atual em milisegundos(vai ser usado aqui para que nenhum arquivo fique com o mesmo nome). "file.originalname" retorna o nome original do arquivo
+    }
+})
+
+const upload = multer({ storage }).single('arquivo') // "storage" vai passar as configurações definidas para o destino e nome do arquivo. ".single(nome do arquivo)" aceita 1 arquivo associado com o nome (o nome "arquivo" é o valor do atributo "name" dentro do "input" no html (xmlHttpRequest2))
+
+app.post('/upload', (req, res) => {
+    upload(req, res, err => { // Executa quando for feita uma requisicao. O arquivo e seu "name" que serão usados no ".single()" virão nessa requisicao
+        if (err) { // Tratamento de erro
+            return res.end('Ocorreu um erro.')
+        }
+
+        res.end('Concluido com sucesso.')
+    })
+})
+
 app.listen(8080, () => console.log('Executando...'))

@@ -11,6 +11,60 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        function ajax(config) { // "config" vai receber um objeto com varios dados para configurar
+            const xhr = new XMLHttpRequest() // Responsavel por atualizar a pagina ou uma parte dela de forma assincrona(sem interromper o que o usuario esta fazendo). Comunicacao entre cliente e servidor
+            xhr.open(config.metodo, config.url, true) // "open()" inicializa uma nova requisicao. "true" seta como assincrono (opcional), padrao "true"
+
+            xhr.onload = e => { // Executa quando carregar a requisicao
+                if (xhr.status === 200) { // ".status" retorna o codigo de status numerico da resposta
+                    config.sucesso(xhr.response) // Retorna o conteudo da resposta do servidor. Retorna o conteudo da URL da requisicao
+                } else if (xhr.status >= 400) {
+                    config.erro({ // Retorna uma mensagem de erro
+                        code: xhr.status, // Passa um objeto como parametro
+                        text: xhr.statusText
+                    })
+                }
+            }
+
+            xhr.send() // Envia a requisicao para o servidor. Nesse caso vai vazio, pois só ira ler arquivos do servidor
+        }
+
+        ajax({ // Chamando a funcao
+            url: "dados/estados.json",
+            metodo: "get",
+            sucesso(resposta) { // Tratamento da resposta
+                const estados = JSON.parse(resposta) // Transformando a resposta de JSON para Objeto
+                criarTabela(estados)
+            },
+            erro(e) { // Usando a DOM
+                const msg = document.createTextNode(`${e.code}: ${e.text}`)
+                document.body.appendChild(msg)
+            }
+        })
+
+        function criarTabela(estados) { // Usando a DOM
+            const linhas = estados.map(estado => { // Cria uma linha para cada elemento. Cada linha desse novo array vai ser um elemento do novo array "linhas"
+                const tdId = document.createElement('td') // "table data" cria uma celula dentro da linha
+                tdId.innerHTML = estado.id // Colocando conteudo dentro da celula
+
+                const tdNome = document.createElement('td')
+                tdNome.innerHTML = estado.nome
+
+                const tdSigla = document.createElement('td')
+                tdSigla.innerHTML = estado.sigla
+                
+                const tr = document.createElement('tr') // "table row" cria uma linha
+
+                tr.appendChild(tdId)
+                tr.appendChild(tdNome)
+                tr.appendChild(tdSigla)
+
+                return tr
+            })
+
+            const tabela = document.createElement('table') // Criando a tabela
+            linhas.forEach(linha => tabela.appendChild(linha)) // Add as linhas na tabela
+            document.body.appendChild(tabela) // Add a tabela no body
+        }
     </script>
 </body>
