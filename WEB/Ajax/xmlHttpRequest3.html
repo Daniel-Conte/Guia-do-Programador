@@ -11,6 +11,45 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        function ajax(config) {
+            const xhr = new XMLHttpRequest()
+
+            xhr.open(config.metodo, config.url, true)
+
+            xhr.onreadystatechange = e => { // Parecido do ".onload()". Dispara a funcao quando mudar o status de ".readyState"
+                if (xhr.readyState === 4) { // ".readyState" retorna o valor do status do XMLHttpRequest
+                // 0 -> requisicao não inicializada
+                // 1 -> Conexao com o servidor estabelecida
+                // 2 -> Requisicao recebida
+                // 3 -> Processando requisicao
+                // 4 -> Requisicao finalizada e resposta está pronta
+                    if (xhr.status === 200) {
+                        config.sucesso(xhr.responseXML) // ".responseXML" retorna um document(uma "mini DOM") com HTML ou XML da resposta.
+                    } else if (xhr.status >= 400) {
+                        config.erro({
+                            codigo: xhr.status,
+                            texto: xhr.statusText
+                        })
+                    }
+                }
+            }
+
+            xhr.send()
+        }
+
+        ajax({
+            url: 'dados/estados.xml',
+            metodo: 'get',
+            sucesso(resposta) {
+                const estados = resposta.getElementsByTagName('estado')
+                const itens = Array.from(estados).reduce((html, estado) => html + `<li>${estado.attributes.nome.value}</li>`, '') // "reduce(function(acumulador, atual) {...}, valorInicial)". Vai concatenar cada estado(como um "list item") em um elemento só(html). Vai ficar tudo junto(sem espaço) mas o HTML vai interpretar cada item(por causa do "<li>")
+
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+            },
+            erro(e) {
+                const msg = document.createTextNode(`${e.codigo}: ${e.texto}`)
+                document.body.appendChild(msg)
+            }
+        })
     </script>
 </body>
