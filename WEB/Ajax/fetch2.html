@@ -29,6 +29,36 @@
     </form>
     <div id="resultado"></div>
     <script>
-        // ...
+        document.usuarioForm.onsubmit = async e => { //".usuarioForm" é o nome do formulario. Transformando a funcao em assincrona
+            e.preventDefault()
+
+            const form = e.target // Quem está disparando essa funcao é o formulario
+            const data = new FormData(form) // Pegando os dados do formulario
+            data.append('ajax', true) // No formato FormData é possivel manipular os dados. Nesse caso adicionando
+
+            const options = {
+                method: form.method, // Retorna o valor do atributo "method" no formulario
+                body: new URLSearchParams(data) // "body" é o corpo do que vai ser enviado pro servidor. "URLSearchParams" vai gerar query params como um formulario iria fazer se estivesse usando uma simples submissao "get"
+            }
+
+            const resultado = document.getElementById('resultado')
+            /* fetch(form.action, options) // ".action" é a URL do formulario
+                .then(resp => resp.json()) // Transforma em um Objeto JSON
+                .then(json => {
+                    resultado.innerHTML = JSON.stringify(json) //Transforma em uma STRING JSON
+                })
+                .catch(e => { // Tratamento de erro
+                    resultado.innerHTML = e
+                }) */
+
+            // Tratamento de erro usando "try/catch" e async/await
+            try {
+                const resp = await fetch(form.action, options)
+                const json = await resp.json()
+                resultado.innerHTML = JSON.stringify(json)
+            } catch (e) {
+                resultado.innerHTML = e
+            }
+        }
     </script>
 </body>

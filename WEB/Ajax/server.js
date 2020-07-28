@@ -31,4 +31,12 @@ app.post('/upload', (req, res) => {
     })
 })
 
+// Fetch2.html
+app.post('/formulario', (req, res) => { // "/formulario" é a url(action) do formulario no HTML
+    res.send({ //Manda de volta
+        ...req.body, // Espalha(Spread) o corpo da requisicao na resposta
+        id:7
+    })
+})
+
 app.listen(8080, () => console.log('Executando...'))
