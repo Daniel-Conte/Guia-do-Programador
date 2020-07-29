@@ -12,6 +12,14 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        const url = 'dados/estados.json'
+        axios(url) // Retorna uma promise
+            .then(resp => {
+                console.log(resp)
+                console.log(resp.data) // ".data" contem os dados da resposta. Já transforma JSON em Object (nao precisa ".json()"). Nesse caso retorna um array de objetos
+                const itens = resp.data.reduce((html, estado) => html + `<li>${estado.nome}</li>`, '')
+
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+            })
     </script>
 </body>

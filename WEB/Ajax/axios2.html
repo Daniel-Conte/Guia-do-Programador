@@ -14,6 +14,23 @@
     <div id="post"></div>
 
     <script>
-        // ...
-    </script>
+        function exibirResultado(id, dados) {
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+
+        //axios('parOuImpar?numero=8').then(resp => exibirResultado('get', resp.data)) // Passando os dados na url por query
+
+        //axios.get('parOuImpar', { // Outro metodo para passar os dados por query
+        //    params: {
+        //        numero: 3
+        //    }
+        // })
+        //.then(resp => exibirResultado('get', resp.data))
+
+        //axios.get('parOuImpar/3').then(resp => exibirResultado('get', resp.data)) // Passando os dados na url por params
+        
+        axios.post('parOuImpar', { numero: 4 })
+            .then(resp => exibirResultado('post', resp.data)) // Passando os dados no body da requisicao
+        </script>
 </body>

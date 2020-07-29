@@ -39,4 +39,19 @@ app.post('/formulario', (req, res) => { // "/formulario" é a url(action) do for
     })
 })
 
+//axios2.html
+app.post('/parOuImpar', (req, res) => {
+    // req.body -> pega os dados no corpo da requisicao. "POST"
+    // req.query -> pega os dados na url. "/parOuImpar?numero=4". "GET"
+    // req.params -> pega os dados na url. "/parOuImpar/4". "GET"
+
+    //const par = parseInt(req.query.numero) % 2 === 0
+    //const par = parseInt(req.params.numero) % 2 === 0 //Tem que usar "/:numero" na url
+    const par = parseInt(req.body.numero) % 2 === 0
+
+    res.send({
+        resultado: par ? 'par' : 'impar'
+    })
+})
+
 app.listen(8080, () => console.log('Executando...'))
