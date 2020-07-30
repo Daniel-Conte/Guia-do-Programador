@@ -14,6 +14,37 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibirResultado(id, dados) {
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+
+        // Usa Callbacks ao inves de Promises. Mais velho
+        //GET
+        $.ajax({ // Os nomes das chaves tem que ser esses. Metodo padrao é "GET"
+            url: 'parOuImpar',
+            data: {
+                numero: 4
+            },
+            success(data) { // Callback em caso de sucesso da requisicao. "data" recebe os dados da resposta do servidor
+                exibirResultado('get', data)
+            }
+        })
+
+        //POST
+        $.ajax({
+            url: 'formulario',
+            method: 'post',
+            data: {
+                nome: 'João',
+                idade: 20
+            },
+            success(data) {
+                exibirResultado('post', data)
+            },
+            error(e) {
+                exibirResultado('post', e)
+            }
+        })
     </script>
 </body>

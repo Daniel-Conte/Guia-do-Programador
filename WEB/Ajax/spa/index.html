@@ -20,11 +20,42 @@
 
 <body class="conteudo">
     <nav>
+        <!-- "wm-link" propriedade personalizada para guardar o diretorio do arquivo a ser carregado. "wm-destino" identifica a div para jogar o conteudo do link -->
         <a href wm-link="series.html" wm-destino=".pagina">Séries</a> |
         <a href wm-link="linguagens.html" wm-destino=".pagina">Linguagens</a>
     </nav>
     <div class="pagina"></div>
     <script>
-        // ...
+        function navegarViaAjax(url, seletor, push = true) {
+            if(!url || !seletor) return // Se algum for falso sai da funcao
+            const elemento = document.querySelector(seletor)
+            fetch(url)
+                .then(resp => resp.text()) // Transforma o conteudo da promise em texto(string)
+                .then(html => {
+                    elemento.innerHTML = html
+                    if(push) {
+                        history.pushState({ seletor }, null, url) // "history" dá acesso para manipular o histórico da sessão no browser(o historico da pagina)
+                        // ".pushState(data, title, url)" adiciona um novo "estado" no histórico da pagina e este se torna o estado ativo/atual
+                        //"data" são os dados referentes a este estado. "title" é o nome do estado, mas os navegadores ignoram. "url" é a nova url deste estado. Esta nova url SÓ APARECE na barra, ela NÃO É CARREGADA
+                    }
+                })
+        }
+
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value
+            const seletorDestino = link.attributes['wm-destino'].value
+
+            link.onclick = e => {
+                e.preventDefault()
+                navegarViaAjax(url, seletorDestino)
+            }
+        })
+
+        window.onpopstate = e => { // Dispara quando o historico de atividades mudar entre 2 historicos para o mesmo documento(quando aperta o botao de voltar no browser). Ao ser disparado, remove o estado atual e assume o estado anterior
+            if(e.state) { // ".state" é o estado ativo/atual
+                navegarViaAjax(window.location.href, e.state.seletor, false) // "window.location.href" é o link ativo/atual. "e.state.seletor" são os dados que foram referenciados para este estado no "history.pushState()"
+                // Passando "false" para não adicionar um novo estado(não faz sentido criar um novo estado nesse caso)
+            }
+        }
     </script>
 </body>
