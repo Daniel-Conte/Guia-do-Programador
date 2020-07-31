@@ -92,3 +92,31 @@
     - Caso você se esqueceu de add um arquivo no commit ou escreveu o nome do commit errado, você pode comitar novamente(do jeito certo agora) usando "--amend", isso vai sobrescrever o commit atual
 
 [ "git restore --staged <nomeDoArquivo>" ] -> Tira um arquivo do estado "Staged"
+
+[ "git branch" ] -> Mostra todas as branches do seu projeto e em qual você está
+
+[ "git branch <nomeDaNovaBranch>" ] -> Cria uma nova branch
+    - Uma branch é um ramo/braço do seu projeto
+    - Faz uma cópia do ramo atual que pode ser usada para realizar modificações ou criar novas funcionalidades sem alterar o ramo original
+    - Arquivos/modificações só serão visiveis na branch que foram feitos
+    - O ponto onde a branch original e a nova são comuns(iguais) é a BASE
+
+[ "git checkout <nomeDaBranch>" ] -> Muda de branch
+    - Ao trocar de branch, arquivos vão sumir e aparecer conforme as modificações em cada branch
+
+[ "git checkout -b <nomeDaNovaBranch>" ] -> Cria uma nova branch e já muda pra ela
+
+[ "git branch -d <nomeDaBranch>" ] -> Remove uma branch
+    - Se não der "merge" na branch antes de remover, vai mostrar uma mensagem no console e a branch não vai ser removida
+
+[ "git branch -D <nomeDaBranch>" ] -> Remove uma branch
+    - Remove qualquer branch, mesmo se não deu merge antes
+
+[ "git merge <nomeDaBranch>" ] -> Junta/funde a branch atual com uma outra branch
+    - Os commits da outra branch são adicionados DEPOIS DO ÚLTIMO commit da branch atual
+
+[ "git rebase <nomeDaBranch>" ] -> Junta/funde a branch atual com uma outra branch
+    - Os commits da outra branch são adicionados NA BASE da branch atual com essa branch, ou seja, se foram feitos commits na branch atual depois de ter criado a branch 'A', os commits da branch 'A' serão adicionados ANTES desses commits da branch atual
+
+[ "git clone <diretorioReposOriginal> <diretorioReposClone>" ] -> Cria um clone do repositorio na pasta desejada
+    - Usando "." significa 'pasta atual'
