@@ -97,9 +97,9 @@
 
 [ "git branch <nomeDaNovaBranch>" ] -> Cria uma nova branch
     - Uma branch é um ramo/braço do seu projeto
-    - Faz uma cópia do ramo atual que pode ser usada para realizar modificações ou criar novas funcionalidades sem alterar o ramo original
+    - Faz uma cópia da branch atual que pode ser usada para realizar modificações ou criar novas funcionalidades sem alterar o ramo original
     - Arquivos/modificações só serão visiveis na branch que foram feitos
-    - O ponto onde a branch original e a nova são comuns(iguais) é a BASE
+    - O ponto(commit) onde a branch original e a nova são comuns(iguais) é a BASE
 
 [ "git checkout <nomeDaBranch>" ] -> Muda de branch
     - Ao trocar de branch, arquivos vão sumir e aparecer conforme as modificações em cada branch
@@ -112,11 +112,20 @@
 [ "git branch -D <nomeDaBranch>" ] -> Remove uma branch
     - Remove qualquer branch, mesmo se não deu merge antes
 
-[ "git merge <nomeDaBranch>" ] -> Junta/funde a branch atual com uma outra branch
-    - Os commits da outra branch são adicionados DEPOIS DO ÚLTIMO commit da branch atual
+[ "git merge <nomeDaBranch>" ] -> Cria um NOVO commit(chamado "merge branch '...') na branch atual, resultado da junção/fundição do último commit da branch atual com o último commit da branch escolhida
+    - A bifurcação da branch escolhida fica salva
+    - Os commits das 2 branches ficam salvos no log em ordem de criação(não altera o histórico)
 
-[ "git rebase <nomeDaBranch>" ] -> Junta/funde a branch atual com uma outra branch
-    - Os commits da outra branch são adicionados NA BASE da branch atual com essa branch, ou seja, se foram feitos commits na branch atual depois de ter criado a branch 'A', os commits da branch 'A' serão adicionados ANTES desses commits da branch atual
+[ "git rebase <nomeDaBranch>" ] -> Unifica as 2 branches e refaz a BASE
+    - Os commits da branch escolhida são adicionados NA BASE da branch atual, assim, a nova BASE das 2 branches vai ser o último commit da branch escolhida
+    - A bifurcação da branch escolhida não fica salva, pois a BASE foi refeita(ou seja, as branches foram unificadas)
+    - Os commits das 2 branches não são organizados em ordem(altera o histórico)
 
 [ "git clone <diretorioReposOriginal> <diretorioReposClone>" ] -> Cria um clone do repositorio na pasta desejada
     - Usando "." significa 'pasta atual'
+
+[ "git fetch" ] -> Baixa as modificações(se houver) do repositorio remoto para o repositorio local
+    - NÃO aplica as modificações, SÓ baixa
+    - Para aplicar as modificações, precisa usar [ "git rebase" ]
+
+[ "git pull" ] -> Baixa as modificações do repositorio remoto e já aplica elas no repositorio local

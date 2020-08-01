@@ -9,3 +9,7 @@
     - Ao trocar/adicionar o nome e email, isto só afetará os futuros commits
 
 - Faça commits frequentemente, evite fazer commits quando você modificou muito o projeto
+
+- REGRA DE OURO do rebase: Não faça rebase nas branches publicas (como o master), pois não ficará salvo onde foi feito o rebase, alem de reorganizar os commits(atrapalha muito os outros desenvolvedores)
+    - Use somente 'merge' nas branches publicas
+    - Use rebase somente nas branches privadas
