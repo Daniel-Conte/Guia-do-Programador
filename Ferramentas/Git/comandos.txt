@@ -53,10 +53,8 @@
 
 [ "git checkout <IDdoCommit>" ] -> Volta no tempo para o commit desejado
     - Pode usar o ID completo ou o resumido
+    - Fica no estado "detached HEAD"
     - Se usar [ "git switch -" ] volta para o estado anterior
-    - Fica no estado "detached HEAD" pois a HEAD(versão mais recente da branch) assume uma versão que não é a mais recente
-        - Todas as alterações e commits feitos no estado "detached HEAD" vão ser experimentais(não estão associados à nenhuma branch), e, vão ser descartadas quando trocar de branch
-            - Para salvar essas alterações é preciso criar uma nova branch [ "git switch -c <nomeDaNovaBranch> ]
 
 [ "git checkout <nomeDoArquivo>" ] -> Desfaz todas as alterações não comitadas do arquivo
 
@@ -121,11 +119,31 @@
     - A bifurcação da branch escolhida não fica salva, pois a BASE foi refeita(ou seja, as branches foram unificadas)
     - Os commits das 2 branches não são organizados em ordem(altera o histórico)
 
+[ "git init --bare" ] -> Inicia um repositorio Bare
+
 [ "git clone <diretorioReposOriginal> <diretorioReposClone>" ] -> Cria um clone do repositorio na pasta desejada
     - Usando "." significa 'pasta atual'
+    - O diretorio de destino não pode ser um repositorio para poder clonar
 
-[ "git fetch" ] -> Baixa as modificações(se houver) do repositorio remoto para o repositorio local
-    - NÃO aplica as modificações, SÓ baixa
-    - Para aplicar as modificações, precisa usar [ "git rebase" ]
+[ "git clone --bare <diretorioReposOriginal> <diretorioReposBare>" ] -> Clona um repositorio normal e tranforma em repositorio Bare
+    - O repositorio Bare vai possuir todos os arquivos do repositorio original
 
-[ "git pull" ] -> Baixa as modificações do repositorio remoto e já aplica elas no repositorio local
+[ "git push" ] -> Envia os commits do repositorio local para o repositorio remoto
+    - O repositorio remoto precisa ser do tipo 'Bare'
+
+[ "git fetch" ] -> Baixa os novos commits(se houver) do repositorio remoto para o repositorio local
+    - NÃO aplica os commits, SÓ baixa
+    - Para aplicar os commits, precisa usar [ "git rebase" ]
+
+[ "git pull" ] -> Baixa os novos commits do repositorio remoto e já aplica eles no repositorio local
+
+[ "git tag" ] -> Mostra todas as tags do projeto
+
+[ "git tag <nomeDaNovaTag>" ] -> Cria uma tag no estado atual do projeto
+    - Ex: "v1.0"
+
+[ "git checkout <nomeDaTag>" ] -> Muda para o estado da tag
+    - Fica no estado "detached HEAD"
+
+[ "git push origin <nomeDaTag>" ] -> Envia a tag para o repositorio remoto
+    - Um "push" normal não envia

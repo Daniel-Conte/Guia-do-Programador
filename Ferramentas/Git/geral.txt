@@ -10,6 +10,17 @@
 
 - Faça commits frequentemente, evite fazer commits quando você modificou muito o projeto
 
+- Estado "detached HEAD": Acontece quando a HEAD(versão mais recente da branch) assume uma versão que não é a mais recente
+    - Todas as alterações e commits feitos no estado "detached HEAD" vão ser experimentais(não estão associados à nenhuma branch), e, vão ser descartadas quando trocar de branch
+        - Para salvar essas alterações é preciso criar uma nova branch [ "git switch -c <nomeDaNovaBranch> ]
+
 - REGRA DE OURO do rebase: Não faça rebase nas branches publicas (como o master), pois não ficará salvo onde foi feito o rebase, alem de reorganizar os commits(atrapalha muito os outros desenvolvedores)
     - Use somente 'merge' nas branches publicas
     - Use rebase somente nas branches privadas
+
+- Bare Repository: É um repositório central e remoto(geralmente em um servidor) que armazena o trabalho feito pelas maquinas com o seu clone
+    - Pra ter acesso precisa clonar esse repositorio
+    - Não é possivel fazer alterações ou outra coisa diretamente no Bare, pois é um repositorio de armazenamento e não de trabalho
+    - Para armazenar commits seus clones precisam usar o comando [ "git push" ]
+
+- Tags: São "versões finalizadas" do projeto, prontas para serem publicadas("v1.0")
