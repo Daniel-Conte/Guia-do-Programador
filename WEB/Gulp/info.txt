@@ -1,0 +1,11 @@
+- Use sempre o nome do arquivo como "gulpfile.js" quando criar um arquivo Gulp
+
+- Tarefas são funções com o parametro "cb" e retornando "cb()"
+    - "cb" significa callback e é o nome padrao para ser usado como parametro nas suas tarefas (e deve ser chamado no final)
+
+- Cada tarefa do gulp é assíncrona
+
+- Para executar o Gulp precisa usar o comando "gulp" no terminal
+    - Executa todos os arquivos gulpfile do diretorio
+    - Pra executar as tarefas, elas precisam estar dentro de "series()" ou "parallel()" ("series(task1)") e serem exportadas dentro de "default"(é uma funcao que precisa ser executada sempre pra funcionar) ("module.exports.default = series(task1)")
+
