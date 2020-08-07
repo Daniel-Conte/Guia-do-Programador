@@ -125,11 +125,21 @@
     - Usando "." significa 'pasta atual'
     - O diretorio de destino não pode ser um repositorio para poder clonar
 
+[ "git clone <enderecoRepRemoto>" ] -> Cria um clone de um repositorio online passando o endereco do mesmo. Ex: GitHub
+
 [ "git clone --bare <diretorioReposOriginal> <diretorioReposBare>" ] -> Clona um repositorio normal e tranforma em repositorio Bare
     - O repositorio Bare vai possuir todos os arquivos do repositorio original
 
+[ "git remote add origin <enderecoRepGitHub>" ] -> Registra um repositorio do GitHub como repositorio remoto deste repositorio local aqui
+
+[ "git remote -v" ] -> Mostra o repositorio remoto registrado neste repositorio local
+
 [ "git push" ] -> Envia os commits do repositorio local para o repositorio remoto
     - O repositorio remoto precisa ser do tipo 'Bare'
+
+[ "git push -u origin master" ] -> Em alguns casos precisa usar este comando para dar push
+
+[ "git config credential.helper store" ] -> Caso precise colocar usuario e senha para dar push em algum repositorio remoto, este codigo vai salvar os dados e não sera preciso mais digita-los
 
 [ "git fetch" ] -> Baixa os novos commits(se houver) do repositorio remoto para o repositorio local
     - NÃO aplica os commits, SÓ baixa
