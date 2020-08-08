@@ -58,10 +58,20 @@
 
 [ "git checkout <nomeDoArquivo>" ] -> Desfaz todas as alterações não comitadas do arquivo
 
-[ "git reset HEAD --hard" ] -> Remove todas as alterações feitas no commit atual
+[ "git checkout -- <nomeDoArquivo>" ] -> Desfaz todas as alterações não adicionadas no arquivo
+    - "." Desfaz todas as alterações não adicionadas
+
+[ "git reset HEAD --hard" ] -> Remove todas as alterações feitas no commit atual(Volta para o estado original do commit atual)
     - Arquivos "Untracked" não são removidos, pois não estão sendo monitorados pelo Git
 
 [ "git reset HEAD^ --hard" ] -> Remove o commit atual e volta para o ultimo commit
+
+[ "git reset HEAD~3" ] -> Remove os 3 últimos commits(contando com o atual) e assume o anterior
+    - Os arquivos não são alterados, só é feita a remoção dos commits
+
+[ "git revert <IDdoCommit>" ] -> Cria um NOVO commit desfazendo as alterações feitas no commit especificado
+    - O commit especificado não sofre nenhuma alteração
+    - É recomendado utilizar em repositórios publicos para não gerar conflito
 
 [ "git mv <nomeDoArquivo> <novoNome>" ] -> Renomeia um arquivo
     - Bem melhor renomear pelo Git, pois depois de renomeado o arquivo já está pronto para commit
