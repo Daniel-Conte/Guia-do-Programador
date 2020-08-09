@@ -146,6 +146,7 @@
 
 [ "git push" ] -> Envia os commits do repositorio local para o repositorio remoto
     - O repositorio remoto precisa ser do tipo 'Bare'
+    - !!!!Não dá pra dar push se o repositorio local está desatualizado(mais antigo) com o repositorio remoto!!!!
 
 [ "git push -u origin master" ] -> Em alguns casos precisa usar este comando para dar push
 
