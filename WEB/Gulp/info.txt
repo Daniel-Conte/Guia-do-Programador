@@ -1,3 +1,5 @@
+- Dependencias: 'gulp' e 'gulp-cli'
+
 - Use sempre o nome do arquivo como "gulpfile.js" quando criar um arquivo Gulp
 
 - Tarefas são funções com o parametro "cb" e retornando "cb()"

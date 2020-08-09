@@ -1,0 +1,8 @@
+- Dependencias: 'webpack' e 'webpack-cli'
+    - Dependencias de desenvolvimento
+
+- Webpack -> É um empacotador de modulos. Basicamente ele junta os arquivos JS (e também outros formatos) da sua aplicação (seja arquivos seus ou dependências externas) em um arquivo só (ou mais de um), de forma otimizada. Os arquivos são unificados na ordem certa, sem duplicação e podem ser minificados para reduzir o tamanho.
+
+- Webpack monta um 'dependencies graph' com todos os arquivos e dependências importados no arquivo de entrada('entry') definido no arquivo de configuracao do Webpack('webpack.config.js')
+
+- Webpack joga os arquivos gerados em uma pasta chamada "dist"
