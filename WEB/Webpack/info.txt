@@ -5,4 +5,5 @@
 
 - Webpack monta um 'dependencies graph' com todos os arquivos e dependências importados no arquivo de entrada('entry') definido no arquivo de configuracao do Webpack('webpack.config.js')
 
-- Webpack joga os arquivos gerados em uma pasta chamada "dist"
+- Webpack joga os arquivos gerados em uma pasta chamada "dist"(padrao) e em um arquivo chamado "main"(padrao)
+    - Dá pra mudar o nome da pasta/diretorio e do arquivo pelo arquivo de config
