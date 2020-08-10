@@ -7,3 +7,5 @@
 
 - Webpack joga os arquivos gerados em uma pasta chamada "dist"(padrao) e em um arquivo chamado "main"(padrao)
     - Dá pra mudar o nome da pasta/diretorio e do arquivo pelo arquivo de config
+
+- Webpack só interpreta JS e JSON. Para interpretar outros formatos precisa usar "loaders"
