@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin') // É usado para gerar um novo arquivo só com o Css
 
 module.exports = { // Toda a configuracao precisa estar dentro da exportacao
     mode: 'development', // Seta o modo de como vai ser tratado os arquivos gerados
@@ -8,5 +9,20 @@ module.exports = { // Toda a configuracao precisa estar dentro da exportacao
     output: { // Configura o output dos arquivos gerados
         filename: 'principal.js', // Seta o nome do arquivo que vai ser gerado
         path: __dirname + '/public' // Seta o diretorio(junto com o nome da pasta) onde todos os arquivos gerados vão ficar. "__dirname" retorna o diretorio raiz de onde fica este arquivo
+    },
+    plugins: [ // Todos os plugins ficam aqui
+        new MiniCssExtractPlugin({
+            filename: "estilo.css" // Nome do arquivo que vai ser gerado
+        })
+    ],
+    module: { // Webpack só interpreta JS e JSON. Para interpretar outros formatos precisa usar "loaders"
+        rules: [{ // Todos os loaders ficam dentro de "rules"
+            test: /\.css$/, // Expressão regular. "test" identifica que arquivo ou arquivos que devem ser transformados
+            use: [ // "use" indica qual/quais loaders devem ser usados para fazer a transformacao
+                MiniCssExtractPlugin.loader, // Carrega o loader dele pra fazer a transformacao nos arquivos referenciados. !!! Conflita com o loader "style-loader" !!!
+                //'style-loader', // Add o css na DOM(dentro do JS) injetando a tag <style>
+                'css-loader' // interpreta @import url()...
+            ]
+        }]
     }
 }
