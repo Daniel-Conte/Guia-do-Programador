@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack"
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^4.1.0",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }

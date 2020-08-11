@@ -14,6 +14,10 @@ module.exports = { // Toda a configuracao precisa estar dentro da exportacao
         filename: 'principal.js', // Seta o nome do arquivo que vai ser gerado
         path: __dirname + '/public' // Seta o diretorio(junto com o nome da pasta) onde todos os arquivos gerados vão ficar. "__dirname" retorna o diretorio raiz de onde fica este arquivo
     },
+    devServer: { // Cria um servidor de desenvolvimento
+        contentBase: "./public", // Qual pasta fornecerá os arquivos
+        port: 9000
+    },
     optimization: { // Onde ficam todas as otimizações
         minimizer: [ // Ativa só quando o modo for "production"
             new OptimizeCSSAssetsPlugin({}) // Otimiza o CSS
