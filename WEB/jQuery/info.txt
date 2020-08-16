@@ -1,0 +1,12 @@
+- jQuery não manipula a DOM diretamente, ele é um objeto que possui um nó da DOM dentro dele. E dentro desse objeto há diversas funcoes que manipulam a DOM. Por isso é possivel o encadeamento de funcoes
+
+- Precisa referenciar o jQuery no inicio de cada linha pra usá-lo
+    - Pode-se usar tanto "$" como "jQuery"
+
+- É possivel chamar o jQuery como funcao "$('...')" e por notacao ponto "$.ajax"
+
+- É muito simples criar plugins personalizados
+    - "$.fn.'nomeDaSuaFuncao' = function() {
+        ...
+    }
+    - Essa funcao é add ao objeto do jQuery, então é possivel chamá-la em qualquer lugar(desde que esteja encadeada dentro do jQuery)

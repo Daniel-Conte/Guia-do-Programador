@@ -49,6 +49,28 @@
     </form>
 
     <script>
-        // ...
+        // jQuery usa seletores do CSS
+        $('#feira').addClass('destaque').removeClass('destaque') // "#" seleciona IDs
+        $('li').addClass('destaque') // "normal" seleciona tags
+        $('[wm-obrigatorio]').removeClass('destaque') // "[]" Seleciona propriedades
+        $('li.opcional').removeClass('destaque') // Seleciona as classes "opcional" dentro da tag "li"
+        $('div p span').addClass('destaque') // Seleciona a tag "span" dentro da tag "p" que fica dentro da tag "div"
+
+        // Filtros exclusivos do jQuery
+        // Seleciona elementos na tag "li"
+        $('li:first').css('border', 'solid 3px yellow') // Primeiro elemento
+        $('li:odd').css('border', 'solid 10px orange') // Elementos ímpares
+        $('li:gt(1)').css('border', 'solid 10px white') // "greater than (<indice>)" Elementos com indice maior que 1
+        $('li:not(:last)').css('border', 'none') // Todos os elementos, menos(:not) o último(:last)
+        $('li:contains("r")').css('background-color', 'black') // Elementos que tenham a letra "r"('caRne')
+
+        // Seleciona elementos na tag "form"
+        $('form *').hide() // Todos
+        // Com determinado tipo(type)
+        $('form :text').show() //type 'text'
+        $('form :password').show()
+        $('form :checkbox').show()
+        $('form :radio').show()
+        $('form :file').show()
     </script>
 </body>

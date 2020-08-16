@@ -14,6 +14,24 @@
     <div>2</div>
 
     <script>
-        // ...
+        $('div').hide(5000).show(5000).fadeOut(5000) // Seleciona todas as tags 'div' e aplica uma serie de funcoes(encadeadas)
+            // Essas são funcoes do jQuery. Não existem na DOM
+            // ".hide(<milisegundos>)" Diminui o tamanho do elemento(s) até sumir
+            // ".show(<milisegundos>)" Aumenta o tamanho do elemento(s) até seu tamanho original(use com .hide)
+            // ".fadeOut(<milisegundos>)" Diminui a opacidade do elemento(s) até sumir
+        console.log($('div').get(1)) // ".get(<indice>)" Pega o elemento "puro" da DOM(só da pra encadear funcoes da DOM)
+        console.log($.isEmptyObject({})) // Verifica se o objeto passado é vazio ou nãa
+        console.log(jQuery.inArray(3, [1, 2, 3])) // Verifica se o numero passado está contido no array
+            // ".inArray(<numero>, <array>)"
+            // Se o numero está contido, retorna o indice do numero no array, senão retorna "-1"
+
+        $.fn.fundoVerde = function() { // Cria uma funcao personalizada
+            this.css('background-color', 'green') // Atribui uma propriedade CSS no elemento
+                // "this" está referenciando o elemento que está recebendo essa funcao
+                // .css('<propriedadeCSS>', '<valor>')
+            return this // Para encadear mais funcoes a partir desta é preciso retornar o elemento    
+        }
+
+        $('body').fundoVerde().fadeOut(1000)
     </script>
 </body>
