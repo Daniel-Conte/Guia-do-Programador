@@ -74,13 +74,36 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span>Dentro do span</span></p>
         </section>
     </main>
     <footer>
         <p>Cod3r Ensino</p>
     </footer>
     <script>
-        // ...
+        const comBorda = { 'border': 'solid 8px orange' }
+        const semBorda = { 'border': 'none' }
+
+        $('a[href="#link3"]').parent().css(comBorda).css(semBorda) // ".parent()" seleciona o elemento pai
+
+        $('li:last').prev().css(comBorda).css(semBorda) // ".prev()" seleciona o elemento anterior
+        $('a[href="#link3"]').parent().next().css(comBorda).css(semBorda) // ".next()" seleciona o proximo elemento
+
+        $('a[href="#link1"]').parents().css(comBorda).css(semBorda) // ".parents()" seleciona toda a hierarquia de pais(até a tag "html")
+        $('a[href="#link1"]').parentsUntil($('body')).css(comBorda).css(semBorda) // ".parentsUntil('<elementoHierarquia>')" seleciona os elementos até determinado elemento superior na hierarquia(este elemento nao é selecionado)
+
+        $('main').children().css(comBorda).css(semBorda) // ".children()" seleciona os elementos filhos
+
+        $('body').find('a').css(comBorda).css(semBorda) // ".find('<elemento>')" seleciona os elementos(tag 'a') que estejam em qualquer lugar dentro de outro elemento(tag 'body')
+
+        const elementoDOM = document.getElementsByClassName('menu')
+        $(elementoDOM).css(comBorda) // Outra forma de selecionar elementos
+
+        $('main').children().each((i, e) => $(e).css(comBorda)).css(semBorda) // ".each(<funcao(indice, elemento)>)" percorre todos os elementos
+            // Praticamente igual ao ".forEach()"
+            // O elemento retornado é um nó direto da DOM, então pra usar funcoes do jQuery precisa selecionar o elemento com "$(e)"
+        $('li').each((i, e) => {
+            $(e).css(comBorda)
+        })
     </script>
 </body>

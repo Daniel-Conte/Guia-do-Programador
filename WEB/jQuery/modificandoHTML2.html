@@ -17,6 +17,22 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        $('#div1').append(', 2')
+        $('#div1').prepend('0, ')
+
+        $('<span>, 3</span>').appendTo('#div1') // ".appendTo(<elemento>)" É um "append" só que invertido, "adicione em"
+        $('<span>-1, </span>').prependTo('#div1')
+
+        $('#div2').before('<p>Antes 2</p>') // ".before(<elemento/texto>)" adiciona antes do elemento selecionado
+        $('#div2').after('<p>Depois 2</p>') // ".after(<elemento/texto>)" adiciona depois do elemento selecionado
+
+        $('<p>Antes 3</p>').insertBefore('#div3') // ".insertBefore(<elemento>)" É um "before" só que invertido
+        $('<p>Depois 3</p>').insertAfter('#div3')
+
+        //$('p.numero').wrap('<div>') // ".wrap(<elemento>)" Insere cada elemento selecionado("p.numero") dentro de 1 elemento criado("<div>")
+        $('p.numero').wrapAll('<div id="div4">') // ".wrapAll(<elemento>)" Insere todos os elementos selecionados dentro do elemento criado
+        $('#div4').empty() // ".empty()" esvazia o elemento selecionado
+        $('#div3, #div4').prev().remove() // Remove o elemento antes da "#div3" e antes da "#div4"
+            // É possível selecionar mais que 1 elemento, mas tem que ser no mesmo '' e separado por ","
     </script>
 </body>
