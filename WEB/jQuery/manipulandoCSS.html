@@ -15,6 +15,22 @@
     <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+        const fonte = $('#div1').css('font-family') // Só passando o nome é retornado o valor
+        $('#resultado').append(`Fonte é ${fonte}`)
+
+        $('#div1').css('font-size', '3em') // Passando nome e valor é adicionado ou alterado
+        $('#div1').css({ 'font-size': '3,5em', 'color': 'yellow' }) // Passando varias propriedades de uma vez
+        $('#div1').css('font-size', function() {
+            return `${2 * 2}` // Usando uma funcao para calcular o valor
+        })
+
+        $('#div2').addClass('destaque') // Adiciona uma classe
+
+        const temClasse = $('#div2').hasClass('destaque') // Verifica se tem classe ou nao
+        $('#resultado').append(`<br>Tem class? ${temClasse}`)
+
+        $('#div2').removeClass('destaque') // Remove uma classe
+        $('#div2').toggleClass('destaque') // Se tiver essa classe ela é removida, senao é adicionada
+        $('#div2').toggleClass('destaque')
     </script>
 </body>
