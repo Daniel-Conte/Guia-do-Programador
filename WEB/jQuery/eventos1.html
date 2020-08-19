@@ -20,6 +20,37 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        function mostrarPosicaoMouse(e) {
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+
+        $('body').on('mousemove', mostrarPosicaoMouse) // ".on('<evento>', <callback>)" Registra uma funcao para disparar em determinado evento
+            // "mousemove" a funcao é disparada quando mover o mouse
+            // Só coloque o nome da funcao, não chame("()")
+
+        $('#posicao').mouseover(e => { // ".mouseover(<callback>)" Dispara uma funcao quando o mouse estiver em cima do elemento
+            $('body').off('mousemove', mostrarPosicaoMouse) // ".off('<evento>', <callback>)" Não permite que uma funcao dispare em determinado evento
+        })
+
+        $('#posicao').mouseleave(e => { // ".mouseleave(<callback>)" Dispara uma funcao quando o mouse sair do elemento
+            $('body').mousemove(mostrarPosicaoMouse) // ".mousemove(<callback>)" Dispara uma funcao quando mover o mouse 
+        })
+
+        let cliques = 0
+        $('body').click(e => { // ".click(<callback>)" Dispara uma funcao quando clicar no elemento
+            $('#cliques').html(`Cliques: ${++cliques}`)
+        })
+
+        const backgroundOriginal = $('body').css('background-color')
+
+        $('input').keyup(function(e) { // ".keyup(<callback>)" Dispara uma funcao quando soltar uma tecla que foi apertada
+            const valor = $(this).val() // ".val()" pega o valor do elemento
+                // "this" está apontando para o elemento selecionado("input")
+            if(valor.match(/#[\da-fA-F]{6}/)) { // ".match(<regex>)" retorna os valores que combinam
+                $('body').css('background-color', valor)
+            } else {
+                $('body').css('background-color', backgroundOriginal)
+            }
+        })
     </script>
 </body>
