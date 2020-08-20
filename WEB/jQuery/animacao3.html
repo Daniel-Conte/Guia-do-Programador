@@ -29,5 +29,26 @@
 
     <script>
         // Mesmo exercicio que "animacao2.html" só que resolvido usando Promise
+        async function alterarLargura(valor, duracao) {
+            await $('div').animate({ width: `+=${valor}` }, duracao)
+        }
+
+        async function moverDiagonal(valor, duracao) {
+            await $('div').animate({ top: `+=${valor}`, left: `+=${valor}` }, duracao)
+        }
+
+        async function girar(valor, duracao) {
+            await $('div').animate({ transform: `+=${valor}` }, { 
+                step: function(valor) {
+                    $(this).css('transform', `rotate(${valor}deg)`)
+                }, 
+                duration: duracao 
+            }, 'linear')
+        }
+
+        alterarLargura(300, 100)
+            .then(alterarLargura(-300, 'slow'))
+            .then(moverDiagonal(300, 600))
+            .then(girar(3300, 3000))
     </script>
 </body>
