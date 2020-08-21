@@ -22,6 +22,26 @@
     </div>
 
     <script>
-        // ...
+        const $ = { nome: 'Não é o jQuery' };
+
+        (function($) { // Funcao auto invocada (IIFE) para isolar o uso de "$" para o jQuery, caso esse simbolo esteja sendo usado para outros fins
+            $.fn.interpretar = function() {
+                const retirarChaves = s => s.substring(2, s.length - 2) // ".substring(<indiceInicio>, <indiceFinal>)" seleciona um pedaco de uma string
+                const conteudo = $(this).html() // Se usar ".html()" sem passar nada, ele retorna o conteudo do primeiro elemento que deu match
+                    // "this" vai apontar para o elemento que foi selecionado ao chamar a funcao "interpretar"
+                const expressoesComChaves = conteudo.match(/\{\{.+\}\}/g) // Retorna um array contendo somente as expressoes que são envolvidas por 2 chaves "{{ }}"
+                const expressoes = expressoesComChaves.map(retirarChaves) // Expressoes sem chaves
+                const resultados = expressoes.map(e => eval(e)) // "eval(<expressao>)" valida expressoes/strings e executa o codigo contido
+
+                let conteudoFinal = conteudo
+                for(let i = 0; i < expressoesComChaves.length; i++) {
+                    conteudoFinal = conteudoFinal.replace(expressoesComChaves[i], resultados[i])
+                }
+                $(this).html(conteudoFinal)
+                return this
+            }
+
+            $('div').interpretar()
+        })(jQuery)
     </script>
 </body>
