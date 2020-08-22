@@ -38,9 +38,24 @@
             const alvo = new Date() // Horario alvo
             alvo.setHours(horarioAlvo[1], horarioAlvo[2], horarioAlvo[3]) // "Date.setHours(<hora>, [<minuto>], [<segundo>])" modifica o horario
 
-            const diferencaEmMili = alvo.getTime() - agora.getTime() // "Date.getTime()" retorna o tempo em milisegundos
+            const diferencaEmMili = alvo.getTime() - agora.getTime() // "Date.getTime()" retorna o tempo em milisegundos(diferenca do horario setado com o horario marco zero)
             if(diferencaEmMili >= 0) {
-                const diferenca = regex.exec(new Date(diferencaEmMili).toISOString())
+                const diferenca = regex.exec(new Date(diferencaEmMili).toISOString()) // Passando um valor para "Date(...)" em milisegundos, resultara na data inicio(marco zero) + esse tempo em milisegundos
+                    // Transforma os milisegundos em uma data
+                    // Aqui só precisamos do horario, entao desconsideramos a data
+                    // ".toISOString()" desconsidera o fuso horario(time zone)
+                
+                    horaDezena.html(diferenca[1][0]) // Pega o caractere de indice "0" da string/numero do elemento 1
+                        // Indice 1 de "diferenca" -> hora: "XY"
+                        // Indice 0 do elemento 1 -> dezena da hora: "X"
+                        // Indice 1 do elemento 1 -> unidade da hora: "Y"
+                    horaUnidade.html(diferenca[1][1])
+                    minutoDezena.html(diferenca[2][0])
+                    minutoUnidade.html(diferenca[2][1])
+                    segundoDezena.html(diferenca[3][0])
+                    segundoUnidade.html(diferenca[3][1])
+            } else {
+                clearInterval(temporizador)
             }
         }, 1000)
 
