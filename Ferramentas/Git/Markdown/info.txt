@@ -1,0 +1,7 @@
+- Markdown é uma linguagem de marcacao bem simples de escrever e entender
+
+- É baseada e renderizada no HTML
+
+- É escrita em arquivos .md
+
+- Muito popular para escrever arquivos README.md no GitHub
