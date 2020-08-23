@@ -1,7 +1,6 @@
 <!-- Títulos são escritos com "#" -->
 
 # Título H1
-<!-- Títulos H1 vão ter uma linha de separação logo abaixo -->
 
 ## Título H2
 
