@@ -38,3 +38,13 @@
    1.  Argentina
    5.  Venezuelana
 34. Laranja
+
+# Lista com Checkbox
+
+<!-- Basta colocar colchetes "[ ]" -->
+<!-- Para deixar a caixa marcada, basta colocar um "x" entre os colchetes -->
+- [x] Python
+- [x] Javascript
+- [ ] Java
+- [ ] PHP
+- [ ] Ruby

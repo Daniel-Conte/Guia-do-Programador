@@ -42,6 +42,11 @@ Outra forma de escrever em ***negrito e itálico***
 <!-- Envolve com 3 underlines "___" -->
 Outra forma de escrever em ___negrito e itálico___
 
+# Texto Riscado
+
+<!-- Basta envolver o texto com 2 tils "~~"  -->
+Esta palavra está ~~riscada~~
+
 # Links
 
 <!-- [<NomeDoLink>](<link> ["<titleDoLink>"]) 'titleDoLink' é o texto que aparece quando o mouse fica em cima do link-->
@@ -53,7 +58,9 @@ Outra forma de escrever em ___negrito e itálico___
 
 # Códigos
 
-<!-- Envolve com crase " `` " -->
+## Código feio (sem cor)
+
+<!-- Envolve com crase " ` " -->
 Escrevendo um código: `scanf("%d",&num);`
 
 <!-- Envolve com 3+ crases " ``` " -->
@@ -65,9 +72,32 @@ Escrevendo várias linhas de código:
     }
 ```
 
+```
+    function escreverNome(nome) {
+        console.log(nome)
+    }
+```
+
+## Código bonito (com cor)
+
+<!-- Basta colocar o nome da linguagem após as primeiras crases -->
+``` C++
+    #include <stdio.h>
+    int main(){
+    int num;
+    }
+```
+
+``` Javascript
+    function escreverNome(nome) {
+        console.log(nome)
+    }
+```
+
 # Citação
 
 <!-- Coloca um sinal de maior que ">" no inicio -->
-> Markdown
-> Guia do Programador
+<!-- Dê um "TAB" no fim de cada linha ou pule uma linha para deixar um embaixo do outro -->
+> Markdown  
+> Guia do Programador   
 > Citações
