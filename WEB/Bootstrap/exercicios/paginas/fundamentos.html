@@ -1,0 +1,134 @@
+<div class="jumbotron p-4 my-1"> <!-- "jumbotron" dá um destaque, como se fosse uma tela de boas vindas -->
+    <h1 class="display-4">Fundamentos</h1> <!-- "display" deixa o tamanho da fonte grande -->
+    <p class="lead m-1">Alguns recursos importantes do Bootstrap</p> <!-- "lead" dá um estilo diferente no conteudo -->
+</div>
+
+<nav class="mb-5">
+    <ol class="breadcrumb"> <!-- "breadcrumb" é para mostrar a navegação entre as paginas, mostra o caminho percorrido(tipo um diretório) -->
+        <li class="breadcrumb-item"> <!-- Cada "breadcrumb-item" é um nome do diretório -->
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Fundamentos</li> <!-- "active" aplica um estilo diferente pra indicar que este diretório é o atual -->
+    </ol>
+</nav>
+
+<div class="exercicio">
+    <h1>1. Tipografia -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/content/typography/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <ul>
+        <li><strong>Reboot</strong> - Torna consistente o estilo entre diferentes browser!</li>
+        <li><strong>Rems</strong> - Baseado no raiz</li>
+        <li>Evita <strong>margin-top</strong> - Provavelmente será necessário adicionar algum espaço</li>
+        <li><strong>box-sizing</strong> border-box</li>
+        <li>Fontes nativas</li>
+    </ul>
+
+    <h1 class="mt-5">2. Espaços -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/spacing/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Espaços -->
+    <!-- "mb-5"
+
+        --Primeira Letra--
+        m -> margin
+        p -> padding
+
+        --Segunda Letra--
+        t -> top
+        l -> left
+        r -> right
+        b -> bottom
+        x -> eixo X (right e left)
+        y -> eixo Y (top e bottom)
+        vazio -> aplica nos 4 lados
+        
+        --Hífen "-" para separar o tamanho--
+
+        Os tamanhos vão de 0 a 5
+     -->
+<div class="mb-5">1</div> <!-- Margin Bottom de tamanho 5 -->
+<div class="m-4 py-4">2</div> <!-- Margin tamanho 4 e Padding eixo Y tamanho 4 -->
+<div class="pt-5">3</div> <!-- Padding top tamanho 5 -->
+
+    <h1 class="mt-5">3. Cores -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/colors/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Cores -->
+    <!-- 
+        Bootstrap tem classes com cores específicas para cada componente
+
+        text -> aplica a cor no texto
+        bg -> aplica a cor no background
+        btn -> aplica a cor no botão
+
+        --Hífen "-" para separar a cor--
+
+        primary -> Um tipo de azul
+        danger -> Um tipo de vermelho
+        ... Veja a documentação
+     -->
+    <div class="my-1 p-3 bg-primary text-light">1</div>
+    <div class="my-1 p-3 bg-danger text-white">2</div>
+    <div class="my-1 p-3 bg-warning text-success">3</div>
+
+    <h1 class="mt-5">4. Flex -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/flex/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Flex -->
+    <!-- Os nomes das classes são parecidos com os nomes das propriedades CSS
+        d-flex -> Display flex
+        flex-column-reverse -> Seta a direção column e inverte a ordem dos itens
+
+        --Seta para itens individuais--
+        align-self-end -> Joga pro fim (right-bottom)
+        align-self-center -> Joga no meio
+        align-self-start -> Joga no inicio (left-top)
+    -->
+    <div class="d-sm-flex flex-column-reverse p-2">
+        <div class="align-self-end">1</div>
+        <div class="align-self-center">2</div>
+        <div class="align-self-start">3</div>
+    </div>
+
+    <h1 class="mt-5">5. Imagens -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/content/images/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Imagens -->
+
+    <h1 class="mt-5">6. Float -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/float/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Float -->
+</div>
+
+<style>
+    .exercicio div {
+        border: solid 8px #000;
+        font-size: 2rem;
+    }
+</style>
