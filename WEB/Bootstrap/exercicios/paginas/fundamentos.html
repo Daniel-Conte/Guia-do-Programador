@@ -54,6 +54,7 @@
         --Hífen "-" para separar o tamanho--
 
         Os tamanhos vão de 0 a 5
+        auto -> tamanho automatico
      -->
 <div class="mb-5">1</div> <!-- Margin Bottom de tamanho 5 -->
 <div class="m-4 py-4">2</div> <!-- Margin tamanho 4 e Padding eixo Y tamanho 4 -->
@@ -115,6 +116,18 @@
     <hr>
 
     <!-- Imagens -->
+    <!-- 
+        mx-auto -> Centralizou a imagem no eixo X
+        d-block -> Display block
+        img-thumbnail -> Adiciona uma borda e deixa a imagem responsiva
+        img-fluid -> Deixa a imagem responsiva
+     -->
+
+    <div class="p-2">
+        <img src="/imgs/img1.png" alt="Imagem 1" class="mx-auto d-block" width="400">
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-thumbnail" width="400">
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-fluid" width="400">
+    </div>
 
     <h1 class="mt-5">6. Float -
         <small>
@@ -124,6 +137,16 @@
     <hr>
 
     <!-- Float -->
+    <!-- 
+        O nome das classe são parecidos com os nomes das propriedades CSS
+
+        float-lg-right -> Aplica o float só quando a tela for grande
+        float-xl-left -> Aplica o float só quando a tela for extra grande
+     -->
+
+     <div class="my-1 p-3 float-left">1</div>
+     <div class="my-1 p-3 float-right">2</div>
+     <div class="my-1 p-3 float-lg-right float-xl-left">3</div>
 </div>
 
 <style>

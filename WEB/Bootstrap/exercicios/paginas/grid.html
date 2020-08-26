@@ -22,16 +22,90 @@
     <hr>
 
     <!-- Grid Básica -->
+    <!-- 
+        A tela é dividida em linhas e em 12 colunas, o que torna fácil a responsividade
+
+        container-fluid -> Ocupa a tela toda, facilita a responsividade
+        row -> Cria uma linha
+        col -> Cria uma coluna
+            A largura da coluna é definida pela quantidade de colunas na mesma linha, ou seja, as 12 colunas do grid vão ser divididas entre as colunas criadas
+        
+        col-"tamanho"
+        - Os tamanhos vão até 12
+        - Determina quantas colunas do grid ela vai ocupar
+        - Se não passar tamanho, as colunas criadas vão dividir o espaço disponível igualmente entre si
+    -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col bg-primary">1</div>
+            <div class="col bg-danger">2</div>
+            <div class="col bg-warning">3</div>
+            <div class="col bg-info">4</div>
+            <div class="col bg-secondary">5</div>
+        </div>
+        <div class="row">
+            <div class="col bg-danger">1</div>
+            <div class="col-4 bg-warning">2</div>
+            <div class="col-5 bg-info">3</div>
+            <div class="col bg-primary">4</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">2. Grid Responsiva</h1>
     <hr>
 
     <!-- Grid Responsiva -->
+    <!-- 
+        Pode-se setar que tamanho a coluna vai ocupar para cada tamanho de tela
+
+        --col-"tela"-"tamanho"--
+
+        !!!!O configuração vai valer para aquela tela em diante(se as outras não forem setadas)!!!!
+
+        col -> "Extra Small"
+        col-sm -> "Small"
+        col-md -> "Medium"
+        col-lg -> "Large"
+        col-xl -> "Extra Large"
+    -->
+
+    <div class="container-fluid">
+        <div class="row"> <!-- Se as colunas não couberem em 1 linha elas vão ser quebradas em mais linhas -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">1</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">2</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">3</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">4</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-success">5</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">6</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">7</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">8</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-success">9</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">10</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">11</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">12</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">3. Quebra de Linha</h1>
     <hr>
 
     <!-- Quebra de Linha -->
+    <!-- 
+        w-100 -> Width 100%
+            - Ocupa 100% da largura disponível
+            - É usada para quebrar linhas pois ocupa toda a largura disponível
+     -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 bg-primary">1</div>
+            <div class="col-3 bg-danger">2</div>
+            <div class="col-7 bg-success">3</div> <!-- Quebra a linha pois ultrapassa as 12 colunas do grid -->
+            <div class="w-100"></div>
+            <div class="col-3 bg-warning">4</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">4. Ordem</h1>
     <hr>
