@@ -1,0 +1,8 @@
+- Bootstrap é um framework CSS e JS com componentes e classes predefinidas que agilizam bastante o desenvolvimento
+
+- É muito conhecido pelo sistema de grid, o que revolucionou a forma de construir sites responsivos
+
+- Dependências:
+    - Bootstrap
+    - jQuery
+    - Popper.js
