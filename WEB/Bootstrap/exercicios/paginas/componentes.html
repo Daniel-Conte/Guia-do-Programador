@@ -265,23 +265,39 @@
 
 <!-- Accordion -->
 <!-- 
-    Quando clica em cima de um elemento expande uma janela, e quando clica em outro fecha aquela janela e abre outra
+    Quando clica em um elemento(pergunta) expande uma janela(resposta), e quando clica em outro fecha aquela janela e abre outra
 
-    accordion -> Cria o accordion
-    card ->
-    card-header -> Cria o cabeçalho do card
-    card-body ->
+    #accordion -> Trabalha junto com o [data-parent]
+        - Faz com que quando uma pergunta é expandida a anterior seja fechada
+        - Pode ser colocado outro nome desde que seja o mesmo do [data-parent]
+    card -> Aplica um estilo de card
+        - Envolve o card-header e o card-body
+    card-header -> Aplica um estilo para o cabeçalho do card(a pergunta)
+    card-body -> Aplica um estilo para o corpo do card(a resposta)
     collapse -> Esconde a janela
 
-    [data-toggle="collapse"] -> Alterna entre mostrar e esconder a janela
-    [data-target] ->
-    [data-parent] -> Referencia quem é o elemento pai
+    [data-toggle="collapse"] -> Alterna entre mostrar e esconder a pergunta
+    [data-target] -> Deve apontar para a resposta para fazer a ligação entre eles
+    [data-parent] -> Trabalha junto com o id do accordion (#accordion)
+        - Faz com que quando uma pergunta é expandida a anterior seja fechada
+        - Pode ser referenciado outro nome, desde que seja o mesmo do id do accordion
+
+    -- Botão da pergunta --
+        Deve conter:
+            - [data-toggle]
+            - [data-target]
+
+    -- Resposta --
+        Deve conter:
+            - id para fazer a ligação com o [data-target]
+            - Classe "collapse"
+            - [data-parent]
 -->
 
 <div>
     <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="pergunta1" class="card-header">
+            <div class="card-header">
                 <h5 class="mb-0">
                     <button class="btn btn-link" data-toggle="collapse" data-target="#resposta1">
                         Quem é o professor de programação mais legal?
@@ -291,6 +307,30 @@
             <div id="resposta1" class="collapse" data-parent="#accordion">
                 <div class="card-body">
                     Posso dizer?
+                </div>
+            </div>
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta2">
+                        Teste 2?
+                    </button>
+                </h5>
+            </div>
+            <div id="resposta2" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    Teste 2!
+                </div>
+            </div>
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta3">
+                        Teste 3?
+                    </button>
+                </h5>
+            </div>
+            <div id="resposta3" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    Teste 3!
                 </div>
             </div>
         </div>
