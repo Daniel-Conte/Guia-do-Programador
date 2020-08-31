@@ -1,0 +1,18 @@
+--> Expressões Regulares (Regex) <--
+
+- Foco em JavaScript
+
+- O que é?
+    - Resumidamente, é um método formal de se especificar um padrão de texto
+    - Basicamente, é uma expressão que busca strings em um texto de acordo de como foi escrita.
+
+- É encontrada em:
+    - Linguagens de programação
+    - Editores de texto
+    - IDEs
+    - Ferramentas de linha de comando
+
+- Linguagens VS Regex (flavors)
+    - Algumas linguagens tem algumas diferenças na execução da Regex
+        - Comandos a mais, algumas modificações...
+    - Regex tem um flavor(sabor) para cada linguagem
