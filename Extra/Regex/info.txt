@@ -1,6 +1,6 @@
 --> Expressões Regulares (Regex) <--
 
-- Foco em JavaScript
+- Este capítulo terá foco em JavaScript
 
 - O que é?
     - Resumidamente, é um método formal de se especificar um padrão de texto
