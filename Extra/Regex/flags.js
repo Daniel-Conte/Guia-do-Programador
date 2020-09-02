@@ -7,6 +7,9 @@
 
     i -> ignore case
         - Ignora se letras são maiúsculas ou minúsculas (insensitive case)
+
+    s -> dotall
+        - Faz com que o meta-caractere "." substitue o "\n"(quebra de linha)
 */
 
 const texto = 'Carlos assinou o abaixo-assinado.'
