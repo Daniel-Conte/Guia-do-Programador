@@ -10,6 +10,7 @@ function loadIncludes(parent = 'body') {
                 $(e).removeAttr('wm-include') // Remove pra executar a função só uma vez(já que é recursiva)
 
                 loadIncludes(e) // Chamada recursiva
+                    // Reliza esse mesmo procedimento para os elementos caso eles tenham o atributo em suas tags
             }
         })
     })
