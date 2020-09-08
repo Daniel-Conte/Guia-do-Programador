@@ -1,0 +1,35 @@
+- React é uma biblioteca que usa componentes para montar a página WEB
+    - Há várias tecnologias envolvidas nesses componentes
+
+- React usa uma build do Webpack para criar as aplicações, então use a lógica do Webpack no projeto
+
+- React usa Babel para converter o código em JavaScript puro
+
+- React já cria uma aplicação/projeto base para iniciar
+
+- React usa 'JSX' que é JavaScript "extendido"
+    - É parecido com XML
+
+- Para criar componentes é possível utilizar tanto extensão ".js" como ".jsx"
+    - Porém, para elementos JSX é mais conveniente utilizar ".jsx"
+
+- Na pasta "public" vai ter um HTML base
+    - !!! Toda a aplicação vai ficar dentro da div id="root" !!!
+
+Como iniciar:
+    -> npm i -g create-react-app
+        - Esse comando vai criar a primeira versão da aplicação, já configurando o build e tudo
+
+    -> npx create-react-app <nomeDoProjeto>
+        - Demora pra instalar
+        - Cria o seu projeto já com uma base pronta
+        - Instala todas as dependências necessárias
+        - Configura o package.json
+
+Scripts:
+    -> npm start
+        - Inicia a aplicação no modo de desenvolvimento
+        - Inicia um servidor local
+
+    -> npm run build
+        - Cria a build final da sua aplicação para deploy
