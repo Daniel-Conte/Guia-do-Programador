@@ -3,6 +3,9 @@ import React from 'react' // CORE do React
 import ReactDOM from 'react-dom' // Dependência do react que vai se comunicar com a DOM
 
 import Primeiro from './components/Primeiro'
+    // O nome da variável pode ser qualquer um, CONTANTO que a primeira letra seja MAIÚSCULA, senão é confundido com um elemento normal
+        // Isso para componentes PERSONALIZADOS
+import BomDia from './components/BomDia'
 
 const element = <h1>React</h1> // !!! ISSO NÃO É HTML !!!
     // Isso é JAVASCRIPT que faz parte do JSX(JavaScript extendido)
@@ -15,3 +18,7 @@ ReactDOM.render(element, document.getElementById('root'))
 
 ReactDOM.render(<Primeiro/>, document.getElementById('root'))
     // Se o componente/elemento for importado de outro arquivo, deve-se colocar o nome do arquivo importado dentro de uma tag sem corpo "< ... />"
+
+ReactDOM.render(<BomDia nome="Arthur" idade={39}/>, document.getElementById('root'))
+    // É possível passar atributos no componente, assim esses atributos podem ser passados como parametro na função desse componente
+    // É possível criar atributos com valores envolvidos por "{ }"(chaves), assim pode-se passar valores do tipo number, boolean, variáveis... sem ser uma string
