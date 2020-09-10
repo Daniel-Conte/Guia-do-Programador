@@ -6,6 +6,9 @@ import Primeiro from './components/Primeiro'
     // O nome da variável pode ser qualquer um, CONTANTO que a primeira letra seja MAIÚSCULA, senão é confundido com um elemento normal
         // Isso para componentes PERSONALIZADOS
 import BomDia from './components/BomDia'
+import Multi, { BoaTarde, BoaNoite } from './components/Multiplos'
+    // "Multi" vai importar um objeto contendo as 2 funções no "export default"
+    // "{ ... }" vai importar cada função separada (export)
 
 const element = <h1>React</h1> // !!! ISSO NÃO É HTML !!!
     // Isso é JAVASCRIPT que faz parte do JSX(JavaScript extendido)
@@ -22,3 +25,10 @@ ReactDOM.render(<Primeiro/>, document.getElementById('root'))
 ReactDOM.render(<BomDia nome="Arthur" idade={39}/>, document.getElementById('root'))
     // É possível passar atributos no componente, assim esses atributos podem ser passados como parametro na função desse componente
     // É possível criar atributos com valores envolvidos por "{ }"(chaves), assim pode-se passar valores do tipo number, boolean, variáveis... sem ser uma string
+
+ReactDOM.render(
+    <div>
+        <Multi.BoaTarde nome="Ana"/>
+        <BoaNoite nome ="Bruna"/>
+    </div>
+, document.getElementById('root'))
