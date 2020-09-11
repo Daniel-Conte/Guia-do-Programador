@@ -9,6 +9,7 @@ import BomDia from './components/BomDia'
 import Multi, { BoaTarde, BoaNoite } from './components/Multiplos'
     // "Multi" vai importar um objeto contendo as 2 funções no "export default"
     // "{ ... }" vai importar cada função separada (export)
+import Saudacao from './components/Saudação'
 
 const element = <h1>React</h1> // !!! ISSO NÃO É HTML !!!
     // Isso é JAVASCRIPT que faz parte do JSX(JavaScript extendido)
@@ -22,6 +23,10 @@ ReactDOM.render(element, document.getElementById('root'))
 ReactDOM.render(<Primeiro/>, document.getElementById('root'))
     // Se o componente/elemento for importado de outro arquivo, deve-se colocar o nome do arquivo importado dentro de uma tag sem corpo "< ... />"
 
+    /* 
+    >>>>>>> Toda vez que você está chamando um componente, ele é INSTANCIADO <<<<<<<
+    */
+
 ReactDOM.render(<BomDia nome="Arthur" idade={39}/>, document.getElementById('root'))
     // É possível passar atributos no componente, assim esses atributos podem ser passados como parametro na função desse componente
     // É possível criar atributos com valores envolvidos por "{ }"(chaves), assim pode-se passar valores do tipo number, boolean, variáveis... sem ser uma string
@@ -32,3 +37,5 @@ ReactDOM.render(
         <BoaNoite nome ="Bruna"/>
     </div>
 , document.getElementById('root'))
+
+ReactDOM.render(<Saudacao tipo="Bom dia" nome="João" />, document.getElementById('root'))
