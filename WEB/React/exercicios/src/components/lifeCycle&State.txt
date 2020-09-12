@@ -1,0 +1,49 @@
+Componentes de classe tem algumas vantagens sobre os de função:
+
+    -> state: É um objeto que armazena as propriedades/valores do componente
+        - Ao contrário do "props", no "state" é possível modificar os valores das propriedades
+        - Basicamente, "state" é um "props" que dá pra modificar os valores
+        - Sempre que sofrer uma mudança, o método "render()" é chamado
+
+    -> Ciclo de vida: É possível monitorar e manipular os componentes durante suas 3 fases de vida:
+        https://www.w3schools.com/REACT/react_lifecycle.asp
+
+        --> Mounting: Adiciona o componente na DOM
+                São executados 4 métodos nessa ordem:
+                ( "render()" é obrigatório, os outros são opcionais )
+
+                >> constructor(props) -> É chamado antes de tudo
+                    - Inicializa o state e outros valores
+                    - Antes de tudo chame "super(props)" para incializar os métodos do "Component"
+
+                >> getDerivedStateFromProps(props, state) -> É chamado logo antes do componente ser renderizado
+                    - É o lugar ideal para setar o state baseado no props
+
+                >> render() -> Renderiza o componente
+
+                >> componentDidMount() -> É chamado depois do componente ser renderizado
+                    - É o lugar para manipular algo quando é necessário que o componente já esteja na DOM
+
+        --> Updating: Atualiza o componente
+                São executados 5 métodos nessa ordem:
+                ( "render()" é obrigatório, os outros são opcionais )
+
+                >> getDerivedStateFromProps(props, state) -> É o primeiro método a ser chamado quando um componente é atualizado
+                    - É o mesmo método mensionado no "Mounting"
+                    - Esse mesmo método é chamado em diferentes fases do ciclo de vida
+
+                >> shouldComponentUpdate() -> Boolean que define se deve ou não renderizar o componente quando é atualizado
+                    - Deve retornar "true" ou "false"
+                        - "true" para renderizar e "false" para não renderizar
+
+                >> render() -> Renderiza novamente o componente quando é atualizado
+
+                >> componentDidUpdate() -> É chamado depois do componente ser atualizado
+
+                >> getSnapshotBeforeUpdate(prevProps, prevState) -> Dá acesso aos valores de "props" e "state" antes da atualização do componente
+                    - É NECESSÁRIO incluir o método "componentDidUpdate()" para funcionar
+
+        --> Unmounting: Remove o componente da DOM
+            É executado somente 1 método:
+
+                >> componentWillUnmount() -> É chamado quando o elemento vai ser removido da DOM
