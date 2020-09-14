@@ -16,7 +16,7 @@ Componentes de classe tem algumas vantagens sobre os de função:
                     - Inicializa o state e outros valores
                     - Antes de tudo chame "super(props)" para incializar os métodos do "Component"
 
-                >> getDerivedStateFromProps(props, state) -> É chamado logo antes do componente ser renderizado
+                >> static getDerivedStateFromProps(props, state) -> É chamado logo antes do componente ser renderizado
                     - É o lugar ideal para setar o state baseado no props
 
                 >> render() -> Renderiza o componente
@@ -38,10 +38,10 @@ Componentes de classe tem algumas vantagens sobre os de função:
 
                 >> render() -> Renderiza novamente o componente quando é atualizado
 
-                >> componentDidUpdate() -> É chamado depois do componente ser atualizado
-
                 >> getSnapshotBeforeUpdate(prevProps, prevState) -> Dá acesso aos valores de "props" e "state" antes da atualização do componente
                     - É NECESSÁRIO incluir o método "componentDidUpdate()" para funcionar
+                    
+                >> componentDidUpdate() -> É chamado depois do componente ser atualizado
 
         --> Unmounting: Remove o componente da DOM
             É executado somente 1 método:

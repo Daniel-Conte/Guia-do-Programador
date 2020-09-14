@@ -3,16 +3,25 @@ import React, { Component } from 'react'
 export default class Saudacao extends Component {
     // Uma classe SEMPRE deve extender(definir como pai/prototipo; herda as funções) "Component"
 
-    state = { 
-        /* 
-        -> Essa forma é só pra inicializar o objeto(valores iniciais), pra modificar é usado "setState()"
-        -> state SEMPRE deve ser inicializado
+    constructor(props) {
+        // "constructor()" é útil AQUI só pra inicializar o "state" e fazer "bind()" dos métodos
+        super() // Sempre chame o "super()"
 
-        -> >>> Inicie no "constructor" <<< 
-        */
-        tipo: this.props.tipo, // Para acessar o "props" deve usar: this.props
-        nome: this.props.nome
+        this.state = { 
+            /* 
+            -> Essa forma é só pra inicializar o objeto(valores iniciais), pra modificar é usado "setState()"
+            -> state SEMPRE deve ser inicializado
+    
+            -> Inicie no "constructor()" somente se for inicializar mais mais coisas
+                - Senão pode iniciar fora sem problemas
+                - Aqui é só pra ilustrar dentro...
+            */
+            tipo: 'Boa Tarde',
+            nome: 'Ana'
+            // Evite usar "props.nome/tipo pra atribuir a state"
+        }
     }
+
 
     setTipo(e) {
         this.setState({ tipo: e.target.value }) 
