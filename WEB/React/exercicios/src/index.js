@@ -9,7 +9,9 @@ import BomDia from './components/BomDia'
 import Multi, { BoaTarde, BoaNoite } from './components/Multiplos'
     // "Multi" vai importar um objeto contendo as 2 funções no "export default"
     // "{ ... }" vai importar cada função separada (export)
-import Saudacao from './components/Saudação'
+import Saudacao from './components/Saudacao'
+import Pai from './components/Pai'
+import Filho from './components/Filho'
 
 const element = <h1>React</h1> // !!! ISSO NÃO É HTML !!!
     // Isso é JAVASCRIPT que faz parte do JSX(JavaScript extendido)
@@ -39,3 +41,16 @@ ReactDOM.render(
 , document.getElementById('root'))
 
 ReactDOM.render(<Saudacao tipo="Bom dia" nome="João" />, document.getElementById('root'))
+
+ReactDOM.render(
+    <Pai nome="Paulo" sobrenome="Silva">
+        {/* Método para passar as propriedades(sobrenome) do pai para os filhos sem ter que digitar tudo a mão */}
+        <Filho nome="Pedro" />
+        <Filho nome="Carla" />
+        <Filho nome="Ana" />
+        {/*
+        - Colocando um componente dentro de outro não funciona por padrão
+            - Precisa colocar um código dentro do componente pai para funcionar
+        */}
+    </Pai>
+, document.getElementById("root"))
