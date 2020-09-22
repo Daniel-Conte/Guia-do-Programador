@@ -23,17 +23,16 @@ const getTurma = letra => {
     })
 }
 
-//Rescurso do ES8
-//Objetivo de simplificar o uso de promises
-//Transforma um código assíncrono em algo que parece síncrono
-//Só pode ser usado em funcoes que retornam Promises
+// Rescurso do ES8
+// Objetivo de simplificar o uso de promises
+// Transforma um código assíncrono em algo que parece síncrono
 
-let obterAlunos = async () => { //"async" torna a funcão assíncrona
-    const turmaA = await getTurma('A') //"await" só pode ser usado dentro de funcoes que estao marcadas com "async"
+let obterAlunos = async () => { //"async" torna a funcão assíncrona e retorna uma Promise
+    const turmaA = await getTurma('A') //"await" só pode ser usado dentro de funcoes assíncronas
     const turmaB = await getTurma('B') //"await" pausa a execução da funcao assíncrona até o retorno da Promise. A funcao só vai pro próximo passo se ela for resolvida (forma síncrona)
     const turmaC = await getTurma('C')
     return [].concat(turmaA, turmaB, turmaC)
-} //Retorna um objeto AsyncFunction
+} // Retorna um objeto AsyncFunction/Promise
 
 obterAlunos()
     .then(alunos => alunos.map(aluno => aluno.nome)) //Pega o "return" da funcao "obterAlunos"
