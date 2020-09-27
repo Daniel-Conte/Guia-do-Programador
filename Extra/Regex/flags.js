@@ -10,6 +10,9 @@
 
     s -> dotall
         - Faz com que o meta-caractere "." substitue o "\n"(quebra de linha)
+    
+    m -> multiline
+        - Usado para trabalhar com strings de múltiplas linhas no uso de bordas
 */
 
 const texto = 'Carlos assinou o abaixo-assinado.'
