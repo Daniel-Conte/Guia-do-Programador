@@ -1,0 +1,31 @@
+-> O que é Teste de Software?
+    - De forma simplificada, é a verificação feita sobre um sistema ou parte dele para garantir que uma determinada entrada produza, sempre, uma saída esperada.
+        - Quando você vai ao caixa eletrônico, coloca seu cartão e digita R$100,00, ao clicar no botão "Confirmar" você espera que o caixa retorne R$100,00 em dinheiro vivo. Se o sistema fizer isso todas as vezes, ele está correto/funcionando. Já se ele não retornar o dinheiro ou retornar o valor errado, o sistema está falho.
+        - Quando você compra/pega uma coisa nova você sempre testa ela.
+        Ex: Ao comprar uma bicicleta você testa se as marchas estão funcionando corretamente, se o freio está bom, etc...
+    - De forma mais completa, teste de software é um controle de qualidade que pode envolver etapas desde a escolha das condições em que a aplicação vai ser colocada à prova até a simulação de uso real dela e o desenvolvimento de relatórios sobre os resultados obtidos. O propósito é verificar se o produto corresponde às funcionalidades esperadas no desenvolvimento e às necessidades dos usuários.
+
+-> Algumas verdades importantes:
+    1. Testes não verificam completamente as saídas de um sistema, pois as entradas são infinitas.
+        - Se levarmos em consideração um sistema bancário para transferir dinheiro entre contas, existem milhares de bancos, contas e instituições para que o sistema possa ser testado. Então se torna inviável testar todas as possibilidades.
+        - São escolhidas para teste as funcionalidades/possibilidades mais importates do sistema dentre todas existentes.
+    2. Testes não garantem qualidade.
+        - Os testes existem para dar ao software uma melhor qualidade, mas o conceito de qualidade vai muito além de o software só fazer o que é esperado que ele faça.
+    3. Testes custam em média de 20% a 30% do custo total de elaboração de um software.
+        - Existe o custo de planejar o que vai ser testado e como vai ser testado, o custo de quem vai executar os testes e o custo de arrumar os bugs/falhas encontrados(as).
+    4. Testes são essenciais e devem ser feitos.
+        - No lançamento de um jogo da Disney para crianças, o jogo só funcionava em algumas plataformas, o que revoltou os usuários das plataformas que não funcionava, trazendo um enorme prejuízo à empresa.
+        - Um projeto da Agência Espacial Europeia custou 10 anos e US$8 Bilhões. O sistema do foguete falhou após 40 segundos do lançamento por causa de uma simples falha de conversão de tipo numérico.
+        - Na guerra fria, um sistema de alerta de mísseis soviético detectou 5 mísseis americanos, sendo que não foram lançados. Se não fosse pela frieza do Tenente em cargo, uma terceira guerra mundial provavelmente teria acontecido simplesmente por um erro no software.
+
+-> Perfil do Testador:
+    - Detalhista
+    - Paciente
+    - Focado
+    - Criterioso
+    - Perspicaz
+    - Motivado
+    - Visão PESSIMISTA
+        - Um testador tem que olhar o software já achando que tá errado e procurando erros, aumentando a change de encontrar erros.
+        - Um programador tem a visão otimista, ele acha que tudo está funcionando e que fez um bom trabalho, o que diminui a chance de encontrar erros
+    - Um testador NÃO pode ter feito parte do desenvolvimento do software, pois o testador se acostuma e cria vícios com o sistema, diminuindo a chance de encontrar erros.
