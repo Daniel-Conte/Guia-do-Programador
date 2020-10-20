@@ -25,7 +25,9 @@
     - Criterioso
     - Perspicaz
     - Motivado
+    - Visão voltada para a qualidade
     - Visão PESSIMISTA
         - Um testador tem que olhar o software já achando que tá errado e procurando erros, aumentando a change de encontrar erros.
         - Um programador tem a visão otimista, ele acha que tudo está funcionando e que fez um bom trabalho, o que diminui a chance de encontrar erros
     - Um testador NÃO pode ter feito parte do desenvolvimento do software, pois o testador se acostuma e cria vícios com o sistema, diminuindo a chance de encontrar erros.
+    - Tem que ser aquele cara chato que acha defeito em tudo

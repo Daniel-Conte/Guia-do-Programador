@@ -1,0 +1,33 @@
+- Existem vários testes que são executados em diferentes etapas do desenvolvimento, os chamados "Níveis de Teste".
+
+-> Níveis de Teste em ordem:
+
+    1. Teste de Unidade
+        - O objetivo é encontrar falhas de funcionamento dentro de uma pequena parte do sistema funcionando independentemente do todo.
+        - Os alvos são subrotinas, métodos, classes, funções, ou seja, as menores unidades do sistema.
+        - São feitos pelo programador.
+            - O programador sempre testa essas pequenas unidades durante o desenvolvimento
+        - Geralmente é automatizado, através de ferramentas como Junit, PHPUnit, XXXUnit e outras.
+        - Precisa estar sempre atualizado, coerente com as regras de negócio atuais do sistema.
+    
+    2. Teste de Integração
+        - O objetivo é validar a comunicação entre os componentes/módulos de um sistema.
+        - Geralmente são feitos pelo programador durante o desenvolvimento.
+        - Geralmente os tipos de falhas encontradas são de transmissão de dados.
+            - Ex.: Um componente A invoca um método de um componente B que espera um valor inteiro, porém, vem um valor decimal, causando uma falha no componente A.
+        - Geralmente é automatizado, através de ferramentas como Junit, PHPUnit, XXXUnit e outras.
+        - Podem ser feitos antes de o sistema estar concluído, a medida em que os componentes vão ficando prontos.
+
+    3. Teste de Sistema
+        - O objetivo é executar o sistema sob o ponto de vista de seu usuário final (em um ambiente que simule o ambiente de produção), varrendo as funcionalidades em busca de falhas em relação aos objetivos originais.
+        - O testador irá testar todas as possibilidades que conseguir para ver o comportamento do sistema: Colocar e-mails inválidos, enviar campos em branco, etc. Tudo a procura de erros.
+        - Planejados e executados pela equipe de teste.
+        - Cenários de teste coerentes com os requisitos especificados para o sistema.
+        - São realizados após a codificação do sistema estar concluída.
+
+    4. Teste de Aceitação
+        - É muito similar ao teste de sistema.
+        - O objetivo é executar o sistema sob o ponto de vista de seu usuário final (em um ambiente que simule o ambiente de produção), varrendo as funcionalidades para ver se atendem aos objetivos originais.
+        - planejados e executados por um grupo restrito de usuários finais do sistema, que simulam operações de rotina do sistema de modo a verificar se seu comportamento está de acordo com o solicitado.
+        - Visa permitir ao cliente determinar se aceita ou não o sistema.
+        - Pode incluir testes funcionais, de recuperação de falhas, de segurança e de desempenho.
