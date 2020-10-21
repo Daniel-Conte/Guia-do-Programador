@@ -1,0 +1,25 @@
+- É focado nas Técnicas de Teste, que são 2: Caixa Branca e Caixa Preta
+
+-> Técnicas de Teste:
+    1. Caixa Branca
+        - É a técnica que envolve a VISUALIZAÇÃO do código.
+        - Envolve:
+            - Testes de Unidade.
+            - Testes Estáticos.
+                - São testes feitos sem a execução do sistema.
+                - Consiste em encontrar falhas no código atráves da leitura e análise visual do mesmo, sem executar.
+                - Ex.: Código sem boas práticas de programação (sem tratamento de erros, não documentado, etc).
+        - Procura falhas que são invisíveis na Caixa Preta.
+        - Teste de métodos e classes.
+        - Teste de comandos de repetição.
+        - Teste de condições.
+    
+    2. Caixa Preta
+        - É a técnica que confere as ENTRADAS e SAÍDAS de cenários macro, sem visualização do código.
+        - Envolve:
+            - Teste de Integração.
+            - Teste de Sistema.
+            - Teste de Aceitação.
+            - Teste Alfa.
+            - Teste Beta.
+        - É feito através da interface do sistema.
