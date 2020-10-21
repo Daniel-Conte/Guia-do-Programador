@@ -27,7 +27,35 @@
 
     4. Teste de Aceitação
         - É muito similar ao teste de sistema.
-        - O objetivo é executar o sistema sob o ponto de vista de seu usuário final (em um ambiente que simule o ambiente de produção), varrendo as funcionalidades para ver se atendem aos objetivos originais.
+        - O objetivo é executar o sistema sob o ponto de vista de seu usuário final (em um ambiente que simule o ambiente de produção), varrendo as funcionalidades para ver se atendem aos objetivos originais, ou seja, são feitos cenários pré-planejados onde são cobertas as funcionalidades que o cliente considera pré-requisito para aceitar a entrega.
         - planejados e executados por um grupo restrito de usuários finais do sistema, que simulam operações de rotina do sistema de modo a verificar se seu comportamento está de acordo com o solicitado.
         - Visa permitir ao cliente determinar se aceita ou não o sistema.
         - Pode incluir testes funcionais, de recuperação de falhas, de segurança e de desempenho.
+    
+    5. Teste Alfa
+        - Similar ao teste de aceitação.
+        - O objetivo é executar o sistema de forma não planejada, sob o ponto de vista de seu usuário final, porém, apenas por um grupo pequeno de pessoas (até 100 pessoas).
+        - O grupo restrito de usuários que testarão geralmente é composto por membros da própria organização e também do cliente.
+        - Visa a identificação de possíveis erros não detectados até o momento, encontrados enquanto mais usuários finais utilizam o sistema de forma natural, não planejada.
+        - Representantes do time de programadores irão acompanhar de perto estes testes para coletar possíveis falhas a serem corrigidas e melhorias a serem implementadas.
+
+    6. Teste Beta
+        - Similar ao teste alfa.
+        - O objetivo é executar o sistema de forma não planejada, sob o ponto de vista de seu usuário final, porém, por um grupo grande de pessoas.
+        - O grupo de usuários que testarão geralmente são usuários reais e desconhecidos, sendo de uma determinada localidade, idioma ou que satisfizeram determinados critérios definidos pelo fornecedor do sistema.
+            - Ex.: Versão Beta do sistema ser lançada apenas em países sujo idioma é inglês.
+        - Visa a identificação de possíveis erros não detectados até o momento, encontrados enquanto mais usuários finais utilizam o sistema de forma natural, não planejada.
+        - Representantes do time de programadores não irão fazer acompanhamento e coleta de erros. No teste Beta, os usuários são que reportam os erros encontrados.
+        - A versão Beta do sistema pode ser lançada como se fosse a versão final, para atingir um maior número de usuários para testar.
+    
+    7. Teste de Regressão
+        - O objetivo é reexecutar testes após alterações serem realizadas no sistema, para conferir se tudo continua funcionando corretamente (detectar efeitos colaterais):
+            - Após mudanças de regras durante o desenvolvimento.
+                - Ex.: Facebook agora permite a postagem de vídeos 3D na timeline.
+            - Após a correção de uma falha encontrada.
+            - Após a implementação de melhorias para lançamento de novas versões.
+        - Pode ser feito em qualquer etapa do desenvolvimento do sistema.
+        - São reexecutados os testes a nível de unidade, integração e sistema.
+        - Consiste em aplicar, a cada nova versão do software ou a cada ciclo, todos os testes que já foram aplicados nas versões ou ciclos de teste anteriores do sistema.
+        - É nessa hora que os testes automáticos fazem a maior diferença.
+            - É inviável executar manualmente todos os testes após cada mudança.
