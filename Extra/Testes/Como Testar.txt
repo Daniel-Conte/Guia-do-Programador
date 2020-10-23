@@ -23,3 +23,37 @@
             - Teste Alfa.
             - Teste Beta.
         - É feito através da interface do sistema.
+
+- Testes Manuais X Testes Automáticos
+
+-> Testes Manuais
+    1. Velociadade de execução baixa
+        - Tudo vai ser executado de forma manual(testando as funcionalidades do programa de forma prática) e a velocidade varia da pessoa que for testar.
+    2. Repetitivo e Cansativo
+        - A cada modificação do código o programa vai ser testado, isso se torna muito repetitivo e o testador perde o foco e fica cansado.
+    3. Não exige tecnologias
+        - Como o teste é manual, não é preciso saber codificar ou utilizar alguma outra tecnologia.
+    4. Alto custo a cada execução
+        - O testador vai repetir os mesmos testes toda vez, custando muito tempo.
+    5. Possuem limitações quando o teste envolve situações de grande paralelismo
+    6. Podem explorar além do cenário de teste, quando necessário
+        - O testador pode testar uma funcionalidade de várias formas diferentes e do jeito que quiser, fora do cenário padrão de testes.
+    7. Podem avaliar questões visuais como cores e formas
+    8. Podem avaliar questões de usabilidade
+
+-> Testes Automáticos
+    1. Execução muito rápida
+        - O computador vai fazer todos os testes, então é muito mais rápido.
+    2. Não cansam e não sentem preguiça
+        - A cada modificação do código é só executar o teste que é realizado de forma rápida e sem dar trabalho ao testador.
+    3. Exige domínio de tecnologias expecíficas
+        - Para fazer os testes automáticos é necessário conhecer alguma tecnologia expecífica para construir o código necessário.
+    4. Alto custo apenas na criação
+        - O custo dos testes automáticos é só na construção do código dos testes(que demora dependendo de quantos testes forem necessários). Quando o código está pronto é só executá-lo.
+    5. Permite testar situações impossíveis de testar manualmente
+        - Envolvendo inúmeros valores de entrada e saída.
+    6. Faz apenas o que o testador programou para fazer
+        - Não testará nada fora do que está programado.
+    7. Não avaliam questões visuais
+        - Se restringe a valores de entrada e saída.
+    8. Não avaliam questões de usabilidade
