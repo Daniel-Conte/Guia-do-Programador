@@ -1,6 +1,8 @@
 - React é uma biblioteca que usa componentes para montar a página WEB
     - Há várias tecnologias envolvidas nesses componentes
 
+- React cria SPAs, todos os componentes serão renderizados em um único index.html
+
 - React usa uma build do Webpack para criar as aplicações, então use a lógica do Webpack no projeto
 
 - React usa Babel para converter o código em JavaScript puro
