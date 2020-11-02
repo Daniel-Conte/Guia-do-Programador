@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Main from '../template/Main'
+import Form from '../template/Form'
 
 const headerProps = {
     icon: 'users',
@@ -43,10 +44,17 @@ export default class UserCrud extends Component {
         return list
     }
 
+    updatedField(event) {
+        const user = { ...this.state.user }
+        user[event.target.name] = event.target.value
+            // "[]" outra maneira de acessar um atributo
+        this.setState({ user })
+    }
+
     render() {
         return (
             <Main {...headerProps}>
-                Cadastro de Usuário
+                <Form change={e => this.updatedField(e)} nameValue={this.state.user.name} emailValue={this.state.user.email} save={e => this.save(e)} cancel={e => this.clear(e)}/>
             </Main>
         )
     }
