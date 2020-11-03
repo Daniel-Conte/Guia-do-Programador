@@ -3,5 +3,5 @@ import React from 'react'
 
 export default props =>
     <button className={props.class} onClick={props.click}>
-        {props.name}
+        {props.name} {props.children}
     </button>
