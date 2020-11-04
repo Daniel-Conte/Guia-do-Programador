@@ -1,0 +1,56 @@
+-> Tipos de Teste:
+    - Teste de Funcionalidade
+        - Objetivo é validar que as funcionalidades do sistema estão funcionando corretamente
+        - Exemplo: Testar se o cadastro de usuário está funcionando
+        - Envolve os testes de:
+            - Unidade
+            - Integração
+            - Sistema
+            - Aceitação
+            - Alfa
+            - Beta
+            - Regressão
+    
+    - Teste de Desempenho
+        - Objetivo é validar o desempenho do sistema no que diz respeito ao seu tempo de resposta para determinadas operações
+        - Testa a aplicação como um todo, desde a camada de interface até o banco de dados
+        - Exemplos:
+            - Tempo de resposta de um sistema bancário para processar uma operação
+            - Tempo de resposta do facebook para fazer upload de fotos
+            - Tempo de resposta de um robô médico para responder a comandos
+        - Ferramenta:
+            - Jmeter
+
+    - Teste de Usabilidade
+        - Objetivo é validar aspectos que envolvem a experiência do usuário ao utilizar o sistema
+            - Quão agradável/fácil/simples está a experiência de usar o sistema
+        - Exemplos:
+            - Estética de um website
+            - Definição e disposição de cores da interface do aplicativo
+            - Tipo de interface a ser utilizada
+                - Touch screen? Gestos? Sensível ao som?
+            - Ajuda online e contextual
+            - Manual do usuário
+        - É testado geralmente visualizando as expressões do usuário enquanto utiliza o sistema e feedback
+
+    - Teste de Segurança
+        - Objetivo é validar a proteção do sistema contra invasões ou acesso não autorizado a informações
+            - Algumas empresas contratam hackers para tentar invadir o sistema e expor vulnerabilidades para serem corrigidas
+        - Exemplos:
+            - Sites com acesso restrito
+            - Tráfego de informações criptografadas
+
+    - Teste de Portabilidade
+        - Objetivo é validar o funcionamento do sistema em diferentes plataformas, sistemas operacionais e dispositivos, nas quais o sistema está proposto a funcionar
+        - Exemplos:
+            - IOS, Android, etc
+            - Windows, Linux, Mac OS
+            - Smartphones, tablets, notebooks, etc
+            - Chrome, Safari, Opera, FireFox, Edge, etc
+
+    - Teste de Stress
+        - Objetivo é validar o comportamento do sistema em condições extremas
+        - O stress no sistema pode abranger cargas de trabalho extremas, memória insuficiente, hardware e serviços indisponíveis, recursos compartilhados limitados ou quantidade de usuários ativos ao mesmo tempo
+        - Executados o quanto antes para se ter o tempo necessário para corrigir ou melhorar o desempenho do sistema conforme necessário
+        - Ferramenta:
+            - Jmeter (para alguns casos)
