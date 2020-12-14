@@ -1,0 +1,15 @@
+-> Não Técnicas
+    1. A pessoa que especifica os cenários de teste de sistema não deve estar participando da codificação do sistema(por conta de vieses)
+        - De preferência, que seja um testador especialista e não um programador
+        - A especificação(documentação) é a base para os cenários de teste
+            - "O que não está especificado não será validado"
+    
+    2. Faça uma boa seleção de cenários, considerando:
+        - O tempo disponível para execução dos testes
+        - A maturidade do(s) testador(es)
+        - A relevância das funcionalidades a serem testadas
+        - Lembre-se: Os cenários são infinitos, nunca haverá tempo para testar todos
+
+    3. Seja pessimista! Cuidado para não ignorar cenários aparentemente inocentes
+
+    4. Registre todas as falhas encontradas e acompanhe até que seja corrigida
