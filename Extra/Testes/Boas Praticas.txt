@@ -13,3 +13,41 @@
     3. Seja pessimista! Cuidado para não ignorar cenários aparentemente inocentes
 
     4. Registre todas as falhas encontradas e acompanhe até que seja corrigida
+
+-> Técnicas
+    1. Não execute cenários roboticamente. Explore e crie novos cenários quando necessário
+
+    2. Achou uma falha? Detalhe ao máximo!
+        - "A caixa de mensagens não segue o padrão"
+        - "Após não preencher um dos campos obrigatórios no formulário de cadastro de usuário, a caixa de mensagens apresentada está em um formato diferente das demais caixas de mensagens de erro do sistema"
+            - Browser: Chrome v10.2
+            - Dispositivo: Tablet Ipad 7
+            - (colocar printscreen)
+
+    3. A falha foi corrigida? Reteste! (teste de regressão)
+
+    4. Busque padrões ao reportar um falha
+        - Ex.: Verifique se o erro ocorrido com um produto está associado apenas a tal produto ou se envolve todos os produtos de mesma categoria, cor, faixa de preço, etc.
+
+    5. Teste sempre os valores limites, grande parte dos erros estarão lá!
+        - Formulários:
+            - Campo em branco
+            - Campo com valor inválido
+            - Quantidade de caracteres
+            - E-mail inválido
+            - Mensagens de erro coerentes
+
+        - Cálculos:
+            - Valores positivos
+            - Valores negativos
+            - ZERO
+            - Intervalos fechados e abertos
+            - Acima do limite máximo e abaixo do limite mínimo
+
+    6. O mais importante: Tente pensar como um usuário pensaria
+    
+    7. Ferramentas Web para gestão de incidentes/falhas/melhorias identificadas:
+        - Proj4me
+        - Jira
+        - Bugzilla
+        - Trac

@@ -1,0 +1,20 @@
+-> Mitos do Teste de Software
+
+    1. Testando vamos encontrar 100% dos defeitos
+        - Não tem como encontrar todos os defeitos, principalmente em projetos grandes
+        - O tempo e o orçamento pra testes é limitado
+    
+    2. O teste de software é um custo extra para o projeto
+        - É um custo NECESSÁRIO, pois irá custar muito mais se o projeto for entregue com vários problemas
+
+    3. Qualquer pessoa é capaz de testar bem, é só seguir o plano de testes
+        - Uma pessoa que não é especialista em testes não conhece todas as boas práticas e não irá explorar além do que o plano define
+
+    4. Programadores não precisam testar
+        - Programadores precisam fazer os testes de unidade e de integração para não ficar um "vai e vem" toda hora entre a equipe de teste e de desenvolvimento
+
+    5. Os testes dos programadores são suficientes
+        - Programadores tem dificuldades para achar erros por conta de vieses(eles acham que o código deles tá perfeito), por isso é necessário uma equipe de testes que não faça parte do desenvolvimento
+
+    6. Só podemos testar quando o sistema estiver 100% pronto
+        - Os testes devem começar logo no começo do desenvolvimento do projeto com os testes de unidade e de integração
