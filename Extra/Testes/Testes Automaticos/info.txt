@@ -1,0 +1,13 @@
+-> Testes automáticos são testes executados pelo computador, na qual o programador codificou os testes para determinadas funções
+    - Podem ser executados vários testes ao mesmo tempo
+    - Cada linguagem de programação tem seu framework de teste
+
+-> Usando JUnit(Java)
+    - Cada classe do projeto deve ter uma classe de teste
+        - Nome da classe java: "GerenciadoraClientes.java"
+          Nome da classe teste: "GerenciadoraClientesTest.java"
+    
+    - Cada método da classe deve ter seu método de teste
+        - Nome do método java: "PesquisaCliente()"
+          Nome do método teste: "testPesquisaCliente()"
+        - Métodos devem ter "@Test" escrito na linha acima da sua declaração
