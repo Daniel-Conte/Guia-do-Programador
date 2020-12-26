@@ -2,12 +2,30 @@
     - Podem ser executados vários testes ao mesmo tempo
     - Cada linguagem de programação tem seu framework de teste
 
--> Usando JUnit(Java)
-    - Cada classe do projeto deve ter uma classe de teste
-        - Nome da classe java: "GerenciadoraClientes.java"
-          Nome da classe teste: "GerenciadoraClientesTest.java"
+-> Boas Práticas
+    - Nomeie corretamente
+        - Cada classe do projeto deve ter uma classe de teste
+            - Nome da classe java: "GerenciadoraClientes.java"
+              Nome da classe teste: "GerenciadoraClientesTest.java"
     
-    - Cada método da classe deve ter seu método de teste
-        - Nome do método java: "PesquisaCliente()"
-          Nome do método teste: "testPesquisaCliente()"
-        - Métodos devem ter "@Test" escrito na linha acima da sua declaração
+        - Cada método da classe deve ter seu método de teste
+            - Nome do método java: "PesquisaCliente()"
+              Nome do método teste: "testPesquisaCliente()"
+
+    - Aplique as boas práticas de programação nos testes
+        - Testes automáticos precisam ser programados, então use as boas práticas
+
+    - Documente seu código
+        - Sempre adicione um comentário para cada método de teste explicando a finalidade do mesmo, assim outra pessoa(ou você futuramente) irá entender o teste sem precisar ler e interpretar todo o código
+    
+    - Faça manutenção dos testes
+        - Sempre que a regra de negócio do projeto mudar, faça as devidas alterações nos testes automáticos e reexecute-os
+
+    - Otimize seus testes
+        - Em caso de vários métodos de teste com cenários(ambientes) iguais, utilize métodos para executar antes e após cada teste, assim evitando repetição de código
+    
+    - Torne cada teste independente
+        - Certifique-se de que cada método de teste não deixe nenhuma "sujeira" após ser executado e que influencie os testes seguintes, então limpe toda a sujeira de cada teste após sua execução. Ex:
+            - Feche conexões com banco de dados
+            - Exclua pastas/arquivos criados pelo teste
+            - Exclua clientes fictícios inseridos na base de dados pelo teste

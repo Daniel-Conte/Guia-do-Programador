@@ -1,0 +1,29 @@
+-> O framework de teste unitário em Java é o JUnit
+
+-> Usando JUnit
+    - Cada método de teste deve ter "@Test" escrito na linha acima da sua declaração
+
+    - Não precisa invocar os métodos de teste, todos os métodos presentes na classe são invocados automaticamente ao executar o arquivo
+
+    - Otimizando testes
+        - Escreva "@Before" na linha acima da declaração de um método(não de teste) que precisa ser executado ANTES de cada método de teste
+            - É utilizado quando vários testes tem o mesmo cenário(ambiente), para então não repetir o mesmo código em todos os métodos
+            - Não precisa invocar o método, ele é invocado automaticamente antes de cada método de teste
+            - O nome convencional do método é "setUp()"
+
+        - Escreva "@After" na linha acima da declaração de um método(não de teste) que precisa ser executado DEPOIS de cada método de teste
+            - É utilizado quando vários testes tem o mesmo código após a verificação (geralmente para limpar toda a sujeira deixada pelo método, assim não influenciando os métodos seguintes), para então não repetir o mesmo código em todos os métodos
+            - Não precisa invocar o método, ele é invocado automaticamente depois de cada método de teste
+            - O nome convencional do método é "tearDown()"
+
+    - Executando todas as classes de teste ao mesmo tempo
+        - É necessário criar uma nova classe
+        - Precisa ter "@RunWith(Suite.class)" e "@SuiteClasses({ ... })" escrito na linha acima da declaração da classe(esta pode estar vazia)
+            - Escreva o nome de todas as classes de teste a serem executadas dentro de "@SuiteClasses({ ... })
+        - Ex:
+
+            @RunWith(Suite.class)
+            @SuiteClasses({ classe1.class, classe2.class, classe3.class })
+            public class TodosOsTestes {
+
+            }
