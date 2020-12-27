@@ -1,0 +1,3 @@
+-> Vue é um framework JS similar ao React e Angular, porém ele é regido pela comunidade e não por uma empresa
+
+-> É possível usar o Vue apenas referenciando seu arquivo JS na página HTML e instanciá-lo dentro da tag <script>. Porém para projetos grandes utiliza-se o Client Vue
