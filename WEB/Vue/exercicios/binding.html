@@ -7,9 +7,48 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
+    <div id="app">
+        <p>{{ link }}</p>
+        <p><a href="{{ link }}">Canal?</a></p>
+            <!-- Não é possível usar a interpolação do Vue dentro de propriedades HTML para acessar atributos -->
 
+        <p><a v-bind:href="link">Canal</a></p>
+            <!--
+                - Uma forma de acessar um atributo dentro de uma propriedade é através da diretiva "v-bind:<qualquerPropriedadeHTML>"
+                - Diretivas são as propriedades personalizadas do Vue
+            -->
+            
+        <p><a :href="link">Canal</a></p>
+            <!-- Outra forma é usar ":" antes de uma propriedade. É uma forma reduzida do "v-bind", tem o mesmo resultado -->
+
+        <input type="text" v-model="nome"><br>
+            <!--
+                - A propriedade "v-model" funciona como se fosse um "value", só que ela atualiza o valor do atributo em tempo real (interligação de mão dupla)
+                - "v-model" pode ser usada nas tags relacionadas a formulários
+                - "v-model" irá ignorar o estado inicial de "value", "checked" ou "selected" encontrado em qualquer elemento de formulário. Sempre se tratará a instância Vue como a fonte dos dados verdadeiros. Ou seja, declare os valores iniciais no lado JavaScript, dentro da opção "data" de seu componente
+            -->
+        <span>{{ nome }}</span>
+            <!-- Com o "v-model", o nome vai atualizar conforme for digitando no input -->
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                nome: 'Maria',
+                link: 'https://www.youtube.com/cod3rcursos'
+            },
+            watch: { // Esta propriedade armazena funções que irão monitorar um atributo e serão executadas quando o valor do atributo for alterado
+                // O nome da função deve ser o nome do atributo que deseja monitorar
+                // Não precisa invocar a função, ela é invocada automaticamente toda vez que o valor do atributo for alterado
+
+                // !!!! Em alguns casos é melhor usar um Valor Computado do que um Watcher, presta atenção !!!!
+
+                nome(novoValor, valorAntigo) {
+                    console.log(novoValor.toUpperCase())
+                    console.log(valorAntigo.toLowerCase())
+                }
+            }
+        })
     </script>
 </body>
 </html>

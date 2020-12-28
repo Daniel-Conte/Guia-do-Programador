@@ -42,10 +42,11 @@
                 }
             },
             computed: { // Armazena funções que calculam valores (valores computados)
-                // Funciona como um "getter"
+                // Basicamente funciona como um atributo de "data" normal, só que aqui é possível fazer várias operações em cima de valores
+                // Funciona como um "getter", mas pode funcionar como um "setter" também
                 // As funções não aceitam parâmetros
-                // O valor resultante da função é armazenado em cache, então um valor computado somente será reexecutado quando alguma de suas dependências(dados) for alterada. Isso significa que enquanto um dado não sofrer alterações, múltiplos acessos a esta função retornarão o último valor calculado sem precisar executar a função novamente.
-                // Para acessar no template, use apenas o nome da função(sem invocar)
+                // O valor resultante da função é armazenado em cache, então um valor computado somente será reexecutado quando alguma de suas dependências(atributos) for alterada. Isso significa que enquanto um atributo não sofrer alterações, múltiplos acessos a esta função/atributo retornarão o último valor calculado sem precisar executar a função novamente.
+                // Para acessar no template, use apenas o nome da função(sem invocar, como se fosse um atributo normal)
                 precoComDesconto() {
                     return this.preco * (1 - this.desconto) // Para acessar os atributos em "data", utilize "this"
                 }

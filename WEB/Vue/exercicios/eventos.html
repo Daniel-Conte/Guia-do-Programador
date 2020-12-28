@@ -7,9 +7,56 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
+    <div id="app">
+        <p>{{ contador }}</p>
+        <p>
+            <button v-on:click="add">+1</button>
+                <!--
+                    - A diretiva "v-on:" é ligada a uma propriedade HTML que escuta eventos e executa uma função quando esse evento ocorre
+                -->
 
+            <button @click="contador -= 2">-2</button>
+                <!--
+                    - "@" é a forma reduzida de "v-on:"
+                    - É possível interpolar expressões JS dentro da diretiva, como se estivesse dentro de {{ ... }}
+                -->
+        </p>
+
+        <p @mousemove="atualizarPosicao">
+            Coordenadas: {{ x }} e {{ y }}
+            <span @mousemove.stop>Aqui Não</span>
+                <!-- "@mousemove.stop"(modificador ".stop") impede que o evento "mousemove" seja disparado (dentro dessa área) -->
+        </p>
+
+        <input type="text" @keyup.enter="alerta">
+            <!--
+                - "@keyup.enter"(modificador ".enter") executa a função quando a tecla "enter" for apertada
+                - É possível configurar a disparada do evento para qualquer tecla, basta adicionar o modificador ".<nomeTecla>"
+                    - @keyup.m="alerta"
+                    - @keyup.*="alerta"
+            -->
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+                atualizarPosicao(e) {
+                    this.x = e.clientX
+                    this.y = e.clientY
+                },
+                alerta() {
+                    alert('Enter!')
+                }
+            }
+        })
     </script>
 </body>
 </html>
