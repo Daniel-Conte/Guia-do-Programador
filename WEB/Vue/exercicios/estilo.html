@@ -6,15 +6,27 @@
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
     <style>
-        .vermelho {
+        .bg-vermelho {
             background-color: red;
         }
     </style>
 </head>
 <body class="exercicio">
-
+    <div id="app" @click="aplicarCor = !aplicarCor" :class="{'bg-vermelho': aplicarCor}">
+        <!--
+            - Aplicando uma classe CSS com uma condicional
+            - A classe CSS é tratada como chave/valor(objeto), se o valor da classe for verdadeiro ela é aplicada
+            - Se o nome da classe possui símbolos coloque-a entre aspas, senão não precisa
+        -->
+        Teste
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                aplicarCor: false
+            }
+        })
     </script>
 </body>
 </html>

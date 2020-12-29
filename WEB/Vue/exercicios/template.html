@@ -7,9 +7,28 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-    
+    <div id="app"></div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'VueJS',
+                subtitulo: 'Framework Progressivo'
+            },
+            template: `
+                <div>
+                    <h1>{{ titulo }}</h1>
+                    <h3>{{ subtitulo }}</h3>
+                </div>
+            `
+            /*
+                - Através do atributo "template" é possível desenvolver o codigo HTML dentro da instância do Vue e injetar na DOM
+                - Não é muito comum de se usar
+                - O conteúdo de "template" será injetado onde o Vue está monitorando('#app' neste caso)
+                - O conteúdo de "template" deve estar dentro de crases `` se usar mais do que uma linha
+                - Só será renderizado o primeiro componente que está dentro de "template", então coloque tudo dentro de 1 só componente(div, span, fragment...)
+            */
+        })
     </script>
 </body>
 </html>

@@ -7,9 +7,52 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
+    <div id="app">
+        <!--
+            - "v-for" é uma diretiva que vai fazer um loop em cima da expressão passada
+            - Cada elemento do loop irá usar a estrutura(fazer uma cópia) onde o "v-for" está colocado
+                - Ou seja, neste caso, irá ser renderizado 4 tags "<p>" com seu conteúdo, uma para cada elemento(aluno),
+            - Tanto "for/in" quanto "for/of" funcionam do mesmo jeito
+            - (<valor>, <indice>) in/of <array>
+        -->
+        <p v-for="(aluno, i) in alunos">
+            {{ i + 1 }}) {{ aluno.nome }} - {{ aluno.nota }} -
 
+            <!-- As diretivas de condição do Vue tem a mesma lógica que as condições do JS -->
+            <span v-if="aluno.nota >= 9">Quadro de Honra</span>
+            <!-- Este componente só será renderizado se a condição for verdadeira -->
+
+            <span v-else-if="aluno.nota >= 7">Aprovado</span>
+            <!-- Esta condição será analizada somente se a condição do elemento acima for falsa -->
+
+            <span v-else-if="aluno.nota >= 3">Recuperação</span>
+            <span v-else>Reprovado</span>
+            <!-- Se nenhuma das condições dos elementos acima for verdadeira, este elemento será renderizado -->
+        </p>
+        <ul style="list-style: none;">
+            <li v-for="n in 8">
+                <span v-show="n >= 4">{{ n }}</span>
+                <!--
+                    - "v-show" é uma diretiva de condição semelhante à "v-if"
+                    - Diferente da "v-if", essa diretiva renderiza o componente, mas o mostra somente se a condição for verdadeira
+                        - Ou seja, o componente é renderizado, PORÉM, se a condição for FALSA o componente receberá o CSS "display: none"
+                            - Já na "v-if" se a condição for FALSA o componente NÃO será renderizado
+                -->
+            </li>
+        </ul>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                alunos: [
+                    { nome: 'Ana', nota: 7.8 },
+                    { nome: 'Bia', nota: 9.1 },
+                    { nome: 'Carlos', nota: 6.8 },
+                    { nome: 'Daniel', nota: 2.8 }
+                ]
+            }
+        })
     </script>
 </body>
 </html>

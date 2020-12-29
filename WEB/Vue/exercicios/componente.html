@@ -7,9 +7,38 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <saudacao nome="Ana"></saudacao>
+        <saudacao nome="Bia"></saudacao>
+        <saudacao nome="Julia"></saudacao>
+    </div>
     <script>
-        // ...
+        /*
+            !!!!! Esta forma de criar componentes é diferente da forma usada no Client Vue !!!!!
+
+            - O componente é criado fora da instância do Vue, porém é necessário instanciar o Vue para monitorar o trecho HTML
+            - Vue.component(<nome>, { <conteúdo> })
+        */
+        Vue.component('saudacao', {
+            props: ['nome'],
+            template: `
+                <div>Bom dia {{ nome }}!</div>
+            `
+        })
+        /*
+            - "props" armazena todas as propriedades que serão usadas no componente (similar ao React)
+                - As propriedades precisam estar dentro de um array
+            - "template" guarda todo o código HTML do componente
+            - A tag do componente sempre deve ser fechada no estilo HTML
+                - Desse jeito: <componente>...</componente>
+                - E não assim: <componente />
+                
+            - !!! Se for usar o atributo "data" é necessário atribuir uma função que retorna um objeto com os atributos
+        */
+
+        new Vue({
+            el: '#app'
+        })
     </script>
 </body>
 </html>
