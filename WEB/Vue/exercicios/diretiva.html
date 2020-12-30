@@ -7,9 +7,38 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <input type="text" v-model="nome">
+        <div v-inverter="nome"></div>
+    </div>
     <script>
-        // ...
+        /*
+            - Criando diretivas personalizadas
+            - São criadas fora da instância do Vue
+            - Vue.directive(<nome>, { <OQueVaiFazer> })
+                - O nome não deve conter o prefixo "v-"
+            - Para acessá-las, deve-se usar o prefixo "v-" + o nome da diretiva
+            - Existem funções pré-definidas nas diretivas para determinados casos, como "componentUpdated()"
+        */
+        Vue.directive('inverter', {
+            componentUpdated(el, binding) {
+                /*
+                    - "componentUpdated()" dispara sempre que o valor da diretiva mudar. Neste caso, o valor de "nome"
+                    - O primeiro parâmetro retorna o componente onde a diretiva está
+                    - O segundo componente retorna um objeto com as propriedades relacionadas à diretiva
+                */
+                const invertido = binding.value.split('').reverse().join('')
+                    // "binding.value" retorna o valor associado à diretiva. Neste caso, retorna o valor do atributo "nome"
+                el.innerHTML = invertido
+            }
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                nome: ''
+            }
+        })
     </script>
 </body>
 </html>

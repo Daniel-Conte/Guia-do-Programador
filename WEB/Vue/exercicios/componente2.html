@@ -5,13 +5,44 @@
     <title>Componente (Desafio)</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
+
+    <style>
+        #app {
+            display: flex;
+        }
+        .contador {
+            margin: 0 20px;
+        }
+    </style>
 </head>
 <body class="exercicio">
     <div id="app">
-
+        <contador nome="A"></contador>
+        <contador nome="B"></contador>
+        <contador nome="C"></contador>
     </div>
     <script>
-        
+        Vue.component('contador', {
+            props: ['nome'],
+            data() { /* Em componentes, "data" deve ser uma função que retorna um objeto com os atributos */
+                return {
+                    contador: 0
+                }
+            },
+            template: `
+                <div class="contador">
+                    Contador {{ nome }}: {{ contador }}
+                    <br/>
+                    <button @click="contador++">+1</button>
+                    <button @click="contador--">-1</button>
+                </div>
+
+            `
+        })
+
+        new Vue({
+            el: '#app'
+        })
     </script>
 </body>
 </html>
