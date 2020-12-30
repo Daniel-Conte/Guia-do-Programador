@@ -1,0 +1,35 @@
+-> O que é um projeto?
+    - "Um projeto é um esforço temporário empreendido para criar um produto, serviço, ou resultado exclusivo"
+        - Ou seja, é um esforço temporário que produz algo que é único
+        - Você convive com projetos todo os dias, seja pintar uma parede, desenvolver um software, planejar eventos, aumentar o faturamento da sua empresa nos próximos 3 meses, criar e alcançar metas...
+            - "Você foi e sempre será um gerente de projetos", seja você estudante, trabalhador ou desempregado
+
+-> Gestão de Projetos Tradicional X Ágil
+
+    -> Método Tradicional
+        - Tem foco no planejamento de TUDO o que será realizado, DO INÍCIO AO FIM do projeto
+        - Envolve MUITA DOCUMENTAÇÃO (planejar gera muitas documentações)
+        - Mudanças acabam sendo resistidas e burocratizadas
+            - Mudar depois de tanto trabalho fica muito caro e estressante
+        - O produto, resultado ou serviço é disponibilizado no encerramento do projeto
+            - O cliente geralmente não vê como está a situação durante o projeto, o que tem grande chance do cliente não gostar do resultado final
+                - "O cliente não sabe o que quer"
+
+        - Início do projeto
+            - Conhecimento mínimo sobre o projeto
+            - Capacidade máxima de alterar o resultado
+        - Fim do projeto
+            - Conhecimento máximo sobre o projeto
+            - Capacidade mínima de alterar o resultado
+
+        - Quando usar?
+            - O método tradicional se torna útil em projetos que tendem a não sofrer alterações durante o processo e que são muito bem detalhados no início
+                - Ex: Construção de pontes, prédios... O que torna invíavel grandes mudanças
+
+    -> Método Ágil
+        - Tem foco na resposta à mudanças
+        - O cliente participa do desenvolvimento do projeto e dá seu feedback, assim tornando as mudanças bem menos custosas
+        
+        - Quando usar?
+            - O método ágil é muito útil em projetos onde há incerteza do cliente, onde o projeto tem que ser pensado e repensado e que não possuem escopo petrificado durante o desenvolvimento
+                - Ex: Desenvolvimento de Software
