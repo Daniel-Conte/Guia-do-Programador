@@ -1,0 +1,34 @@
+-> Resumo das etapas que o Scrum percorre durante um projeto
+
+-> O projeto surge a partir de uma necessidade
+    - Ex: O diretor de uma escola quer um sistema escolar para economizar tempo e papelada
+
+-> Surge o projeto "Construção do sistema de gestão da escola Esperança"
+    - Ainda não há detalhes sobre o projeto, é só uma ideia superficial
+
+-> Fluxo do Scrum
+    1. Visão
+        - É criado o documento "Declaração de visão do projeto" para definir melhor a ideia e criar a base do projeto
+            - É definido o objetivo do projeto, descrição, mapeamento de quem são as partes interessadas no projeto (todos que estão envolvidos) e outras informações importantes
+
+    2. Backlog do Produto
+        - Onde é listado todos os requisitos do produto a ser desenvolvido (Escopo)
+            - Ex: O sistema deve registrar a nota de todos os alunos
+            - No Scrum, cada requisito é chamado de História de usuário(User Story)
+
+    3. Backlog da Sprint
+        - É o planejamento do que vai ser feitos na próxima Sprint
+            - Ex: Será desenvolvido o cadastro de alunos no sistema
+        - Note que não é feito o planejamento total do projeto, é planejado conforme o desenvolvimento
+        - Quando definido, é mostrado para o cliente decidir se aprova ou não
+
+    4. Sprint
+        - Onde será desenvolvido tudo o que foi planejado no Backlog da Sprint
+        - Cada Sprint tem duração de 2 a 4 semanas
+
+        4.1. Daily Scrum
+            - É uma reunião com a equipe realizada TODOS os dias durante o Sprint para discutir sobre o andamento do projeto
+
+    5. Entrega do produto
+        - Após cada Sprint, o produto desenvolvido é mostrado ao cliente para avaliá-lo e dar feedback
+        - Após a aprovação do cliente, o projeto é adaptado ao feedback fornecido e é planejado o novo Sprint (Backlog da Sprint)

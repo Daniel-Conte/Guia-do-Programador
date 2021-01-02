@@ -1,0 +1,58 @@
+-> "É uma metodologia de adaptação, iteratividade, rapidez, flexibilidade e eficiência projetada para fornecer um valor significativo de forma rápida durante todo o projeto." (SBOK Guide)
+
+-> Scrum é o método ágil mais popular para gestão de projetos atualmente
+
+-> Os 3 pilares do Scrum
+    1. Transparência
+        - Para diminuir a quantidade de documentação, ter melhor adaptação, iteratividade, cooperação com o cliente e velocidade de resposta, TODA a equipe possui conhecimento sobre os requisitos e andamento do projeto, processos e tecnologias utilizadas, ou seja, todo mundo sabe o que está acontecendo e quem está fazendo o que.
+
+    2. Inspeção
+        - São feitas inspeções periodicamente para ver o andamento do projeto(geralmente a cada iteração)
+        - Para aumentar a cooperação, comunicação, interação e envolvimento entre a equipe são feitas reuniões diárias para inspecionar como o projeto está progredindo.
+
+    3. Adaptação
+        - O Scrum é baseado em se adaptar à situação atual do projeto, então a equipe deve sempre estar preparada para alterações, seja no projeto a cada iteração com o cliente ou até na própria equipe.
+
+-> Papeis e responsabilidades
+    -> Papeis Não-essenciais
+        - São pessoas envolvidas no projeto, mas não são fundamentais
+        - Usuários, parceiros, fornecedores, gestores, outras organizações...
+
+    -> Papeis Centrais
+        -> Dono do Produto
+            - Faz o papel de cliente diante da equipe Scrum
+            - Representa as partes interessadas no projeto
+                - No caso de um sistema escolar, conversa com os alunos, professores, diretor, coordenador... para ouvir o que eles querem no sistema
+            - Define os requisitos do produto
+                - A partir das informações fornecidas pelas partes interessadas, ele cria os requisitos(User Stories)
+            - Determina a data de entrega e conteúdo
+            - Prioriza as necessidades(histórias) de acordo com o valor de negócio
+                - Define quais requisitos são mais importantes
+            - Mantém o backlog do produto atualizado e priorizado
+            - Aceita ou rejeita as entregas
+                - No fim de cada Sprint
+
+        -> Scrum Master
+            - É um "facilitador", NÃO É lÍDER NEM GERENTE
+            - Responsável pela aplicação dos valores e práticas do Scrum
+                - Ele deve ser um especialista em Scrum
+            - Remove impedimentos
+                - Fornece os recursos necessários para a equipe Scrum continuar com o projeto
+                - Resolve problemas que impedem ou atrapalham o andamento do projeto
+            - Assegura que a equipe está funcional e produtiva
+            - Blinda o time das interferências externas
+        
+        -> Equipe Scrum
+            - Constituída de programadores, testadores, engenheiros de software, analistas...
+            - Deve ser constituída de 5 a 9 pessoas
+                - Quantidade boa para organizar e cooperar melhor
+            - Auto organizada e auto gerenciável
+                - A equipe não tem um líder/gerente, todos tem a mesma importância e são independentes
+                - A equipe se comunica e tem liberdade para tomar decisões de como vão organizar o trabalho deles para entregar o objetivo da Sprint
+                - Cada integrante aplica sua especialidade, seus conhecimentos e experiências
+            - Estima as histórias
+            - Aprova as histórias do backlog que entrarão nas Sprints
+                - O cliente define as prioridades do que deve ser feito, mas a equipe Scrum é quem avalia o que é possível e o que vai ser feito dentro do tempo da próxima Sprint
+            - Se compromete a entregar um incremento
+                - Missão dada é missão cumprida
+            - Garante o funcionamento e qualidade do produto
