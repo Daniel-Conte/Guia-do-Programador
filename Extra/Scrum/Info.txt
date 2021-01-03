@@ -56,3 +56,7 @@
             - Se compromete a entregar um incremento
                 - Missão dada é missão cumprida
             - Garante o funcionamento e qualidade do produto
+
+-> Scrum em projetos grandes
+    - A estratégia mais comum é a "Scrum de Scrums"
+        - Consiste de várias equipes Scrum onde o Scrum Master de cada equipe se reúne com o Scrum Master Chefe nas reuniões.

@@ -1,0 +1,42 @@
+-> Princípios do Scrum
+
+    1. Controle Empírico de Processos
+        - O Scrum não tem um jeito definitivo de realizar processos, eles são empíricos
+            - Ou seja, o modo de fazer tal atividade é escolhido de acordo com a experiência e os resultados da prática desse modo
+            - Se tal maneira de fazer uma atividade deu certo e é eficiente, ela é continuada, senão é escolhido outra maneira até achar uma que de certo
+            - As chamadas "boas práticas" de realizar tal coisa, são empíricas
+    
+    2. Auto-Organização
+        - A equipe Scrum tem independência dentro do projeto, ela escolhe como vão trabalhar pra entregar o objetivo no tempo estipulado
+        - Metas de um time auto-organizado
+            - Procurar trabalho proativamente
+            - Aberto a aprender coisas novas
+            - Continuamente aprimorar o conhecimento e habilidades
+            - Entregar resultados tangíveis
+            - Entender a visão do projeto
+
+    3. Colaboração
+        - Lei do Mont Everest: Ninguém nunca conseguiu subir o Mont Everest sozinho
+            - Quanto maior o objetivo, maior é a necessidade de trabalhar em equipe
+        - Consciência
+            - Todos devem saber o que cada integrante da equipe está fazendo, assim estarão cientes de como seus trabalhos irão impactar no trabalho dos colegas
+        - Articulação
+            - A equipe deve saber como dividir o trabalho (paralelizar o esforço) entre si e unificar o resultado de todos no final
+        - Apropriação
+            - Cada integrante deve se responsabilizar pelo trabalho dos colegas e assumí-lo caso esteja passando por problemas
+                - Deve levantar da cadeira e ir ajudar o colega quando necessário
+
+    4. Priorização Baseada em Valor
+        - Os requisitos com maior prioridade/valor devem ser desenvolvidos nas primeiras Sprints, assim entregando mais valor ao cliente e atendendo as maiores necessidades dele mais cedo
+
+    5. Time-Boxing
+        - Cada evento num projeto Scrum deve ter um tempo definido que não pode ser extendido
+            - Reunião diária, reunião de planejamento da Sprint, Sprint, reunião de revisão da Sprint
+            - O tempo definido deve ser o suficiente para o evento
+                - Não pouco para não deixar coisas de fora e nem muito para não perder tempo
+            - Se tal atividade não for concluída na Sprint, ela deverá ser concluída na próxima (a entrega da Sprint não pode ser adiada)
+            - "Uma pessoa irá usar todo o tempo disponível para realizar a atividade, mesmo que tenha tempo mais do que suficiente."
+
+    6. Iterativo-Incremental
+        - O projeto deverá ser entregue em pedaços confome vai sendo desenvolvido, incrementando-se gradualmente
+            - Assim recebendo feedback do cliente e adaptando-se a suas necessidades
