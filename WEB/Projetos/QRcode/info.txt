@@ -1,0 +1,1 @@
+Projeto Gerador de QRCode utilizando VueJS e a biblioteca QRious

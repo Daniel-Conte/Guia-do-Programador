@@ -4,15 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <script src="js/vue.min.js"></script>
-    <script src="js/qrious.min.js"></script>
+    <script src="js/qrious.min.js"></script> <!-- Biblioteca para gerar QRCodes -->
     <link rel="stylesheet" href="css/style.css">
     <title>Gerador de QRCode</title>
 </head>
 
 <body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <div>
+            <input type="text" size="25" v-model="text" placeholder="Digite para gerar...">
+        </div>
+
+        <div v-if="text" class="output">
+            <img :src="newQRCode" alt="QRCode">
+        </div>
+
+    </div>
 
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Gerador QRCode',
+                text: 'https://www.cod3r.com.br',
+                qrcode: new QRious({ size: 300 }) // Gerador de QRCode
+                    // "size" é o tamanho do QRCode (pixels). Padrão 100
+            },
+            computed: {
+                newQRCode() {
+                    this.qrcode.value = this.text
+                        // "value" é a string que irá gerar o código QRCode
+                    return this.qrcode.toDataURL()
+                        // "toDataURL()" retorna o QRCode gerado, só que em forma de URL para poder ser acessado. Basicamente um link para pegar a imagem do QRCode gerado
+                }
+            }
+        })
     </script>
 </body>
 
