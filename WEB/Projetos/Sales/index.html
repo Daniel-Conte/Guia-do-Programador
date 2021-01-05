@@ -9,9 +9,64 @@
 </head>
 
 <body>
+    <div id="app">
+        <div class="container">
+            <h1 class="mt-3">{{ title }}</h1>
+
+            <table class="table mt-5">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Qtde</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="sale in sales">
+                        <td>{{ sale.id }}</td>
+                        <td>{{ sale.name }}</td>
+                        <td v-money="'R$'">{{ sale.price }}</td>
+                        <td>{{ sale.qtde }}</td>
+                        <td>{{ sale.date }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script>
-        // ...
+        Vue.directive('money', {
+            inserted(el, binding) {
+                // "inserted()" é uma função Vue que é executada quando o elemento for inserido na DOM
+                const amount = parseFloat(el.innerHTML).toFixed(2)
+                    .replace('.', ',')
+                    .replace(/(\d)(?=(\d{3})+\,)/g, '$1.')
+                        // Coloca '.' a cada 3 números
+                        // "$1" é um retrovisor com o valor do primeiro grupo da regex
+                el.innerHTML = `${binding.value} ${amount}`
+            }
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Relatório de Vendas',
+                sales: null
+            },
+            methods: {
+                getSales() {
+                    fetch('/data/sales.json')
+                        .then(resp => resp.json()) // Transformando JSON em Objeto
+                        .then(data => this.sales = data)
+                }
+            },
+            mounted() {
+                // Mounted é uma função do Vue que vai executar quando a instãncia do Vue estiver pronta/"montada"
+                this.getSales()
+            }
+        })
     </script>
 </body>
 
