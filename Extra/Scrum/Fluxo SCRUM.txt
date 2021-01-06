@@ -10,25 +10,37 @@
     1. Visão
         - É criado o documento "Declaração de visão do projeto" para definir melhor a ideia e criar a base do projeto
             - É definido o objetivo do projeto, descrição, mapeamento de quem são as partes interessadas no projeto (todos que estão envolvidos) e outras informações importantes
+            - É nesta etapa onde o Dono do Produto, Scrum Master e a Equipe Scrum serão definidos para desenvolver o projeto (no caso de empresas que possuem várias equipes)
+            - Geralmente, todas as pessoas envolvidas no projeto irão participar da construção do documento de visão
+            - Em relação a escrever o documento, não há um responsável exclusivo por fazer isto, geralmente será algum gestor/coordenador/líder de projetos
+                - Se o Dono do Produto já estiver pré-definido antes da criação da visão, ele é quem escreverá o documento
 
     2. Backlog do Produto
         - Onde é listado todos os requisitos do produto a ser desenvolvido (Escopo)
             - Ex: O sistema deve registrar a nota de todos os alunos
             - No Scrum, cada requisito é chamado de História de usuário(User Story)
+            - Histórias de usuário que são grandes e não cabem no desenvolvimento da Sprint são chamadas de "Épicos"
+                - Épicos são divididos em histórias de usuário menores
+            - O dono do produto é responsável por coletar as histórias de usuário com as partes interessadas
 
-    3. Backlog da Sprint
+    3. Planejamento de Release
+        - Onde será planejado as macro entregas do projeto (as entregas em que já é possível utilizar o produto desenvolvido), definindo o que será entregue e quando
+            - Isso sana as expectativas de datas das partes envolvidas no projeto
+
+    4. Backlog da Sprint
         - É o planejamento do que vai ser feitos na próxima Sprint
             - Ex: Será desenvolvido o cadastro de alunos no sistema
         - Note que não é feito o planejamento total do projeto, é planejado conforme o desenvolvimento
         - Quando definido, é mostrado para o cliente decidir se aprova ou não
 
-    4. Sprint
+    5. Sprint
         - Onde será desenvolvido tudo o que foi planejado no Backlog da Sprint
         - Cada Sprint tem duração de 2 a 4 semanas
 
         4.1. Daily Scrum
             - É uma reunião com a equipe realizada TODOS os dias durante o Sprint para discutir sobre o andamento do projeto
 
-    5. Entrega do produto
+    6. Entrega do produto
         - Após cada Sprint, o produto desenvolvido é mostrado ao cliente para avaliá-lo e dar feedback
+        - Toda Sprint é uma nova versão do projeto, mas nem todas elas são versões prontas para o cliente já utilizar(releases)
         - Após a aprovação do cliente, o projeto é adaptado ao feedback fornecido e é planejado o novo Sprint (Backlog da Sprint)
