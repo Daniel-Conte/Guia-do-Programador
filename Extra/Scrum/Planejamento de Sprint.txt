@@ -1,0 +1,16 @@
+-> Passos da reunião de planejamento da Sprint
+
+    1. O Dono do Produto define a próxima potencial história de usuário a ser selecionada para ser parte da Sprint
+
+    2. A Equipe Scrum avalia a história, garante que existe um perfeito entendimento e estima o esforço necessário para desenvolvê-la
+
+    3. A Equipe Scrum se compromete com um subconjunto de histórias de usuário que eles estimaram que conseguirão entregar na próxima Sprint
+
+    - Lembrando que a reunião é Time-Boxed, tem tempo limitado. Ex: 4 horas
+
+    - Estimativa de tempo
+        - Método Planejamento Poker
+            1. O Dono do Produto seleciona uma história de usuário
+            2. Cada integrante da Equipe Scrum avalia a história selecionada e estima um tempo para desenvolvê-la
+            3. Se todos estimarem um tempo aproximado, ele será definido
+            4. Caso as estimativas sejam muito divergentes, a Equipe Scrum discute o porque da discrepância e estima um tempo novamente, até chegar a um consenso

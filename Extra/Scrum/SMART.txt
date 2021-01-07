@@ -1,0 +1,22 @@
+S -> Specific (Específico)
+M -> Measurable (Mensurável)
+A -> Attainable (Atingível)
+R -> Relevant/Realistic (Relevante/Realista)
+T -> Timely (Restrito no Tempo)
+
+Específico -> O objetivo deve ser específico, não pode ser muito aberto/abrangente
+    - Ex: Aumentar o faturamento da minha empresa em 20%
+
+Mensurável -> O objetivo deve ser algo que pode ser medido
+    - Ex: É possível medir o faturamento da empresa a cada mês para verificar se vai atingir o objetivo
+
+Atingível -> Deve-se adotar medidas que te permitam atingir o objetivo
+    - Ex: Aumentar o faturamento da minha empresa em 20% através da reorganização da equipe e realização de melhores planejamentos para melhor aproveitamento dos recursos da empresa
+
+Relevante -> O objetivo deve ser algo relevante, assim despertando motivação e empenho da equipe para cumprí-lo
+
+Realista -> O objetivo deve ser realista, não pode ser algo impossível
+    - Ex: Aumentar o faturamento da minha empresa em 50% em uma semana
+
+Restrito no Tempo -> O objetivo deve ter um limite de tempo para ser concluído
+    - Ex: Aumentar o faturamento da minha empresa em 20% dentro de 3 meses, através da reorganização da equipe e realização de melhores planejamentos para melhor aproveitamento dos recursos da empresa

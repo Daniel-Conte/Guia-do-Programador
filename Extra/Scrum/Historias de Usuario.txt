@@ -1,0 +1,30 @@
+-> Histórias de usuário são os requisitos do projeto
+
+-> Épico é uma história de usuário muito abrangente e não específica que pode ser quebrada em várias histórias
+
+    -> "Como um gestor da escola, eu quero poder realizar avaliação de desempenho dos professores para poder dar bônus com justiça"
+
+        1. Permitir o cadastro de categorias de avaliação
+        2. Permitir o cadastro de critérios de avaliação
+        3. Permitir o registro de avaliações
+        4. Permitir o envio de avaliações por e-mail
+        5. Permitir a impressão de avaliações
+        6. Permitir a configuração de permissões sobre quem avalia quem
+
+    -> Como um gestor, eu quero seja possível o registro de novos alunos através do sistema da Escola Esperança
+
+        - [Cadastro de Aluno] Inserção de informações:
+        Deve ser criada uma área para registros de novos alunos, onde haverá um formulário para preenchimento do nome, foto, endereço, idade, telefone, estado e nome dos pais de cada aluno
+
+        Critérios de aceitação:
+        1) Após o preenchimento dos dadosm o aluno deve ser registrado com sucesso
+        2) Devem ser realizadas validações em cada campo do formulário para que não seja aceito campos em branco
+        3)Após o registro de cada aluno, o sistema deverá exibir uma mensagem de confirmação contendo o número da matrícula gerado para o alunos
+
+        - [Cadastro de Aluno] Pagamento de matrícula:
+        Deve ser possível emitir um recibo referente ao pagamento da matrícula do aluno no ato do registro, ficando o comprovante também armazenado no sistema
+
+        Critérios de aceitação:
+        1) Após o preenchimento dos dados do aluno, o sistema deve solicitar que o usuário digite o valor a ser pago no ato da matrícula e, em seguida, deverá gerar um recibo de pagamento
+        2) O recibo de pagamento deve conter a logomarca da Escola Esperança
+        3) O sistema deve exibir o recibo no modo de impressão
