@@ -1,0 +1,6 @@
+-> Projeto calculadora feito em Vue
+    - Este projeto é o mesmo que o outro projeto "calculadora" feito em React
+
+-> O arquivo "main.js" é usado para renderizar os componentes na DOM
+
+-> Os componentes são criados em arquivos .vue
