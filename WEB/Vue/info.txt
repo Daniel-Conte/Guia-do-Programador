@@ -3,3 +3,8 @@
 -> Vue tem várias formas diferentes de fazer a mesma coisa
 
 -> É possível usar o Vue apenas referenciando seu arquivo JS na página HTML e instanciá-lo dentro da tag <script>. Porém para projetos grandes utiliza-se o Client Vue
+
+-> Para usar o Client Vue:
+    - npm i -g @vue/cli
+    - vue create <nomeProjeto>
+    - "Vetur" é uma extensão do VsCode bem útil para Vue
