@@ -1,23 +1,23 @@
 <template>
     <div class="calculator">
         <Display value="" />
-        <Button label="AC" triple />
-        <Button label="/" operation />
-        <Button label="7" />
-        <Button label="8" />
-        <Button label="9" />
-        <Button label="*" operation />
-        <Button label="4" />
-        <Button label="5" />
-        <Button label="6" />
-        <Button label="-" operation />
-        <Button label="1" />
-        <Button label="2" />
-        <Button label="3" />
-        <Button label="+" operation />
-        <Button label="0" double />
-        <Button label="." />
-        <Button label="=" operation />
+        <Button label="AC" @onClick="clearMemory" triple /> <!-- "onClick" NÃO é um evento padrão, ele foi criado na função "$emit()" do componente -->
+        <Button label="/" @onClick="setOperation" operation /> <!-- Já que o evento criado "onClick" retorna a label do componente e a função "setOperation(operation)" está passada sem parâmetros (operation), o valor retornado de "onClick" é passado como parâmetro para a função -->
+        <Button label="7" @onClick="addDigit" />
+        <Button label="8" @onClick="addDigit" />
+        <Button label="9" @onClick="addDigit" />
+        <Button label="*" @onClick="setOperation" operation />
+        <Button label="4" @onClick="addDigit" />
+        <Button label="5" @onClick="addDigit" />
+        <Button label="6" @onClick="addDigit" />
+        <Button label="-" @onClick="setOperation" operation />
+        <Button label="1" @onClick="addDigit" />
+        <Button label="2" @onClick="addDigit" />
+        <Button label="3" @onClick="addDigit" />
+        <Button label="+" @onClick="setOperation" operation />
+        <Button label="0" @onClick="addDigit" double />
+        <Button label="." @onClick="addDigit" />
+        <Button label="=" @onClick="setOperation" operation />
     </div>
 </template>
 
@@ -26,8 +26,20 @@ import Button from '../components/Button'
 import Display from '../components/Display'
 
 export default {
-    components: { Button, Display }
+    components: { Button, Display },
         // Sempre que for importar um componente, é necessário registrá-lo(incluir no Objeto "components")
+    methods: {
+        // Armazena os métodos
+        clearMemory() {
+            
+        },
+        setOperation(operation) {
+            
+        },
+        addDigit(n) {
+            
+        }
+    }
 }
 </script>
 

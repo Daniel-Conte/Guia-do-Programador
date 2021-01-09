@@ -1,6 +1,10 @@
 <template>
-    <button class="button" :class="{ double, triple, operation}">
+    <button class="button" :class="{ double, triple, operation}" @click="$emit('onClick', label)">
         <!-- Irá setar a classe se o valor da propriedade for "true" -->
+        <!--
+            "$emit(<evento>, <valor>)" é uma função que emite/dispara um evento e retorna um valor para este evento
+                "onClick" não é um evento padrão, é personalizado/criado
+        -->
         {{ label }}
     </button>
 </template>
