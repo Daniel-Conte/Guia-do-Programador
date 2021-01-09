@@ -9,8 +9,8 @@
 export default {
     // As propriedades passadas para o componente ficam dentro de "props"
     props: {
-        // Cada propriedade é um Objeto, então deve-se atribuir um Objeto para cada propriedade
-        // É possível definir o tipo do valor da propriedade
+        // Cada propriedade é um Objeto ou Array, então deve-se atribuir um Objeto para cada propriedade ou colocar a propriedade dentro de um Array
+            // Trabalhando com Objeto é possível fazer algumas configurações como definir o tipo do valor da propriedade
         label: {}, // String é padrão, não precisa definir o tipo
         operation: { type: Boolean }, // Se for passada a propriedade para o componente, será "true"
         double: { type: Boolean },
