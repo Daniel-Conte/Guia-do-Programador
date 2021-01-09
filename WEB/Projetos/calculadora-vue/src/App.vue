@@ -1,12 +1,17 @@
 <template> <!-- Onde ficará o "HTML" do componente -->
     <div id="app"> <!-- Este elemento "#app" irá substituir o "#app" que está no index.html -->
-        <h1>Olá Vue!</h1>
+        <h1>Calculadora</h1>
+        <Calculator />
     </div>
 </template>
 
 <script> /* Onde ficará o JS do componente */
-export default {
 
+import Calculator from './main/Calculator'
+
+export default {
+    components: { Calculator }
+        // Sempre que for importar um componente, é necessário registrá-lo(incluir no Objeto "components")
 }
 </script>
 
