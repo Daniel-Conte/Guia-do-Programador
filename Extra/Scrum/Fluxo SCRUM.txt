@@ -39,8 +39,36 @@
 
         4.1. Daily Scrum
             - É uma reunião com a equipe realizada TODOS os dias durante o Sprint para discutir sobre o andamento do projeto
+            - É realizada no início do expediente
+            - Tem duração de 15 min(geralmente)
+            - É realizada com toda a equipe de pé, pra ser mais rápido e prático
+            - O foco da reunião é analizar o painel de tarefas com o andamento da Sprint(que está visível para toda a equipe)
+            - O Scrum Master faz 3 perguntas para cada integrante da equipe:
+                - O que foi feito ontem?
+                - O que vai fazer hoje?
+                - Existe algum impedimento para progredir na Sprint?
+            - O Scrum Master vai fazer uma lista com todos os impedimentos da equipe e vai trabalhar pra resolvê-los logo após a reunião
+            - O Scrum Master vai mostrar o gráfico BurnDown
+                - É um gráfico que possui a relação 'Quantidade de tarefas' X 'Dias da Sprint', que mostra 2 linhas:
+                    - Uma linha mostra o progresso que foi planejado para a Sprint
+                    - A outra linha mostra o progresso real da Sprint
 
-    6. Entrega do produto
-        - Após cada Sprint, o produto desenvolvido é mostrado ao cliente para avaliá-lo e dar feedback
+    6. Reunião de Revisão da Sprint
+        - Após cada Sprint, o produto desenvolvido é mostrado ao dono do produto e para as partes interessadas para avaliá-lo e dar feedback
+            - A Equipe e o Scrum Master fazem a apresentação do que foi feito
+            - Dura em torno de 4 horas(no caso de uma Sprint de 2 semanas)
+        - Após a aprovação do cliente, o projeto é adaptado ao feedback fornecido e é planejado a novo Sprint (Backlog da Sprint)
+        - Caso alguma história de usuário seja reprovada, ela volta para o Backlog do Produto
+
+    7. Retrospectiva da Sprint
+        - Tem objetivo de verificar necessidades e adaptações no processo de trabalho da equipe
+        - Tem duração de 1,5 horas(no caso de uma Sprint de 2 semanas)
+        - É uma reunião de "lições aprendidas"
+        - Vai ser mostrado o que funcionou e o que não funcionou, o que deu e não deu certo...
+        - É feita pela equipe Scrum
+        - É discutido as inconsistências que ocorreram na Sprint, alguma ferramenta que não foi de boa escolha, algum membro não foi produtivo, o Scrum Master não engajou muito...
+        - É traçado um plano para não cometer os erros novamente
+
+    8. Release
         - Toda Sprint é uma nova versão do projeto, mas nem todas elas são versões prontas para o cliente já utilizar(releases)
-        - Após a aprovação do cliente, o projeto é adaptado ao feedback fornecido e é planejado o novo Sprint (Backlog da Sprint)
+            - Cada release é entregue geralmente com um intervalo de algumas Sprints
