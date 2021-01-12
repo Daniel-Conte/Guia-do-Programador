@@ -72,3 +72,7 @@
     8. Release
         - Toda Sprint é uma nova versão do projeto, mas nem todas elas são versões prontas para o cliente já utilizar(releases)
             - Cada release é entregue geralmente com um intervalo de algumas Sprints
+
+    9. Retrospectiva do Projeto
+        - É basicamente uma retrospectiva da Sprint, só que realizada no final do projeto e com toda a equipe e partes interessadas referentes à gestão do projeto
+        - Discutindo todos os erros e acertos durante o projeto e sugerindo o que deve mudar e o que deve continuar nos próximos projetos
