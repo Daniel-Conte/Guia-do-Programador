@@ -1,12 +1,16 @@
 <template>
     <div id="app">
         <h1>Problema de Monty Hall</h1>
+        <Door number="1" :hasGift="false" />
     </div>
 </template>
 
 <script>
+import Door from './components/Door'
+
 export default {
-    name: 'App'
+    name: 'App',
+    components: { Door }
 }
 </script>
 
