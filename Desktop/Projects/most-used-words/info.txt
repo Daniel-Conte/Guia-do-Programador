@@ -1,8 +1,8 @@
--> Criando uma aplicação Desktop usando VueJS, Vuetify e ElectronJS
+-> Criando uma aplicação Desktop usando VueJS, Vuetify e ElectronJS que mostra as palavras mais usadas em um arquivo de legenda .srt e a quantidade de ocorrências
     - Vuetify é uma biblioteca de componentes do VueJS
         - Para adicionar no projeto: vue add vuetify
     - ElectronJS é um framework que possibilita usar tecnologias WEB para desenvolver aplicações Desktop
         - Para adicionar no projeto: 
             - vue add electron-builder
             - npm run electron:serve
-                - Roda a aplicação em uma aplicação Electron
+                - Roda a aplicação em uma aplicação Electron(abre uma janela do windows)

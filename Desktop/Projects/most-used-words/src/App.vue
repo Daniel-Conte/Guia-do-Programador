@@ -1,10 +1,23 @@
 <template>
-  <h1>Hello!</h1>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-toolbar-title>Most Used Words</v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+      <Home />
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-export default {
+import Home from './components/Home'
 
+export default {
+  name: 'App',
+  components: {
+    Home
+  }
 }
 </script>
 
