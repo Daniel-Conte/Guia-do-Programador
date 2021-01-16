@@ -1,0 +1,7 @@
+-> Criando uma aplicação Desktop usando VueJS, Vuetify e ElectronJS
+    - Vuetify é uma biblioteca de componentes do VueJS
+        - Para adicionar no projeto: vue add vuetify
+    - ElectronJS é um framework que possibilita usar tecnologias WEB para desenvolver aplicações Desktop
+        - Para adicionar no projeto: 
+            - vue add electron-builder
+            - 
