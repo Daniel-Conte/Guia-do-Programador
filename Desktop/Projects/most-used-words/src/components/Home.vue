@@ -27,26 +27,29 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
+    // "ipcRenderer" é usado no frontend da aplicação para se comunicar com o backend por meio de canais
 import Pill from './Pill'
 
 export default {
     name: 'Home',
-    components: {
-        Pill
-    },
+    components: { Pill },
     data() {
         return {
-            groupedWords: [
-                { name: 'i', amount: 1234},
-                { name: 'you', amount: 900},
-                { name: 'he', amount: 853}
-            ],
+            groupedWords: [],
             files: []
         }
     },
     methods: {
         processSubtitles() {
-            console.log(this.files)
+            const paths = this.files.map(file => file.path)
+
+            ipcRenderer.send('process-subtitles', paths)
+                // "ipcRenderer.send(<canal>, <dados>)" envia os dados para este canal no backend
+            ipcRenderer.on('process-subtitles', (event, resp) => {
+                // "ipcRenderer.on(<canal>, callback(evento, resp))" fica escutando este canal no backend enviar dados
+                this.groupedWords = resp
+            })
         }
     }
 }
