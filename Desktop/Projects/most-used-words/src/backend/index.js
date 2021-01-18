@@ -1,5 +1,8 @@
 import { ipcMain } from 'electron'
     // "ipcMain" é usado no backend da aplicação para se comunicar com o frontend por meio de canais
+import pathsToRows from './pathsToRows'
+import rowsToWords from './rowsToWords'
+import groupWords from './groupWords'
 
 // !!!!!! Para o Electron saber da existência deste arquivo e poder estabelecer a conexão entre o frontend e o backend é preciso importar este arquivo dentro do "background.js" !!!!!!!
 
@@ -11,13 +14,9 @@ ipcMain.on('process-subtitles', (event, paths) => {
         - "paths" é o argumento que vai ser passado no frontend
             - Pode ser passado qualquer coisa, neste caso é esperado que seja passado um array de paths dos arquivos de legenda
     */
-    event.reply('process-subtitles', [
-        { name: 'i', amount: 1234},
-        { name: 'you', amount: 900},
-        { name: 'he', amount: 853},
-        { name: 'she', amount: 853},
-        { name: 'our', amount: 133},
-        { name: 'house', amount: 23}
-    ])
-    // "event.reply(<canal>, <dados>)" envia uma resposta para o canal
+    pathsToRows(paths)
+        .then(rows => rowsToWords(rows))
+        .then(words => groupWords(words))
+        .then(groupedWords => event.reply('process-subtitles', groupedWords))
+            // "event.reply(<canal>, <dados>)" envia uma resposta para o canal
 })
