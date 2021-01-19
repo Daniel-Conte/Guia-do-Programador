@@ -1,0 +1,33 @@
+-> Comandos para manipulação de arquivos e diretórios
+
+-> Manipulação de diretórios
+
+    [ mkdir <diretório> ] -> Cria um diretório
+        - "mkdir teste/teste2"
+
+        [ md <diretório> ] -> Forma reduzida de "mkdir", funciona da mesma forma
+
+        [ md <diretório> <diretório> ] -> Cria 2 diretórios ao mesmo tempo
+
+    [ chdir <diretório> ] -> Muda o diretório atual
+        - "cd teste/teste2"
+
+        [ cd <diretório> ] -> Forma reduzida de "chdir", funciona da mesma forma
+
+        [ cd / ] -> Muda para o diretório raiz
+
+        [ cd .. ] -> Volta um diretório
+
+        [ cd ../../ ] -> Volta 2 diretórios
+
+    [ move <origem> <destino> ] -> Move uma pasta para outro diretório
+        - "move teste2 teste"
+
+    [ ren <diretório> <novo_nome> ] -> Renomeia o diretório
+        - "ren teste\aaa teste5"
+
+    [ rmdir <diretório> ] -> Remove o diretório se estiver VAZIO
+
+        [ rmdir /s <diretório> ] -> Remove o diretório com conteúdo. Pergunta se tem certeza
+
+        [ rmdir /s /q <diretório> ] -> Remove direto o diretório com conteúdo, não faz pergunta

@@ -1,0 +1,31 @@
+-> Comandos para visualização de diretórios
+
+[ <comando> /? ] -> Colocando "/?" depois de um comando, mostrará informações sobre este comando. Ex: "dir /?"
+
+[ cls ] -> Limpa o terminal
+
+[ dir ] -> Mostra todos os diretórios dentro do diretório atual
+
+    [ dir <diretório> ] -> Mostra todos os diretórios dentro do diretório especificado
+
+    [ dir /a:<comando> ] -> "/a:" é um atributo que especifica o que será mostrado
+        - "/a:d" mostra somente os diretórios
+        - "/a:h" mostra somente os arquivos/diretórios ocultos
+        - "/a:r" mostra somente os arquivos "somente leitura"
+
+        - Se adicionar "-" antes da letra, significa negação
+            - "/a:-d" mostra somente os "não diretórios"
+    
+    [ dir /<comando> ] -> Formata como quer exibir o conteúdo
+        - "/b" mostra os diretórios em uma lista simples
+        - "/l" mostra os diretórios com o nome deles em letra minúscula
+        - "/w" mostra os diretórios em forma de coluna
+
+    [ dir *<extensão> ] -> mostra somente os arquivos desta extensão. Ex: dir *.txt
+
+    [ dir te?? ] -> "?" substitui 1 caractere, vai mostrar os diretórios que se encaixam. Ex: temp
+
+[ <comando> > <diretório> ] -> ">" direciona o resultado do comando para tal arquivo
+    - Se direcionar para um arquivo ".txt", irá escrever o resultado do comando dentro do arquivo
+
+[ tree ] -> mostra todas as pastas e subpastas do diretório atual em forma de árvore
