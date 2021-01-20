@@ -14,6 +14,8 @@
 
         [ cd <diretório> ] -> Forma reduzida de "chdir", funciona da mesma forma
 
+        [ cd ] -> Mostra o caminho/diretório atual
+
         [ cd / ] -> Muda para o diretório raiz
 
         [ cd .. ] -> Volta um diretório
@@ -27,7 +29,66 @@
         - "ren teste\aaa teste5"
 
     [ rmdir <diretório> ] -> Remove o diretório se estiver VAZIO
+        - "rmdir teste /s"
 
         [ rmdir /s <diretório> ] -> Remove o diretório com conteúdo. Pergunta se tem certeza
 
         [ rmdir /s /q <diretório> ] -> Remove direto o diretório com conteúdo, não faz pergunta
+
+    [ xcopy <origem> <destino> <parâmetros> ] -> Copia o conteúdo do diretório para outro diretório
+        - "xcopy teste4 teste2 /e"
+        - A pasta de origem não é copiada, somente é copiado o conteúdo da pasta
+        - Se não passar parâmetros, é copiado somente os arquivos "filho direto" do diretório (não é copiado as pastas e subpastas do diretório)
+        - Se o destino não existir, ele é criado (é feita uma pergunta)
+        
+        - Parâmetros:
+            - "/D:m-d-y" -> Copia arquivos alterados em ou depois da data especificada
+            - "/p" -> Solicita confirmação antes de criar cada arquivo no destino
+            - "/s" -> Copia pastas e subpastas que não estejam vazias
+            - "/e" -> Copia qualquer subpasta, mesmo que esteja vazia
+            - "/v" -> Verifica cada novo arquivo
+            - "/w" -> Solicita pressionamento de tecla antes de copiar
+            - "/q" -> Não mostra os nomes dos arquivos enquanto copia
+            - "/f" -> Mostra os nomes completos dos arquivos de origem e destino enquanto copia
+
+-> Manipulação de arquivos
+
+    [ copy con <nome_arquivo> ] -> Cria um arquivo
+        - Após dar Enter, o arquivo é aberto e é possível escrever o conteúdo desejado para este arquivo
+            - Pode escrever como se fosse um bloco de notas
+            - !!! Acentuação é considerado caractere estranho e não aparece no arquivo !!!
+        - Para sair do arquivo, pressione: CTRL + Z
+
+    [ type <arquivo> ] -> Mostra o conteúdo do arquivo
+
+    [ copy <origem> <destino> ] -> Copia arquivos
+        - O diretório/pasta deve existir
+        - Pode-se criar o nome do arquivo cópia, basta colocar em "destino"
+            - Se passar somente o diretório(sem o nome do arquivo cópia) o nome do arquivo vai ser o mesmo do arquivo de origem
+
+    [ move <origem> <destino> ] -> Muda e/ou renomeia o diretório do arquivo
+        - Se passar só o nome da pasta em "destino" o arquivo será movido com o mesmo nome
+            - "move teste4\arquivo.txt teste2"
+        - Se especificar o nome da pasta e um nome para o arquivo em "destino" o arquivo movido será renomeado para o nome passado
+            - "move teste4\arquivo.txt teste2\arquivoNovo.txt"
+
+    [ ren <arquivo> <novo_nome> ] -> Renomeia o arquivo
+
+    [ del <arquivos> <parâmetros> ] -> Deleta um ou mais arquivos
+        - Se especificar uma pasta, todos os arquivos na pasta serão excluídos
+        - É permitido usar caracteres curinga para especificar os arquivos
+
+        [ erase <arquivos> <parâmetros> ] -> Outro nome que faz a mesma coisa
+
+        - Parâmetros:
+            - "/p" -> Solicita confirmação antes de excluir cada arquivo
+            - "/f" -> Força a exclusão de arquivos somente leitura
+            - "/s" -> Exclui os arquivos especificados de todas as subpastas
+            - "/q" -> Modo silencioso, não pede confirmação para excluir com caractere curinga global
+            - "/a:" -> Seleciona arquivos para excluir com base nos atributos.
+                - "R" -> Arquivos somente leitura
+                - "H" -> Arquivos ocultos
+                - "I" -> Arquivos indexados sem conteúdo
+                - "S" -> Arquivos do sistema
+                - "A" -> Arquivos prontos para arquivamento
+                - "-" -> Prefixo signicando negação (usa antes da letra)

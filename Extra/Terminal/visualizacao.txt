@@ -28,4 +28,10 @@
 [ <comando> > <diretório> ] -> ">" direciona o resultado do comando para tal arquivo
     - Se direcionar para um arquivo ".txt", irá escrever o resultado do comando dentro do arquivo
 
+    [ <comando> >> <diretório>] -> Usando ">>", o resultado do comando será ACRESCENTADO ao conteúdo do arquivo
+
+[ echo <texto> ] -> Simplesmente mostra o texto que digitou
+    - Pode ser usado para acrescentar texto em algum arquivo
+        - "echo NOVA LINHA >> arquivo.txt"
+
 [ tree ] -> mostra todas as pastas e subpastas do diretório atual em forma de árvore
