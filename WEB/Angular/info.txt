@@ -1,0 +1,12 @@
+-> Angular é um framework JS desenvolvido pela Google para criar aplicações Web SPA baseada em componentes
+
+-> O código é escrito em TypeScript
+    - TypeScript é um Superset do JS, possui todas as funcionalidades do JS porém com alguns adendos
+    - É orientado a objetos e tem tipagem forte
+    - Todo o código é compilado para JS, pois o browser não interpreta TypeScript
+
+-> Angular é modularizado
+
+-> Para usar o CLI do Angular:
+    - npm i -g @angulat/cli
+    - ng new <nome_projeto>
