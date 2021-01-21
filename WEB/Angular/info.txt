@@ -5,8 +5,66 @@
     - É orientado a objetos e tem tipagem forte
     - Todo o código é compilado para JS, pois o browser não interpreta TypeScript
 
--> Angular é modularizado
+-> Uma aplicação Angular é modularizada, tem um nível maior de encapsulamento
+    - A aplicação é organizada em uma árvore de componentes que são organizados em módulos
+        - A árvore de componentes tem uma dependência de cima para baixo, o componente superior depende dos componentes logo abaixo e assim por diante
+
+                        Árvore de componentes
+
+                                A           - AppModule
+                            B   C   D       - XModule
+                          E  F       G-H    - YModule
+                            I J    K L M    - ZModule
+
+                        Cada linha é um módulo
+
+-> Inicialização do Angular:
+    main.ts > AppModule > AppComponent > Árvore de componentes
+
+    - "main.ts" é o arquivo principal que carrega:
+    - "AppModule" é o módulo principal tem um elemento chamado "bootstrap" que inicia:
+    - "AppComponent" é o componente principal que chama todos os outros componentes
+        - Basicamente é o componente "App" dos outros frameworks
+        - É o componente "A" da árvore de componentes
+
+-> Anatomia e organização dos módulos
+    -> AppModule (Principal)
+        - Bootstrap
+        - Declarations
+        - Imports
+
+    -> XModule
+        - Declarations
+        - Imports
+        - Exports
+        - Providers
+
+    -> YModule
+        - Declarations
+        - Imports
+        - Exports
+        - Providers
+
+    -> ZModule
+        - Declarations
+        - Imports
+        - Exports
+        - Providers
+
+    - Bootstrap: Inicia AppComponent
+    - Declarations: Usado para declarar todos os componentes, diretivas e pipes que fazem parte deste módulo
+        - O que for declarado em cada módulo estará restrito a este módulo e não poderá ser acessado por outro módulo
+    - Exports: Usado para exportar/tornar visível componentes, diretivas e pipes para os outros módulos
+    - Imports: Usado para importar módulos(dependência) sejam internos(da própria aplicação) ou externos(bibliotecas de componentes)
+    - Providers: Usado para declarar os services do módulo
 
 -> Para usar o CLI do Angular:
     - npm i -g @angulat/cli
-    - ng new <nome_projeto>
+    - ng new <nome_projeto> <flags>
+        - flags:
+            - "--prefix" muda o prefixo para chamar cada componente. Padrão "app-"
+            - "--minimal" remove alguns arquivos extras e faz algumas otimizações(ex: junta CSS, HTML e JS num só arquivo)
+
+-> É possível fazer algumas configurações no projeto em "angular.json"
+    - inlineTemplate: Define se o HTML irá ficar em um só arquivo junto com o JS não
+    - inlineStyle: Define se o CSS irá ficar em um só arquivo junto com o JS não
