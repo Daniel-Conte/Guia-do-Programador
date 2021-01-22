@@ -69,10 +69,21 @@
     - inlineTemplate: Define se o HTML irá ficar em um só arquivo junto com o JS não
     - inlineStyle: Define se o CSS irá ficar em um só arquivo junto com o JS não
 
--> Criar arquivo do componente:
-    - "<nome>.component.<extensão>"
+-> Criar componentes:
+    - Manualmente: "<nome>.component.<extensão>"
         - "home.component.html"
+        - "home.component.css"
         - "home.component.ts"
+
+        - Precisa registrar o componente no módulo
+
+    - Pelo console: "ng generate component <diretório>"
+        - Forma reduzida: "ng g c <diretório>"
+            - "ng g c components/template/header"
+                - "header" vai ser o nome da pasta do componente e dos arquivos do componente
+        - O diretório já considera "/src" sendo a raiz, basta especificar o módulo
+            - Se só existir o AppModule, este já está especificado, então é só escrever o diretório a partir da pasta "/app"
+        - Pelo console, é criado os 3 arquivos do componente e já o registra no módulo
 
 -> Para adicionar bibliotecas de componentes:
     - "ng add <pacote>"
