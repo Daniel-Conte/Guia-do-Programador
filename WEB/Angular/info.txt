@@ -68,3 +68,12 @@
 -> É possível fazer algumas configurações no projeto em "angular.json"
     - inlineTemplate: Define se o HTML irá ficar em um só arquivo junto com o JS não
     - inlineStyle: Define se o CSS irá ficar em um só arquivo junto com o JS não
+
+-> Criar arquivo do componente:
+    - "<nome>.component.<extensão>"
+        - "home.component.html"
+        - "home.component.ts"
+
+-> Para adicionar bibliotecas de componentes:
+    - "ng add <pacote>"
+        - "ng add @angular/material"
