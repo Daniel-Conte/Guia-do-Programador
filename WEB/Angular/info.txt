@@ -58,6 +58,187 @@
     - Imports: Usado para importar módulos(dependência) sejam internos(da própria aplicação) ou externos(bibliotecas de componentes)
     - Providers: Usado para declarar os services do módulo
 
+-> Elementos Angular
+
+    --> Diretivas
+
+        -> Attribute Directives: Altera a aparência e o comportamento de um elemento, componente ou outra diretiva
+            - <diretiva>
+            - O nome dessas diretivas é normal, sem nenhum caractere especial
+            - Ex: "appRed" (personalizada) muda o atributo "color" para vermelho
+
+        -> Structural Directives: Altera a estrutura da DOM adicionando e removendo elementos
+            - *<diretiva>=" ... "
+            - O nome dessas diretivas tem o caractere "*" na frente do nome
+            - Ex: "*ngIf="product"" adiciona ou não o elemento na DOM
+            - Ex: "*ngFor="let product of products"" faz iteração no array e adiciona cada elemento
+
+        -> Property Binding: Retorna o valor relacionado a variável passada no componente
+            - [<propriedade>]=" ... "
+            - O nome dessas propriedades é envolvido por "[ ]"
+            - Ex: "[dataSource]="products"" retorna o valor de "products" no componente
+
+        -> Event Binding: Atribui um método ao disparo de um evento
+            - (<evento>)=" ... "
+            - O nome do evento é envolvido por "( )"
+            - Ex: "(click)="createProduct()"" dispara o método ao clicar no botão
+
+        -> One Way Data Binding: Atualiza o HTML baseado no TS e não ao contrário
+            - [<propriedade>]="<variável>"
+            - Ex: 
+                HTML: <input [value]="nome">   (usando Property Binding)
+                TS:   nome: "Rebeca"
+                - O valor do input vai ser atualizado conforme a variável no TS
+
+        -> Two Way Data Binding: Atualiza o HTML baseado no TS e vice-versa
+            - [(ngModel)]="<variável>"
+            - Ex:
+                HTML: <input [(ngModel)]="nome">
+                TS:   nome: "Rebeca"
+                - O valor do input vai ser atualizado conforme a variável no TS e vice-versa
+
+    --> Rotas
+
+        -> Angular Router: Lida com a parte de SPA, carregando componentes no mesmo lugar conforme os links/rotas forem disparados
+            - Ex:
+                <a routerLink="/products">Produtos</a>
+                <router-outlet></router-outlet>
+
+                const routes: Routes =[{
+                    path: "products",
+                    component: ProductCrudComponent
+                }, {
+                    ...
+                }]
+
+                - Ao clicar no link, o componente especificado irá carregar na tag "router-outlet" e irá mudar o endereço da página. Quando clicar em outro link o componente e o endereço serão substituídos pelo novo componente e endereço
+
+    --> Pipes
+
+        -> Angular Pipes: Fazer processamento de dados dentro do HTML
+            - {{ <dados> | <método> }} usa-se o "double moustache {{ }}" e pipe "|"
+            - Ex:
+                <p>
+                    O vencimento é {{ produto.vencimento | date }}
+                </p>
+                - Passa o valor do atributo passado para o método "date", assim formatando o valor para uma data e mostrando-o
+
+                <p>
+                    O vencimento é {{ product.price | currency: 'BRL' }}
+                </p>
+                - Passando o valor do atributo e o parâmetro "BRL" para o método "currency"
+                - Parâmetros ajudam a personalizar o processamento do valor no método
+
+                <p>
+                    O vencimento é {{ produto.vencimento | date: 'fullDate' | uppercase }}
+                </p>
+                - É permitido passar vários métodos para processar o valor, assim fazendo um encadeamento(pegando o valor retornado do método anterior)
+
+    --> Observadores
+    
+        -> Observables: O Angular utiliza o padrão 'Observables' pra tratar as chamadas/requisições ao invés de Promises
+            - Callback -> Promise -> Observable
+            - Como as Promises, os Observables são assíncronos
+            - Observables são a base da Programação Reativa(RxJS) que trata de executar um código somente quando um evento externo ocorrer (forma Reativa), sem precisar ficar verificando o evento toda hora e gastando processamento à toa (forma Proativa)
+            - Nesse cenário existem 2 figuras:
+                - Subject: Encarregado de monitorar um evento
+                - Observer: Código que está esperando o evento acontecer para ser executado
+
+                - Basicamente, tem 1 Subject que está monitorando determinado evento e vários Observers esperando esse evento acontecer
+                    - Os Observers que esperam esse evento devem ser registrados no Subject
+                    - O Subject fica monitorando o evento enquanto todos os Observers registrados ficam "de boa", só esperando
+                    - Quando o evento acontecer, o Subject avisa todos os Observers registrados que o evento aconteceu, então os Observers executam seus códigos
+            - import { Observable } from 'rxjs'
+
+    --> Serviços
+
+        -> Services: São classes que tem como principal objetivo organizar e compartilhar métodos e dados entre componentes e diretivas
+            - Cada Service deve ter um grupo de métodos que sejam relacionados entre si(com objetivo parecido) para que ele trabalhe com uma área específica e não que os métodos tenham objetivos totalmente diferentes
+            - Os componentes devem ter métodos somente relacionados a parte visual, deixando os métodos 'não-visuais' para os Services
+                - Ex: Acessar o backend da aplicação
+                - Ex: Estabelecer comunicação entre o componente A e o componente B para transmitir dados
+                - Ex: 
+                    Componente A tem as lógicas: 01, X, Y e Z sendo X, Y e Z não-visuais
+                    Componente B tem as lógicas: 02, X, Y e W sendo X, Y e W não-visuais
+                    
+                    Além de ter lógicas não-visuais, 2 delas estão duplicadas. Então ao criar um service:
+
+                    Componente A com as lógicas visuais: 01
+                    Componente B com as lógicas visuais: 02
+                    Service com as lógicas não-visuais: W, X, Y e Z
+
+                    Assim o componente foca naquilo que ele deve fazer e fica mais 'magro'
+            - Mas como usar os Services em um componente? Através da Injeção de Dependência
+            - Para criar um Service:
+                - "ng generate service <diretório>"
+                - "ng g s <diretório>" forma reduzida
+                - Ex:
+                    "ng g s services/product"
+                    "product.service.ts"    arquivo criado
+            - Ex:
+                @Injectable({
+                    providedIn: "root",   -- Usa a mesma instância pra todos os componentes --
+                })
+                export class ProductService {
+                    ...
+                }
+                - Geralmente usa-se somente 1 instância de um Service pra toda a aplicação, ou seja, todos os componentes da aplicação que usam esse Service vão estar usando a mesma instância
+                    - Services com somente uma instância são "Singletons"
+                - O "root" está referenciando o AppModule, por isso todos os componentes tem acesso
+                - Para limitar o acesso somente a algum módulo específico, basta importar o módulo e referenciá-lo em "providedIn"
+
+        -> Injeção de Dependência: É um padrão no qual a classe recebe as dependências de uma fonte externa ao invés de criar por conta própria. Ou seja, a classe recebe uma dependência(ex: uma instancia de outra classe) pronta passada por parâmetro no seu construtor, ao invés de instanciar/criar a dependência dentro da classe
+            - Existem 2 tipos de Injetores
+                - ModuleInjector: Quando o escopo de um Service fica dentro de um módulo
+                    - 1 instância usada para todo o escopo
+                    - Percebe-se isso quando os "Providers" são usados em "@NgModule" ou "@Injectable"
+                - ElementInjector: Quando o escopo de um Service fica dentro de uma diretiva ou componente
+                    - Neste caso, é criado uma nova instância do Service somente para a diretiva ou componente, ao invés de usar a instância única do módulo
+                    - Percebe-se isso quando os "Providers" são usados em "@Directive" ou "@Component"
+
+            - Ex: Carro depende de Motor
+                ---------- SEM Injeção de Dependência ----------
+
+                    class Carro {
+                        motor: Motor
+
+                        constructor() {
+                            this.motor = new Motor()  --- Instanciando dentro da classe ---
+                        }
+                    }
+
+                    class Motor {
+                        cilindrada: number
+
+                        constructor(cilindrada: number) {
+                            this.cilindrada = cilindrada
+                        }
+                    }
+
+                    - Ao criar o Motor dentro de Carro, cada vez que o Motor for alterado precisa alterar o Carro
+                        - Pense na vida real: É como se fosse fabricar o motor dentro do próprio carro
+
+                ---------- COM Injeção de Dependência ----------
+
+                    class Carro {
+                        motor: Motor
+
+                        constructor(motor: Motor) { --- Recebendo a instância pronta ---
+                            this.motor = motor
+                        }
+                    }
+
+                    class Motor {
+                        cilindrada: number
+
+                        constructor(cilindrada: number) {
+                            this.cilindrada = cilindrada
+                        }
+                    }
+
+                    - Assim, o Carro recebe o Motor(como parâmetro) já instanciado de uma fonte externa(ex: classe Fabrica)
+                        - Pense na vida real: Uma fábrica constrói um motor, então é só colocá-lo dentro do carro
+
 -> Para usar o CLI do Angular:
     - npm i -g @angulat/cli
     - ng new <nome_projeto> <flags>
