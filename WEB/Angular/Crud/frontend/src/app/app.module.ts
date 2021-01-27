@@ -7,18 +7,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Algumas coisas precisam ser importadas da biblioteca Material
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule} from '@angular/material/sidenav'
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
-
-import { MatSidenavModule} from '@angular/material/sidenav'
-import { MatListModule } from '@angular/material/list';
-import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './views/home/home.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
+import { ProductCreateComponent } from './components/product/product-create/product-create.component'
+
 import { RedDirective } from './directives/red.directive';
-import { MyForDirective } from './directives/for.directive'
+import { MyForDirective } from './directives/for.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { MyForDirective } from './directives/for.directive'
     HomeComponent,
     ProductCrudComponent,
     RedDirective,
-    MyForDirective
+    MyForDirective,
+    ProductCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { MyForDirective } from './directives/for.directive'
     MatToolbarModule, // Sempre importe os módulos usados
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
