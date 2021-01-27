@@ -73,6 +73,11 @@
             - Ex: "*ngIf="product"" adiciona ou não o elemento na DOM
             - Ex: "*ngFor="let product of products"" faz iteração no array e adiciona cada elemento
 
+        -> Para criar diretivas:
+            - "ng generate directive <diretório>"
+            - "ng g d <diretório>" forma reduzida
+                - Lembrando que a pasta "/app" é a raiz
+
         -> Property Binding: Retorna o valor relacionado a variável passada no componente
             - [<propriedade>]=" ... "
             - O nome dessas propriedades é envolvido por "[ ]"
@@ -172,6 +177,7 @@
             - Para criar um Service:
                 - "ng generate service <diretório>"
                 - "ng g s <diretório>" forma reduzida
+                    - Lembrando que a pasta "/app" é a raiz
                 - Ex:
                     "ng g s services/product"
                     "product.service.ts"    arquivo criado
