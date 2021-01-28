@@ -11,6 +11,7 @@ import { MatSidenavModule} from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -30,9 +31,9 @@ import { MyForDirective } from './directives/for.directive';
     NavComponent,
     HomeComponent,
     ProductCrudComponent,
+    ProductCreateComponent,
     RedDirective,
-    MyForDirective,
-    ProductCreateComponent
+    MyForDirective
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import { MyForDirective } from './directives/for.directive';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
