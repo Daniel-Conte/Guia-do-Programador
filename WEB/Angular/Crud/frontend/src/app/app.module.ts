@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'
 
 // Algumas coisas precisam ser importadas da biblioteca Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -39,6 +40,7 @@ import { MyForDirective } from './directives/for.directive';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule, // Sempre importe os módulos usados
     MatSidenavModule,
     MatListModule,
