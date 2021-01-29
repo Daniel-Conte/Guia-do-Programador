@@ -18,6 +18,10 @@ export class ProductService {
       // O método "post" é quem realmente retorna um Observable(é a response), então para vincular o retorno deste Observable à função "create()", é preciso retornar o método "post"
   }
 
+  read(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl)
+  }
+
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,
