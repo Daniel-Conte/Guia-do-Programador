@@ -1,7 +1,21 @@
-<button mat-raised-button color="primary" (click)="createProduct()">
-    Salvar
-</button>
+<mat-card>
+    <mat-card-title>Novo Produto</mat-card-title>
 
-<button mat-raised-button (click)="cancel()">
-    Cancelar
-</button>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="product.name" name="name">
+            <!-- "matInput" fica com o estilo bugado se o input não tiver o atributo "name" -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)" [(ngModel)]="product.price" name="price" type="number">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="createProduct()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

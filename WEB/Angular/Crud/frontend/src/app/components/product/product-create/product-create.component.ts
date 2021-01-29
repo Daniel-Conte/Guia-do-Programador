@@ -10,9 +10,9 @@ import { ProductService } from '../product.service'
 })
 export class ProductCreateComponent implements OnInit {
 
-  // Criando um objeto para armazenar os dados do produto antes de enviar para o backend
+  // Criando um objeto para armazenar os dados do produto antes de enviar para o backend e para fazer o Two Way Data Binding com o formulário
   // Assim é feita a verificação com o model "Product"
-  private product: Product = {
+  product: Product = {
     name: '',
     price: null
   }
