@@ -8,6 +8,8 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-read.component.css']
 })
 export class ProductReadComponent implements OnInit {
+  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
+  displayedColumns = ['id', 'name', 'price', 'actions'];
   products: Product[]
 
   constructor(private productService: ProductService) { }
@@ -16,7 +18,5 @@ export class ProductReadComponent implements OnInit {
     this.productService.read().subscribe((products) => {
       this.products = products
     })
-
   }
-
 }

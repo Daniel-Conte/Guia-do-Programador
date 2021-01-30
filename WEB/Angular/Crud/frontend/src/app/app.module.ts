@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
+import { registerLocaleData } from '@angular/common'
+
+import localePt from '@angular/common/locales/pt'
 
 // Algumas coisas precisam ser importadas da biblioteca Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -27,10 +30,11 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 import { RedDirective } from './directives/red.directive';
 import { MyForDirective } from './directives/for.directive';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
-import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+
+registerLocaleData(localePt) // Registra pra português
 
 @NgModule({
   declarations: [
@@ -44,7 +48,6 @@ import { MatSortModule } from '@angular/material/sort';
     RedDirective,
     MyForDirective,
     ProductReadComponent,
-    ProductRead2Component
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID, // Seta a localidade da aplicação
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
