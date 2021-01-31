@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
+import { MatTableModule } from '@angular/material/table';
 
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -26,13 +27,11 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component'
+import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 
 import { RedDirective } from './directives/red.directive';
 import { MyForDirective } from './directives/for.directive';
-import { ProductReadComponent } from './components/product/product-read/product-read.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
 
 registerLocaleData(localePt) // Registra pra português
 
@@ -48,6 +47,7 @@ registerLocaleData(localePt) // Registra pra português
     RedDirective,
     MyForDirective,
     ProductReadComponent,
+    ProductUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,9 +63,7 @@ registerLocaleData(localePt) // Registra pra português
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule
+    MatTableModule
   ],
   providers: [{
     provide: LOCALE_ID, // Seta a localidade da aplicação
