@@ -32,6 +32,7 @@ import { ProductUpdateComponent } from './components/product/product-update/prod
 
 import { RedDirective } from './directives/red.directive';
 import { MyForDirective } from './directives/for.directive';
+import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 
 registerLocaleData(localePt) // Registra pra português
 
@@ -48,6 +49,7 @@ registerLocaleData(localePt) // Registra pra português
     MyForDirective,
     ProductReadComponent,
     ProductUpdateComponent,
+    ProductDeleteComponent,
   ],
   imports: [
     BrowserModule,
