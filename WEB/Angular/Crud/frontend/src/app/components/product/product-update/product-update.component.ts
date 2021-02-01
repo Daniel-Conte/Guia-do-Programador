@@ -17,7 +17,8 @@ export class ProductUpdateComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id') // Pega o valor do parâmetro na url
+    const id = + this.route.snapshot.paramMap.get('id') // Pega o valor do parâmetro na url
+      // "+" convertendo pra Number
     this.productService.readById(id).subscribe(product => {
       this.product = product
     })
