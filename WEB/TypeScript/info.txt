@@ -1,0 +1,40 @@
+-> O que é TypeScript?
+    - Basicamente é um SuperSet do JavaScript, ou seja, possui as funcionalidades do JavaScript, porém fortemente tipadas(JS é tipagem dinâmica) e alguns adendos exclusivos do TypeScript
+    - O código TypeScript, ao ser executado, é traduzido para JavaScript
+    - Além da tipagem forte, outro ponto bom do TypeScript é que é possível escolher a versão do JavaScript em que o código será traduzido
+        - Ou seja, é possível utilizar as funcionalidades mais recentes do JavaScript(muitas delas não são suportadas pelos browsers) e traduzí-las para uma versão mais antiga do JavaScript(onde quase todos os browsers suportam)
+
+-> Recursos
+    - Tipagem forte
+    - Generics
+    - Interfaces
+    - Namespaces
+    - Decorators
+
+-> Instalação
+    - É necessário possuir o Node
+    - No terminal: "npm i -g typescript"
+        - Mac OS: "sudo npm i -g typescript"
+
+-> Configuração
+    - No terminal, entre na pasta onde irá utilizar TypeScript
+    - Execute o comando: "tsc --init"
+    - Isso irá gerar um arquivo "tsconfig.json" onde será possível fazer a configuração
+
+-> Execução
+    - O Node não interpreta TypeScript, primeiro é preciso traduzir o arquivo para JavaScript
+        -> Manual
+            - Pelo terminal, entre na pasta do arquivo ".ts" e execute o arquivo usando "tsc <arquivo>"
+            - Isso irá gerar um arquivo JavaScript com o código traduzido
+            - Ex: "tsc basico.ts"
+        
+        -> Code Runner
+            - Usando o Visual Studio Code baixe a extensão "Code Runner"
+            - No terminal: "npm i -g ts-node"
+                - Mac OS: "sudo npm i -g ts-node"
+            - Então basta executar o arquivo normalmente
+        
+        -> HTML
+            - Para usar TypeScript no HTML é preciso refereciar o arquivo ".js"(TS traduzido) na tag "script"
+            - No terminal, entre na pasta raiz dos arquivos TypeScript e execute o comando "tsc -w"
+                - Este comando irá monitorar os arquivos ".ts" e irá traduzir automaticamente as mudanças feitas
