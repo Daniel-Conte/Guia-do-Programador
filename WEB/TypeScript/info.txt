@@ -3,6 +3,7 @@
     - O código TypeScript, ao ser executado, é traduzido para JavaScript
     - Além da tipagem forte, outro ponto bom do TypeScript é que é possível escolher a versão do JavaScript em que o código será traduzido
         - Ou seja, é possível utilizar as funcionalidades mais recentes do JavaScript(muitas delas não são suportadas pelos browsers) e traduzí-las para uma versão mais antiga do JavaScript(onde quase todos os browsers suportam)
+    - TypeScript não permite criar 2 variáveis com o mesmo nome mesmo em arquivos diferentes(caso esteja no escopo global)
 
 -> Recursos
     - Tipagem forte
