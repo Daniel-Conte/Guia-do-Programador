@@ -2,7 +2,7 @@
 
 //----------------------- Classes -----------------------
 
-class Data {
+export class Data {
     // Tanto os atributos como os métodos são públicos por padrão
     dia: number
     public mes: number
