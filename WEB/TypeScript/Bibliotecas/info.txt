@@ -1,0 +1,9 @@
+- TypeScript pode ser usado em várias bibliotecas
+- A melhor maneira de integrar é baixando uma dependência pelo npm/yarn
+
+- https://www.typescriptlang.org/dt/search?search=react
+    - Mostra as bibliotecas que suportam TypeScript e como instalar a dependência específica para integração
+
+-> React
+    - Para criar um projeto com TypeScript:
+        - "npx create-react-app <nomeProjeto> --template typescript"
