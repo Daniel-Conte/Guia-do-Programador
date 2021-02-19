@@ -12,8 +12,8 @@
 - React usa 'JSX' que é JavaScript "extendido"
     - É parecido com XML
 
-- Para criar componentes é possível utilizar tanto extensão ".js" como ".jsx"
-    - Porém, para elementos JSX é mais conveniente utilizar ".jsx"
+- Para criar componentes é possível utilizar tanto extensão ".js"/".ts" como ".jsx"/".tsx"
+    - Porém, para elementos JSX/TSX é mais conveniente utilizar ".jsx"/".tsx"
 
 - Na pasta "public" vai ter um HTML base
     - !!! Toda a aplicação vai ficar dentro da div id="root" !!!
@@ -22,16 +22,20 @@ Como iniciar:
     -> npm i -g create-react-app
         - Esse comando vai criar a primeira versão da aplicação, já configurando o build e tudo
 
+    -> yarn create react-app <nomeDoProjeto>
     -> npx create-react-app <nomeDoProjeto>
+        - Para integrar TypeScript add no final "--template typescript"
         - Demora pra instalar
         - Cria o seu projeto já com uma base pronta
         - Instala todas as dependências necessárias
-        - Configura o package.json
+        - Configura o package.json/yarn.lock
 
 Scripts:
+    -> yarn start
     -> npm start
         - Inicia a aplicação no modo de desenvolvimento
         - Inicia um servidor local
 
+    -> yarn build
     -> npm run build
         - Cria a build final da sua aplicação para deploy
