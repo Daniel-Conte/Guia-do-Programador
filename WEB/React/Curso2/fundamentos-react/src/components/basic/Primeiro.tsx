@@ -1,4 +1,4 @@
-export default () => {
+const Primeiro = () => {
     const msg = 'Seja bem vindo(a)!'
     return (
         <div>
@@ -7,3 +7,5 @@ export default () => {
         </div>
     )
 }
+
+export default Primeiro
