@@ -18,7 +18,7 @@ const initialState = {
 const URL = 'http://localhost:3001/todos'
 
 function searchTodos(search: string, todos: TodoItem[]): TodoItem[] {
-    const regex = new RegExp(search)
+    const regex = new RegExp(search, 'i')
 
     return todos.filter(todo => todo.description.match(regex))
 }
@@ -69,6 +69,9 @@ const Todo: React.FC = () => {
     function handleSearch() {
         refresh(state.description)
     }
+    function handleClear() {
+        refresh()
+    }
 
     function handleDelete(id: number) {
         axios.delete<TodoItem>(`${URL}/${id}`)
@@ -89,6 +92,7 @@ const Todo: React.FC = () => {
                 handleAdd={handleAdd}
                 handleChange={handleChange}
                 handleSearch={handleSearch}
+                handleClear={handleClear}
                 description={state.description}
             />
             <TodoList
