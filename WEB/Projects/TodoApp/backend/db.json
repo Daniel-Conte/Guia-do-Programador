@@ -1,3 +1,24 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "description": "Teste",
+      "done": false,
+      "id": 1
+    },
+    {
+      "description": "Fazer o projeto",
+      "done": false,
+      "id": 2
+    },
+    {
+      "description": "Fazer uma caipira",
+      "done": false,
+      "id": 3
+    },
+    {
+      "description": "Tomar uma caipira",
+      "done": false,
+      "id": 4
+    }
+  ]
 }

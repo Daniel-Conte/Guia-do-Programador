@@ -3,6 +3,7 @@ import IconButton from './IconButton'
 
 type Props = {
     handleAdd: () => void
+    handleSearch: () => void
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
     description: string
 }
@@ -26,6 +27,11 @@ const TodoForm: React.FC<Props> = props => {
                     color="primary"
                     icon="plus"
                     onClick={props.handleAdd}
+                />
+                <IconButton
+                    color="info"
+                    icon="search"
+                    onClick={props.handleSearch}
                 />
             </Grid>
         </div>

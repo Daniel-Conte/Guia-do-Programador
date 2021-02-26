@@ -17,16 +17,29 @@ const initialState = {
 
 const URL = 'http://localhost:3001/todos'
 
+function searchTodos(search: string, todos: TodoItem[]): TodoItem[] {
+    const regex = new RegExp(search)
+
+    return todos.filter(todo => todo.description.match(regex))
+}
+
 const Todo: React.FC = () => {
     const [state, setState] = useState(initialState)
 
-    function refresh() {
-        axios.get(`${URL}?sort=-createdAt`) // Ordena os itens por data de criação
-            .then(resp => setState({
-                ...state,
-                description: '',
-                list: resp.data
-            }))
+    function refresh(description = '') {
+        const isSearch = !!description
+
+        axios.get<TodoItem[]>(URL)
+            .then(resp => {
+                const sortedData = resp.data.sort((a, b) => b.id - a.id)
+                const list = isSearch ? searchTodos(description, sortedData) : sortedData
+
+                setState({
+                    ...state,
+                    description,
+                    list
+                })
+            })
     }
 
     useEffect(() => {
@@ -39,7 +52,7 @@ const Todo: React.FC = () => {
             done: false
         }
 
-        axios.post(URL, item)
+        axios.post<TodoItem>(URL, item)
             .then(() => refresh())
     }
 
@@ -49,13 +62,17 @@ const Todo: React.FC = () => {
             done: !todo.done
         }
 
-        axios.put(`${URL}/${todo.id}`, item)
-            .then(() => refresh())
+        axios.put<TodoItem>(`${URL}/${todo.id}`, item)
+            .then(() => refresh(state.description))
+    }
+
+    function handleSearch() {
+        refresh(state.description)
     }
 
     function handleDelete(id: number) {
-        axios.delete(`${URL}/${id}`)
-            .then(() => refresh())
+        axios.delete<TodoItem>(`${URL}/${id}`)
+            .then(() => refresh(state.description))
     }
     
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -71,6 +88,7 @@ const Todo: React.FC = () => {
             <TodoForm
                 handleAdd={handleAdd}
                 handleChange={handleChange}
+                handleSearch={handleSearch}
                 description={state.description}
             />
             <TodoList
