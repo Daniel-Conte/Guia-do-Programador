@@ -2,14 +2,12 @@ import Card from './Card'
 
 import { connect, ConnectedProps } from 'react-redux'
 
-import { Numeros } from './Intervalo'
-
-interface RootState extends Numeros {}
+import { RootState } from '../store/storeConfig'
 
 const mapState = (state: RootState) => {
     return {
-        min: state.numeros.min,
-        max: state.numeros.max
+        min: state.number.min,
+        max: state.number.max
     }
 }
 

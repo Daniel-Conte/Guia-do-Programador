@@ -1,6 +1,6 @@
 import Card from './Card'
 
-import { Numeros } from './Intervalo'
+import { RootState } from '../store/storeConfig'
 
 import { connect, ConnectedProps } from 'react-redux'
 
@@ -9,17 +9,14 @@ import { connect, ConnectedProps } from 'react-redux'
         // Deve-se criar uma função para mapear o estado e outra pra mapear as actions
     // Usar a função "connect()" para receber os atributos que foram escolhidos na função
 
-interface RootState extends Numeros {}
-    // Interface dos atributos que serão pegados do estado
-
 // Criando a função para mapear o estado
 const mapState = (state: RootState) => {
     // O parâmetro "state" contém o estado total da aplicação
 
     // Escolhendo os atributos que este componente irá usar
     return {
-        min: state.numeros.min,
-        max: state.numeros.max
+        min: state.number.min,
+        max: state.number.max
     }
 }
 

@@ -4,23 +4,41 @@ import Card from './Card'
 
 import { connect, ConnectedProps } from 'react-redux'
 
-type Numeros = {
-    numeros: {
-        min: number;
-        max: number;
-    }
-}
+import { RootState } from '../store/storeConfig'
 
-interface RootState extends Numeros {}
+import { alterarNumeroMaximo, alterarNumeroMinimo } from '../store/number/actions'
+    // Importando os Actions Creators
 
 const mapState = (state: RootState) => {
     return {
-        min: state.numeros.min,
-        max: state.numeros.max
+        min: state.number.min,
+        max: state.number.max
     }
 }
 
-const connector = connect(mapState)
+// Mapeando as Actions da Store que serão usadas no componente
+    // As actions mapeadas serão enviadas para o "props" do componente
+const mapDispatch = {
+    // Basta passar um objeto contendo chave/valor, sendo o valor a Action importada
+        // A chave pode ser um nome qualquer
+        // O Redux invoca o "dispatch" com a Action retornada das Action Creators internamnete (quando passa o objeto pro "connect()")
+    alterarMinimo: alterarNumeroMinimo,
+    alterarMaximo: alterarNumeroMaximo,
+}
+
+// Outra maneira de mapear as Actions
+/* const mapDispatch = (dispatch: Dispatch<NumberActionTypes>) => {
+    // "NumberActionTypes" é um tipo criado na pasta "store/number"
+    return {
+        alterarMinimo(novoNumero: number) {
+            const action = alterarNumeroMinimo(novoNumero)
+
+            dispatch(action)
+        }
+    }
+} */
+
+const connector = connect(mapState, mapDispatch)
 
 type PropsFromRedux = ConnectedProps<typeof connector>
 
@@ -35,7 +53,7 @@ const Intervalo: React.FC<Props> = props => {
                     <input
                         type="number"
                         value={props.min}
-                        readOnly
+                        onChange={e => props.alterarMinimo(+e.target.value)}
                     />
                 </span>
                 <span>
@@ -43,7 +61,7 @@ const Intervalo: React.FC<Props> = props => {
                     <input
                         type="number"
                         value={props.max}
-                        readOnly
+                        onChange={e => props.alterarMaximo(+e.target.value)}
                     />
                 </span>
             </div>
@@ -52,6 +70,3 @@ const Intervalo: React.FC<Props> = props => {
 }
 
 export default connector(Intervalo)
-export type {
-    Numeros
-}
