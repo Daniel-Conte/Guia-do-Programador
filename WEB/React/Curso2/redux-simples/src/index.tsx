@@ -5,10 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux'
-import configStore from './store/storeConfig'
-
-const store = configStore()
-  // A função do "Store" deve ser invocada
+import store from './store/storeConfig'
 
 ReactDOM.render(
 
