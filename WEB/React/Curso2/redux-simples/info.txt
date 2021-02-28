@@ -1,0 +1,6 @@
+-> Redux basicamente é um framework para controlar o estado da aplicação, facilitando a comunicação entre componentes, principalmente aqueles que estão "longe" um do outro.
+
+-> A funcionamento do Redux é praticamente uma junção dos hooks "useContext" e "useReducer" do React.
+
+-> Toda a configuração do Redux fica na pasta "store", onde estarão as "actions" e os "reducers".
+    - A integração do React-Redux fica no arquivo "index" ou "App", onde é usado o componente "Provider" para prover o estado e as actions para toda a aplicação.
