@@ -93,7 +93,6 @@ const Todo: React.FC = () => {
                 handleChange={handleChange}
                 handleSearch={handleSearch}
                 handleClear={handleClear}
-                description={state.description}
             />
             <TodoList
                 list={state.list}

@@ -1,13 +1,33 @@
 import Grid from './Grid'
 import IconButton from './IconButton'
 
-type Props = {
+import { RootState } from '../../store/storeConfig'
+import { changeDescription } from '../../store/todo/actions'
+
+import { connect, ConnectedProps } from 'react-redux'
+
+const mapState = (state: RootState) => {
+    return {
+        description: state.todo.description
+    }
+}
+
+const mapDispatch = {
+    changeDescription
+}
+
+const connector = connect(mapState, mapDispatch)
+
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+type OwnProps = {
     handleAdd: () => void
     handleSearch: () => void
     handleClear: () => void
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    description: string
 }
+
+type Props = PropsFromRedux & OwnProps
 
 const TodoForm: React.FC<Props> = props => {
     function keyHandler(e: React.KeyboardEvent) {
@@ -27,7 +47,7 @@ const TodoForm: React.FC<Props> = props => {
                     className="form-control"
                     placeholder="Adicione uma tarefa..."
                     value={props.description}
-                    onChange={e => props.handleChange(e)}
+                    onChange={e => props.changeDescription(e)}
                     onKeyUp={keyHandler}
                 />
             </Grid>
@@ -53,4 +73,4 @@ const TodoForm: React.FC<Props> = props => {
     )   
 }
 
-export default TodoForm
+export default connector(TodoForm)
