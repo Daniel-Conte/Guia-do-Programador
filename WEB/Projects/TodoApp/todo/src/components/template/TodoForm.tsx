@@ -2,7 +2,7 @@ import Grid from './Grid'
 import IconButton from './IconButton'
 
 import { RootState } from '../../store/storeConfig'
-import { changeDescription } from '../../store/todo/actions'
+import { changeDescription, add, search } from '../../store/todo/actions'
 
 import { connect, ConnectedProps } from 'react-redux'
 
@@ -13,28 +13,25 @@ const mapState = (state: RootState) => {
 }
 
 const mapDispatch = {
-    changeDescription
+    changeDescription,
+    search,
+    add
 }
 
 const connector = connect(mapState, mapDispatch)
 
 type PropsFromRedux = ConnectedProps<typeof connector>
 
-type OwnProps = {
-    handleAdd: () => void
-    handleSearch: () => void
-    handleClear: () => void
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-}
-
-type Props = PropsFromRedux & OwnProps
+type Props = PropsFromRedux & {}
 
 const TodoForm: React.FC<Props> = props => {
+    const { description, changeDescription , add, search } = props
+
     function keyHandler(e: React.KeyboardEvent) {
         if(e.key === 'Enter') {
-            e.shiftKey ? props.handleSearch() : props.handleAdd()
+            e.shiftKey ? search(description) : add(description)
         } else if(e.key === 'Escape') {
-            props.handleClear()
+            search()
         }
     }
 
@@ -47,7 +44,7 @@ const TodoForm: React.FC<Props> = props => {
                     className="form-control"
                     placeholder="Adicione uma tarefa..."
                     value={props.description}
-                    onChange={e => props.changeDescription(e)}
+                    onChange={e => changeDescription(e)}
                     onKeyUp={keyHandler}
                 />
             </Grid>
@@ -56,17 +53,17 @@ const TodoForm: React.FC<Props> = props => {
                 <IconButton
                     color="primary"
                     icon="plus"
-                    onClick={props.handleAdd}
+                    onClick={() => add(description)}
                 />
                 <IconButton
                     color="info"
                     icon="search"
-                    onClick={props.handleSearch}
+                    onClick={() => search(description)}
                 />
                 <IconButton
                     color="default"
                     icon="close"
-                    onClick={props.handleClear}
+                    onClick={() => search()}
                 />
             </Grid>
         </div>

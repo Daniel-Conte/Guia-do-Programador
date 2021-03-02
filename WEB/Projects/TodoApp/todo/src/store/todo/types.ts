@@ -1,4 +1,7 @@
+import { ThunkAction } from "redux-thunk"
+
 export const DESCRIPTION_CHANGED = 'DESCRIPTION_CHANGED'
+export const TODO_SEARCHED = 'TODO_SEARCHED'
 
 export interface TodoItem {
     id: number
@@ -16,4 +19,25 @@ interface ChangeDescription {
     payload: string
 }
 
-export type TodoActionTypes = ChangeDescription
+interface Search {
+    type: typeof TODO_SEARCHED
+    payload: {
+        description: string
+        list: TodoItem[]
+    }
+}
+
+interface Add {
+    type: void
+}
+
+interface ToggleMark {
+    type: void
+}
+
+interface Del {
+    type: void
+}
+
+export type TodoActionTypes = ChangeDescription | Search | Add | ToggleMark | Del
+export type ThunkResult<R> = ThunkAction<R, TodoState, undefined, TodoActionTypes>
