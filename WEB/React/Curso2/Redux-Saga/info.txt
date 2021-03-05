@@ -1,0 +1,14 @@
+-> Redux-Saga é um middleware do Redux que é usado para tratar chamadas assíncronas
+    - Já que é um middleware, fica entre as Actions e os Reducers. Basicamente as Actions chamam as Sagas e as Sagas chamam os Reducers
+        - As Actions chamam as Sagas somente quando é feita alguma chamada assíncrona, senão as Actions podem chamar os Reducers normalmente
+    - Usa as chamadas "Generator Functions" que lidam com chamadas assíncronas
+        - São funções normais, porém usam "palavras-chave" do mesmo estilo de "async await"
+            - Só que "async" é trocado por "*" e "await" por "yield"
+        - O que faz esse tipo de função ser bom é que a função retorna um "iterator", onde é possível manipular cada linha da função que contém "yield", podendo pausar a função e pegar o valor da linha e continuar a execução da função
+            - Essa iteração da função facilita bastante a criação e execução de testes
+
+-> Dependências
+    - "redux"
+    - "redux-saga"
+    - "@types/redux-saga"
+        - Caso utilize com TypeScript
