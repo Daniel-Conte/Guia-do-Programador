@@ -2,9 +2,15 @@ import './Main.css'
 
 import Header from './Header'
 
-const Main: React.FC = () =>
+interface Props {
+    title: string
+    subtitle: string
+    icon: string
+}
+
+const Main: React.FC<Props> = props =>
     <>
-        <Header />
+        <Header {...props} />
         <main className="content">
             Conteúdo
         </main>

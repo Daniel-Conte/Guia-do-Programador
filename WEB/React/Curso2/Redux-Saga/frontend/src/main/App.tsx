@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 import './App.css';
 
 import Logo from '../components/template/Logo'
@@ -10,7 +12,11 @@ const App: React.FC = () => {
     <div className="App">
         <Logo />
         <Nav />
-        <Main />
+        <Main
+            title="Início"
+            subtitle="Cadastro de usuário utilizando React e Redux-Saga"
+            icon="home"
+        />
         <Footer />
     </div>
   );
