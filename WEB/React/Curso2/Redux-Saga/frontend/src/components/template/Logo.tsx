@@ -1,4 +1,6 @@
 import './Logo.css'
+
+import React from 'react'
 import logo from '../../assets/img/logo.png'
 
 const Logo: React.FC = () => 
@@ -8,4 +10,4 @@ const Logo: React.FC = () =>
         </a>
     </aside>
 
-export default Logo
+export default React.memo(Logo)
