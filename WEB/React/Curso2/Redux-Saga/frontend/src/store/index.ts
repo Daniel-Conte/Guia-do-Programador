@@ -9,7 +9,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 function* rootSaga() {
     yield all([
-        userWatchers
+        ...userWatchers
     ])
 }
 

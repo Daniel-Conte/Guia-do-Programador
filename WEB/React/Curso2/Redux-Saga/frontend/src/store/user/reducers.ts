@@ -1,12 +1,14 @@
 import {
     UserActionTypes,
+    UserTypes,
     UserState,
     User,
-    UserTypes
+    UserSyncTypes
 } from './types'
 
 const INITIAL_STATE: UserState = {
-    user: { name: '', email: '' },
+    user: {id: '', name: '', email: '' },
+    loading: false,
     list: Array<User>()
 }
 
@@ -15,6 +17,11 @@ export function userReducer(
     action: UserActionTypes
 ): UserState {
     switch(action.type) {
+        case UserTypes.REQUEST:
+            return {
+                ...state,
+                loading: action.payload.loading
+            }
         case UserTypes.CHANGE_USER_NAME:
             return {
                 ...state,
@@ -31,9 +38,19 @@ export function userReducer(
                     email: action.payload.email
                 }
             }
-        case UserTypes.GET_USER_SUCCESS:
+        case UserTypes.CLEAR_USER:
             return {
                 ...state,
+                user: action.payload.user
+            }
+        case UserSyncTypes.LOAD_USER:
+            return {
+                ...state,
+                user: action.payload.user
+            }
+        case UserTypes.GET_SUCCESS:
+            return {
+                ...INITIAL_STATE,
                 list: action.payload.data
             }
         default:
