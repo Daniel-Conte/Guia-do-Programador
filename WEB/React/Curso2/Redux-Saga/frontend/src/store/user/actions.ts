@@ -6,6 +6,9 @@ import {
     User,
 } from './types'
 
+// Actions normais
+    // Essas Actions não irão fazer uma chamada assícrona, então elas podem chamar o reducer diretamente
+
 export const changeUserName = (e: React.ChangeEvent<HTMLInputElement>): UserActionTypes => ({
     type: UserSyncTypes.CHANGE_USER_NAME,
     payload: { name: e.target.value }
@@ -31,7 +34,12 @@ export const loadUser = (user: User): UserActionTypes => ({
     payload: { user }
 })
 
-// Actions para chamar as sagas
+// ActionCreators para chamar as sagas
+    // Essas ActionCreators irão chamar as sagas pois é preciso fazer uma chamada assíncrona
+        // Só as sagas devem fazer chamadas assíncronas
+    // Essas ActionCreators devem enviar os dados prontos para as sagas, então se é preciso fazer algum processamento, faça aqui
+    // As ActionCreators que chamam as sagas são iguais a uma ActionCreator que chama um reducer
+        // As sagas irão escutar o "type" que foi invocado, então o reducer não deve ter esses "type"s
 
 export const createUser = (user: User): UserAsyncActionTypes => {
 
@@ -74,7 +82,8 @@ export const deleteUser = (id: string): UserAsyncActionTypes => {
     }
 }
 
-// Actions para as Sagas chamarem os reducers
+// ActionCreators para as Sagas chamarem os reducers
+    // Quando as sagas terminarem as chamadas assíncronas elas podem chamar uma Action para enviar os dados para o reducer
 
 export const getSuccess = (users: User[]): UserActionTypes => ({
     type: UserAsyncTypes.GET_SUCCESS,

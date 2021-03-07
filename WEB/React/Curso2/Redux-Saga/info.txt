@@ -7,6 +7,12 @@
         - O que faz esse tipo de função ser bom é que a função retorna um "iterator", onde é possível manipular cada linha da função que contém "yield", podendo pausar a função e pegar o valor da linha e continuar a execução da função
             - Essa iteração da função facilita bastante a criação e execução de testes
 
+-> Glossário:
+    - Blocking: São os "Effect"s que pausam a execução da função até que o "Effect" seja resolvido
+        - Como se usasse um "await" numa função assíncrona
+    - Non-Blocking: São os "Effect"s que são executados mas que não interompem o fluxo da função
+        - Como se não usasse um "await" numa função assíncrona
+
 -> Dependências
     - "redux"
     - "redux-saga"
