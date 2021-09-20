@@ -1,0 +1,31 @@
+- NoSQL: Not Only SQL
+
+Existem 4 tipos de NoSQL:
+    -> Chave/valor (Redis)
+    -> Documento (MongoDB)
+    -> Grafo (Neo4J)
+    -> Colunas (Big Table, Cassandra)
+
+Escalonamento
+Quando uma aplicação começa a crescer é preciso melhorar o hardware(memória, processador) do servidor pra aguentar a quantidade de requisições.
+    -> Vertical:
+        - É usada uma máquina e ela vai crescendo verticalmente a medida que melhora o hardware
+        - Normalmente usado para SQL
+    -> Horizontal:
+        - São usadas várias máquinas interligadas
+        - Normalmente isado para NoSQL
+
+MongoDB
+    -> Baseado em documento(JSON)
+    -> DB -> Collections -> Documentos
+        - DB: Dentro de uma instância do Mongo há vários banco de dados(um para cada aplicação)
+        - Collections: São equivalentes às tabelas do SQL
+        - Documentos: São equivalentes às linhas do SQL
+    -> Banco sem SCHEMA
+        - Não precisa criar um modelo exato do banco como no SQL
+        - Mais flexível
+        - A Collection é criada automaticamente no momento que um documento é adicionado nela
+        - É possível ter vários relacionamentos dentro de um único documento
+            - Estados com várias cidades, cidades com várias empresas...
+        - Caso comece a ter vários relacionamentos entre documentos, começa a ser mais ideal construir o banco em SQL
+    -> Tem uma API própria pra manipular o banco (Não usa SQL)
