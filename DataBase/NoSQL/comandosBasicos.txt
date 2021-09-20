@@ -1,0 +1,27 @@
+- "mongo -version"
+
+-> o MongoDB é case sensitive(ao contrário do SQL), então cuidado com os nomes ao criar coisas
+
+Para usar os comandos, é necessário executar o comando "mongo" no terminal, que vai abrir um client especial
+
+- "help" para ajuda
+- "cls" limpa terminal
+- digitar um namespace + "." e apertar tab 2 vezes mostra os comandos daquele namespace
+    - Ex: Digitar "db." e apertar tab 2 vezes mostra todos os métodos do "db"
+
+- "show dbs" mostra os bancos de dados existentes
+- "show collections" mostra as collections existentes
+
+- "use <banco>" troca para o banco escolhido
+    - É possível trocar para um banco que não existe
+        - Ele começará a existir quando criar algo dentro dele
+
+- "db.createCollection('<nome-da-collection>')" cria uma nova collection(tabela)
+- "db.<nome-da-collection>.drop()" exclui a collection
+- "db.<nome-da-collection>.insert(<JSON/Objeto>)" insere um dado em uma collection
+    - Se a collection não existir, ela é criada
+    - Por conta do Mongo não ter SCHEMA, é possível inserir dados a mais ou a menos
+    - Não precisa inserir o objeto tudo na mesma linha, se digitar "db.<nome-da-collection>.insert({" e der enter, vai poder escrever o objeto em mais linhas
+- "db.<nome-da-collection>.save(<JSON/Objeto>)" funciona tanto como insert e como update
+- "db.<nome-da-collection>.find()" faz uma consulta e retorna os dados da collection
+- "db.<nome-da-collection>.find().pretty()" faz uma consulta e retorna os dados da collection formatados para melhor visualização
