@@ -1,0 +1,56 @@
+Consultas agregadas
+    - São consultas mais complexas que utilizam "estagios/pipelines" para processar/filtrar os dados
+    - Cada pipeline recebe o resultado da pipeline acima e joga o seu resultado para a pipeline abaixo
+        - Similar à ideia dos ".then()" em Promises, porém diferentes na sintaxe
+
+-> db.<nome-da-collection>.aggregate([<estágios>])
+    - A primeira pipeline recebe todos os registros do banco
+    - Cada pipeline é um objeto contendo outro objeto com nome reservado para a sua função
+    - "$project: {<atributos>}" filtra quais atributos dos documentos devem ser retornados
+        - Também serve para adicionar atributos
+    - "$sum: "$<atributo>"" realiza a soma dos atributos passados
+        - Se for usado um atributo do documento para fazer a soma, deve ser usado "$" antes do atributo para a API entender que é uma variável e não um valor explícito
+            - Isso acontece porque o atributo está sendo usado do lado direito da estrutura "chave/valor"
+    - "$group: { _id: <criterio-agregacao>, <atributos-que-serao-gerados> }" agrupa os dados dos documentos de acordo com um critério e gera novos atributos com o resultado
+        - Se o criterio de agregacao for "null", será agrupado os dados de todos os documentos e retorna apenas 1 registro
+        - É possível agrupar por certos atributos (regiao, sigla...), e será retornado um registro para cada agrupamento
+            - Ex1: { $group: "$sigla" } agrupa por sigla
+            - Ex2: { $group: "$regiao" } agrupa por regiao
+
+db.estados.aggregate([
+    { $project: { nome: 1, "cidades.nome": 1, _id: 0 } }
+])
+    - Retorna os atributos "nome" e "nome" dentro de "cidades" de todos os registros
+
+db.estados.aggregate([
+    { $project: { populacao: { $sum: "$cidades.populacao" }, sigla: 1, _id: 0 } }
+])
+    - Retorna a sigla e a soma da populacao de todas as cidades de cada estado
+
+db.estados.aggregate([
+    { $project: { populacao: { $sum: "$cidades.populacao" }, sigla: 1, _id: 0 } },
+    { $group: { _id: null, populacaoTotal: { $sum: "$populacao" } } }
+])
+    - Retorna apenas 1 registro (por conta do "group" e "_id: null") contendo o "_id" e o atributo "populacaoTotal" com a soma de "populacao" da primeira pipeline
+    - O resultado da primeira pipeline vai para a segunda
+
+db.estados.aggregate([
+    { $project: { populacao: { $sum: "$cidades.populacao" }, sigla: 1, _id: 0 } },
+    { $group: { _id: null, populacaoTotal: { $sum: "$populacao" } } },
+    { $project: { _id: 0, populacaoTotal: 1 } }
+])
+    - Retorna apenas o atributo "populacaoTotal"
+
+db.estados.aggregate([
+    { $project: { populacao: { $sum: "$cidades.populacao" }, sigla: 1, _id: 0 } },
+    { $group: { _id: "$sigla", populacaoTotal: { $sum: "$populacao" } } },
+    { $project: { _id: 0, populacaoTotal: 1 } }
+])
+    - Agrupa a soma da populacao por sigla
+
+db.estados.aggregate([
+    { $project: { populacao: { $sum: "$cidades.populacao" }, regiao: 1, _id: 0 } },
+    { $group: { _id: "$regiao", populacaoTotal: { $sum: "$populacao" } } },
+    { $project: { _id: 0, populacaoTotal: 1 } }
+])
+    - Agrupa a soma da populacao por regiao
