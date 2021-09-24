@@ -1,0 +1,32 @@
+-> db.<nome-da-collection>.aggregate([<estágios>])
+    - "$match: { <atributos-para-filtrar> }" filtra os documentos e retorna somente os que passarem pelo filtro
+    - "$unwind: <atributo-array>" cria um novo documento para cada item do array
+        - Se o array cidades tiver 2 itens, serão retornados 2 documentos iguais (com excessão da cidade), 1 para cada item
+            - O array é transformado em um objeto contendo os dados do item
+
+db.estados.aggregate([
+    { $match: { "cidades.nome": "Sorocaba" } }
+]).pretty()
+    - Retorna somente os documentos que tem a cidade com nome "Sorocaba"
+
+db.estados.aggregate([
+    { $match: { "cidades.nome": "Sorocaba" } },
+    { $unwind: "$cidades" }
+]).pretty()
+    - Retorna um documento para cada item contido no array "cidades", cada documento contendo uma cidade diferente
+
+db.estados.aggregate([
+    { $match: { "cidades.nome": "Sorocaba" } },
+    { $unwind: "$cidades" },
+    { $match: { "cidades.nome": "Sorocaba" } }
+]).pretty()
+    - Filtra novamente para retornar os documentos que contém a cidade "Sorocaba"
+
+db.estados.aggregate([
+    { $match: { "cidades.nome": "Sorocaba" } },
+    { $unwind: "$cidades" },
+    { $match: { "cidades.nome": "Sorocaba" } },
+    { $project: { _id: "$cidades._id" } }
+]).pretty()
+    - Mostra somente o id da cidade
+    - É atribuido ao "_id" na raiz do documento o "_id" que fica dentro de "cidades"
