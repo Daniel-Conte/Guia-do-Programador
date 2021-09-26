@@ -1,0 +1,24 @@
+db.<nome-da-collection>.remove(<filtro>, <limite>) remove os registros filtrados
+    - "limite" é a quantidade limite de registros para remover
+        - Se o limite for 4 e o filtro retornar 6 registros, serão removidos somente os primeiros 4 registros
+
+db.estados.remove(
+    { _id: ObjectId("6148d67ff6e865e9e4cae124") }
+)
+    - Deleta o registro que possui o id especificado
+
+db.estados.remove(
+    { sigla: "AC" }
+)
+    - Deleta os registros com a sigla "AC"
+
+db.estados.remove(
+    { populacao: { $exists: true } },
+    1
+)
+    - Remove o primeiro registro que possuir o atributo "populacao"
+
+db.estados.remove(
+    { populacao: { $lt: 20000000 } }
+)
+    - Deleta os registros que possuem o atributo "populacao" menor que 20.000.000

@@ -17,6 +17,10 @@
                 - "$exists" é usado como uma chave, deve estar dentro do atributo que deseja verificar e deve receber um valor boolean
             - Ex1: "db.estados.find({ populacao: { $exists: true } })" retorna todos os registros que possuem o atributo "populacao"
             - Ex2: "db.estados.find({ populacao: { $exists: false } })" retorna todos os registros que não possuem o atributo "populacao"
+        - É possível filtrar os registros que possuem um atributo com valor menor que
+            - Utilize "$lt" (less than)
+                - "$lt" é usado como uma chave, deve estar dentro do atributo que deseja verificar e deve receber um valor number
+            - Ex: "db.estados.find({ populacao: { $lt: 20000000 } })" retorna todos os registros que possuem o valor do atributo "populacao" menor que 20.000.000
 
         Consulta especifica:
         - Executar sem uma consulta especifica irá retornar todos os atributos do registro
