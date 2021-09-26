@@ -1,0 +1,30 @@
+-> db.<nome-da-collection>.update(<filtro>, <update>)
+    - "$set: {<atributos-para-atualizar>}" atualiza o valor dos atributos passados para os registros filtrados
+        - Se o atribuido não existir, ele é criado
+        - Se não colocar "$set" e só colocar o atributo, irá substituir o registro inteiro por esse atributo
+    - "$push: {<atributos-para-adicionar>}" adiciona um novo dado a um array
+        - Se usar o "$set", irá substituir todo o array pelo novo valor
+
+db.estados.update(
+    { sigla: "SP" },
+    { $set: { populacao: 45340000 } }
+)
+    - Atualiza o atributo "populacao" com o novo valor para os estados com a sigla "SP"
+
+db.estados.update(
+    { sigla: "SP" },
+    { populacao: 45340000 }
+)
+    - Por não possuir "$set" o registro inteiro é substituido pelo atributo "populacao"
+
+db.estados.update(
+    { sigla: "AL" },
+    { $set: { cidades: [{ nome: "Sergipe" }] } }
+)
+    - Já que este registro não possui o atributo "cidades", ele é criado
+
+db.estados.update(
+    { sigla: "SP" },
+    { $push: { cidades: { nome: "Santos", populacao: 433966 } } }
+)
+    - Adiciona um novo elemento ao array "cidades"
