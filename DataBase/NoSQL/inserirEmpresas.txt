@@ -1,0 +1,9 @@
+db.empresas.insert({
+    nome: "Bradesco",
+    estadoId: ObjectId("6150a95f00b1c5fe69d151e1"),
+})
+
+db.empresas.insert({
+    nome: "Vale",
+    cidadeId: ObjectId("6150a95f00b1c5fe69d151e0"),
+})

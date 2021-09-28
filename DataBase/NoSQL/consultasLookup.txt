@@ -1,0 +1,24 @@
+Consultas Lookup
+    - São consultas agregadas que relacionam e mesclam 2 ou mais collections
+        - Mesma ideia do JOIN do SQL
+    - É usado "$lookup"
+        - { $lookup: {
+            from: <collection-relacionada>,
+            localField: <nome-do-atributo-local-para-relacionar>,
+            foreignField: <nome-do-atributo-da-collection-relacionada>,
+            as: <nome-para-o-atributo-resultante>
+          }}
+            - O atributo resultante sempre vai receber um array com o resultado da relação
+
+db.empresas.aggregate([
+    { $match: { nome: "Bradesco" } },
+    { $lookup: {
+        from: "estados",
+        localField: "estadoId",
+        foreignField: "_id",
+        as: "estado"
+    } },
+    { $unwind: "$estado" }
+]).pretty()
+    - Retorna o registro da empresa "Bradesco" mais o atributo "estado" com o registro do estado que foi relacionado na empresa
+        - Foi relacionado o "estadoId" da empresa com o "_id" dos registros da collection "estados"
