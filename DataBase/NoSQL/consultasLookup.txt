@@ -22,3 +22,25 @@ db.empresas.aggregate([
 ]).pretty()
     - Retorna o registro da empresa "Bradesco" mais o atributo "estado" com o registro do estado que foi relacionado na empresa
         - Foi relacionado o "estadoId" da empresa com o "_id" dos registros da collection "estados"
+    - Note que não foi usado "$" na frente dos atributos "estadoId" e "_id", mesmo estando do lado direito do par chave/valor
+        - Isso acontece pois nesse caso "localField" e "foreignField" já esperam um atributo
+
+db.empresas.aggregate([
+    { $match: { nome: "Vale" } },
+    { $lookup: {
+        from: "estados",
+        localField: "cidadeId",
+        foreignField: "cidades._id",
+        as: "estado"
+    } },
+    { $unwind: "$estado" },
+    { $unwind: "$estado.cidades" },
+    { $addFields: { mesmaCidade: { $cmp: ["$estado.cidades._id", "$cidadeId"] } } },
+    { $match: { mesmaCidade: 0 } }
+]).pretty()
+    - Retorna o estado e a cidade junto com a empresa que se relacionam com o atributo "cidadeId" da empresa
+    - É adicionado um novo atributo para fazer uma comparação entre as cidades e descobrir qual tem o "_id" igual de "cidadeId"
+    - "$cmp: [<valor1>, <valor2>]" compara 2 valores e retorna 3 possíveis resultados
+        - "-1" quando o valor1 for menor que o valor 2
+        - "0" quando os valor1 é igual ao valor2
+        - "1" quando o valor1 é maior que o valor2
