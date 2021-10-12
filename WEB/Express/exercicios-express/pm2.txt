@@ -1,0 +1,27 @@
+-> PM2 é um launcher de monitoramento e gerenciamento de processos
+    - Parecido com o nodemon mas é voltado para ambiente de produção
+    - Caso a aplicação monitorada quebre por algum motivo, o PM2 restarta a aplicação
+        - Se quebrar várias vezes, o PM2 entende que tem algo de errado e para de restartar
+
+-> Comandos básicos
+    - "pm2 start <arquivo> --name <nome_da_aplicação>"
+        - Inicia uma instância do PM2 com a aplicação contida no arquivo e dá um nome à ela
+    
+    - "pm2 monit"
+        - Abre um painel de monitoramento com as aplicações instanciadas e informações real-time sobre elas
+
+    - "pm2 status"
+        - Mostra uma tabela mostrando informações básicas e atuais das aplicações instanciadas
+
+     - "pm2 show <id/nome>"
+        - Mostra informações detalhadas sobre determinada aplicação
+
+    - "pm2 restart <id/nome>"
+        - Restarta a aplicação
+
+    - "pm2 stop <id/nome>"
+        - Para a aplicação
+
+    - "pm2 kill"
+        - Mata a instância do PM2 e para de executar
+        - Para todas as aplicações que estavam rodando
