@@ -6,9 +6,26 @@ const app = express();
 // Trata qualquer tipo de requisição(GET, POST, PUT...)
 // Se não tiver um endpoint, todas as requisições passarão por esse middleware
 app.use((req, res) => {
-  res.send('<b>Bueno<b/>');
+  //res.send('<b>Bueno<b/>');
   // "res.send(<resposta>)" envia uma response para quem fez a requisição
   // O send interpreta HTML
+
+  //res.json({ name: 'iPad 32Gb', price: 1899.0, discount: 0.12 });
+  // "res.json(<resposta>)" envia uma response em formato JSON
+  // Já converte o conteúdo para JSON
+  // O tipo da resposta é "application/json; charset=utf-8"
+
+  res.json({
+    data: [
+      { id: 7, name: 'Ana', position: 1 },
+      { id: 34, name: 'Bia', position: 2 },
+      { id: 73, name: 'Carlos', position: 3 },
+    ],
+    count: 30,
+    skip: 0,
+    limit: 3,
+    status: 200,
+  });
 });
 
 // Quando usa um endpoint, o middleware será executado somente se a url iniciar com o endpoint especificado
