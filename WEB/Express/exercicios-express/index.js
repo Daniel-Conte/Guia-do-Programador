@@ -1,4 +1,5 @@
 const express = require('express');
+const saudacao = require('./saudacaoMid');
 const app = express();
 // Para iniciar uma aplicação express, deve-se importar o módulo e executá-lo
 
@@ -15,6 +16,11 @@ app.use((req, res, next) => {
   // Executa o próximo middleware
   // Se não executar a função "next", a cadeia para
 });
+
+// Passando uma função externa os parametros do middleware irao para a função (se não disparar a função)
+// Se disparar a função, esta deve retornar um middleware que irá receber os parametros da requisição (req, res, next)
+// Assim é possível passar parâmetros personalizados para usar no tratamento da requisição
+app.use(saudacao('Guilherme'));
 
 app.use((req, res, next) => {
   console.log('Durante...');
