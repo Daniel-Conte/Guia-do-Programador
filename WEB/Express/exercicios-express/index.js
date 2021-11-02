@@ -17,6 +17,39 @@ app.use((req, res, next) => {
   // Se não executar a função "next", a cadeia para
 });
 
+// Escutando o endpoint "/clientes/relatorio" através do método GET
+// !!!!!! Quanto mais específico é o endpoint, mais "pra cima" ele deve ficar !!!!!!
+// Se colocar esse middleware abaixo do middleware logo abaixo "/clientes/:id", este irá ser chamado pois é mais genérico
+app.get('/clientes/relatorio', (req, res) => {
+  // Lendos dados da requisição através da query: "/clientes/relatorio?completo=true&ano=2020"
+  res.send(`Cliente relatório: completo = ${req.query.completo} ano = ${req.query.ano}`);
+});
+
+// Escutando o endpoint "/clientes" através do método GET
+// ":<param>" cria um parâmetro na url da requisição, é colocado um valor direto
+app.get('/clientes/:id', (req, res) => {
+  // ":id" irá receber um valor na hora da requisição
+  // Ex: "/clientes/2"
+
+  // Para acessar os parâmetros, utilize o atributo "params" da requisição
+  res.send(`Cliente ${req.params.id} selecionado!`);
+});
+
+// Escutando o endpoint "/corpo" através do método POST
+app.post('/corpo', (req, res) => {
+  let corpo = '';
+
+  // Para ler os dados do corpo da requisição é preciso montar todos os pedaços do corpo, pois acontece um "streaming de dados" (assíncrono)
+  req.on('data', parte => {
+    corpo += parte;
+  });
+
+  // Executa quando os dados param de chegar
+  req.on('end', () => {
+    res.send(corpo);
+  });
+});
+
 // Passando uma função externa os parametros do middleware irao para a função (se não disparar a função)
 // Se disparar a função, esta deve retornar um middleware que irá receber os parametros da requisição (req, res, next)
 // Assim é possível passar parâmetros personalizados para usar no tratamento da requisição
