@@ -7,6 +7,18 @@ const app = express();
 // Trata qualquer tipo de requisição(GET, POST, PUT...)
 // Se não tiver um endpoint, todas as requisições passarão por esse middleware
 // Geralmente é utilizado pra fazer um tratamento básico nas requisições e joga ela pro próximo middleware
+
+// Utilizando o body parser do express pra interpretar o body da requisição
+// Trata todas as requisições
+// Interpreta o body da requisição e joga o resultado dentro de "req.body"
+app.use(express.text());
+// "express.text()" interpreta o body de tipo texto
+app.use(express.json());
+// "express.json()" interpreta o body de tipo JSON
+app.use(express.urlencoded({ extended: true }));
+// "express.urlencoded()" interpreta o body de tipo form-urlencoded (submit de formulários)
+// "extended: true" interpreta alguns dados a mais que o padrão
+
 app.use((req, res, next) => {
   // O terceiro parâmetro da callback é uma função que ao ser executada dá continuidade à cadeira de middlewares, executando o próximo da cadeia
   // É parecido com o encadeamento de ".then()" nas Promises
@@ -37,7 +49,8 @@ app.get('/clientes/:id', (req, res) => {
 
 // Escutando o endpoint "/corpo" através do método POST
 app.post('/corpo', (req, res) => {
-  let corpo = '';
+  // Método pra ler o corpo da requisição sem body parser
+  /* let corpo = '';
 
   // Para ler os dados do corpo da requisição é preciso montar todos os pedaços do corpo, pois acontece um "streaming de dados" (assíncrono)
   req.on('data', parte => {
@@ -47,7 +60,12 @@ app.post('/corpo', (req, res) => {
   // Executa quando os dados param de chegar
   req.on('end', () => {
     res.send(corpo);
-  });
+  }); */
+
+  // Método pra ler o corpo da requisição com body parser
+  res.send(req.body);
+  //res.send(req.body.nome);
+  // Acessando os dados do JSON no body
 });
 
 // Passando uma função externa os parametros do middleware irao para a função (se não disparar a função)
