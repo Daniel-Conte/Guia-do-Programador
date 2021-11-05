@@ -1,6 +1,11 @@
 const express = require('express');
 const saudacao = require('./saudacaoMid');
+const usuarioApi = require('./api/usuario');
+const produtoApi = require('./api/produto');
+
 const app = express();
+// Outra maneira de separar funcionalidades/módulos
+produtoApi(app, 'com param!');
 // Para iniciar uma aplicação express, deve-se importar o módulo e executá-lo
 
 // "app.use(<endpoint>, <callback>)" É um middleware que é executado sempre que uma requisição é enviada para o servidor(dependendo de como está organizada a cadeia de middlewares)
@@ -72,6 +77,10 @@ app.post('/corpo', (req, res) => {
 // Se disparar a função, esta deve retornar um middleware que irá receber os parametros da requisição (req, res, next)
 // Assim é possível passar parâmetros personalizados para usar no tratamento da requisição
 app.use(saudacao('Guilherme'));
+
+// Dividindo os middlewares em módulos pra deixar melhor organizado
+app.post('/usuario', usuarioApi.salvar);
+app.get('/usuario', usuarioApi.obter);
 
 app.use((req, res, next) => {
   console.log('Durante...');
