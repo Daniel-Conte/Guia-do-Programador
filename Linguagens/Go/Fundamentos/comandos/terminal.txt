@@ -1,0 +1,28 @@
+-> "go"
+    - Lista os comandos possíveis
+
+-> "go help <comando>"
+    - Mostra uma explicação sobre o comando passado
+
+-> "go version"
+    - Mostra a versão do Go e o SO que está instalado
+
+-> "go doc <pacote/símbolo>"
+    - Mostra documentação sobre o pacote/símbolo
+
+-> "go env"
+    - Mostra informações sobre o ambiente onde o Go está instalado
+
+-> "go vet <arquivo>"
+    - Verifica o arquivo em busca de inconsistências/problemas no código ou código morto
+    - Não verifica todo problema possível
+
+-> "go build <arquivo>"
+    - Compila o código e gera um executável
+
+-> "go run <arquivo>"
+    - Compila o código e já executa
+    - Não gera executável
+
+-> "go get <flags> <pacote>"
+    - Instala o pacote
