@@ -1,0 +1,4 @@
+-> Next é uma versão framework do react(biblioteca) que oferece Server Side Rendering, aumentando a velocidade de navegação da aplicação
+
+-> Para criar um projeto Next
+    - "npx create-next-app <nome>"
