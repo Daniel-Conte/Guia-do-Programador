@@ -1,0 +1,12 @@
+/* Módulos CSS tem o objetivo de servir somente a componentes especificos, fugindo do global */
+/* O nome do arquivo deve terminar com ".module.css" e deve ser importado no arquivo desejado como um objeto */
+
+.roxo {
+  height: 100vh;
+  background-color: #670bbd;
+  color: #fff;
+}
+
+.roxo h1 {
+  margin: 0;
+}
