@@ -2,7 +2,7 @@
 /* O nome do arquivo deve terminar com ".module.css" e deve ser importado no arquivo desejado como um objeto */
 
 .roxo {
-  height: 100vh;
+  height: 100%;
   background-color: #670bbd;
   color: #fff;
 }
