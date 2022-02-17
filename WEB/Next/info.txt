@@ -2,3 +2,6 @@
 
 -> Para criar um projeto Next
     - "npx create-next-app <nome>"
+        - Typescript add a flag "--ts"
+    - "yarn create next-app <nome>"
+        - Typescript add a flag "--typescript"
