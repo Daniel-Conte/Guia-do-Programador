@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Botao from '../components/Botao';
 
 import Layout from '../components/Layout';
 import Tabela from '../components/Tabela';
@@ -19,6 +20,11 @@ const Home: NextPage = () => {
   return (
     <div className='flex h-screen justify-center items-center bg-gradient-to-r from-blue-500 to-purple-500 text-white'>
       <Layout titulo='Cadastro Simples'>
+        <div className='flex justify-end'>
+          <Botao className='mb-4' cor='green'>
+            Novo Cliente
+          </Botao>
+        </div>
         <Tabela
           clientes={clientes}
           clienteSelecionado={clienteSelecionado}
