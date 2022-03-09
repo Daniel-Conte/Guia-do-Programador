@@ -1,6 +1,7 @@
 interface BotaoProps {
   cor?: 'green' | 'blue' | 'gray';
   className?: string;
+  onClick?: () => void;
   children: any;
 }
 
@@ -39,7 +40,8 @@ export default function Botao(props: BotaoProps) {
         ${getCoresGradienteTo700(cor)} 
       text-white px-4 py-2 rounded-md 
         ${props.className}
-      `}>
+      `}
+      onClick={props.onClick}>
       {props.children}
     </button>
   );
