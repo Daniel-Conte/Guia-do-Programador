@@ -10,6 +10,7 @@ import Cliente from '../core/Cliente';
 
 const Home: NextPage = () => {
   const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela');
+  const [cliente, setCliente] = useState<Cliente>(Cliente.vazio());
 
   const clientes = [
     new Cliente('Ana', 34, '1'),
@@ -18,9 +19,19 @@ const Home: NextPage = () => {
     new Cliente('Pedro', 54, '4'),
   ];
 
-  function clienteSelecionado(cliente: Cliente) {}
+  function clienteSelecionado(cliente: Cliente) {
+    setCliente(cliente);
+    setVisivel('form');
+  }
 
-  function salvarCliente(cliente: Cliente) {}
+  function novoCliente() {
+    setCliente(Cliente.vazio());
+    setVisivel('form');
+  }
+
+  function salvarCliente(cliente: Cliente) {
+    setVisivel('tabela');
+  }
 
   function clienteExcluido(cliente: Cliente) {}
 
@@ -30,7 +41,7 @@ const Home: NextPage = () => {
         {visivel === 'tabela' ? (
           <>
             <div className='flex justify-end'>
-              <Botao className='mb-4' cor='green' onClick={() => setVisivel('form')}>
+              <Botao className='mb-4' cor='green' onClick={() => novoCliente()}>
                 Novo Cliente
               </Botao>
             </div>
@@ -42,7 +53,7 @@ const Home: NextPage = () => {
           </>
         ) : (
           <Formulario
-            cliente={clientes[1]}
+            cliente={cliente}
             cancelado={() => setVisivel('tabela')}
             clienteMudou={salvarCliente}
           />
