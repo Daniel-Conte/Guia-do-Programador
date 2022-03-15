@@ -1,4 +1,5 @@
 node_modules
 dist
+.env
 /Extra/Testes/Testes Automaticos/Java/SistemaBancario/nbproject/private/
 /Extra/Testes/Testes Automaticos/Java/SistemaBancario/build/
