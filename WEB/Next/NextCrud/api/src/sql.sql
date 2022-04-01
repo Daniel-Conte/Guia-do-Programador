@@ -1,0 +1,5 @@
+CREATE TABLE cliente (
+	codigo SERIAL 	 PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL,
+	idade INT		 NOT NULL
+)
