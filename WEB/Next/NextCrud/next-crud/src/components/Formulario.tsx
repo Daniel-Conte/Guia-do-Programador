@@ -11,13 +11,13 @@ interface FormularioProps {
 }
 
 export default function Formulario(props: FormularioProps) {
-  const id = props.cliente?.id;
+  const codigo = props.cliente?.codigo;
   const [nome, setNome] = useState(props.cliente?.nome ?? '');
   const [idade, setIdade] = useState(props.cliente?.idade ?? '');
 
   return (
     <div>
-      {!!id && <Entrada texto='Código' tipo='number' valor={id} className='mb-5' />}
+      {!!codigo && <Entrada texto='Código' tipo='number' valor={codigo} className='mb-5' />}
       <Entrada texto='Nome' valor={nome} valorMudou={setNome} className='mb-5' />
       <Entrada texto='Idade' tipo='number' valor={idade} valorMudou={setIdade} />
 
@@ -25,8 +25,8 @@ export default function Formulario(props: FormularioProps) {
         <Botao
           cor='blue'
           className='mr-2'
-          onClick={() => props.clienteMudou?.(new Cliente(nome, +idade, id))}>
-          {!!id ? 'Alterar' : 'Salvar'}
+          onClick={() => props.clienteMudou?.(new Cliente(nome, +idade, codigo))}>
+          {!!codigo ? 'Alterar' : 'Salvar'}
         </Botao>
         <Botao onClick={props.cancelado}>Cancelar</Botao>
       </div>

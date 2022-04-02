@@ -1,21 +1,21 @@
 export default class Cliente {
   // "#<atributo>" define um atributo privado (isso é nativo do javascript)
-  #id: string | null;
+  #codigo: string | null;
   #nome: string;
   #idade: number;
 
-  constructor(nome: string, idade: number, id: string | null = null) {
+  constructor(nome: string, idade: number, codigo: string | null = null) {
     this.#nome = nome;
     this.#idade = idade;
-    this.#id = id;
+    this.#codigo = codigo;
   }
 
   static vazio() {
     return new Cliente('', 0);
   }
 
-  get id() {
-    return this.#id;
+  get codigo() {
+    return this.#codigo;
   }
 
   get nome() {

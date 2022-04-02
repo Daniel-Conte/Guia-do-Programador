@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import type { NextPage } from 'next';
 
@@ -7,17 +7,23 @@ import Formulario from '../components/Formulario';
 import Layout from '../components/Layout';
 import Tabela from '../components/Tabela';
 import Cliente from '../core/Cliente';
+import ColecaoCliente from '../core/ColecaoCliente';
 
 const Home: NextPage = () => {
+  const apiClientes = new ColecaoCliente();
+
   const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela');
   const [cliente, setCliente] = useState<Cliente>(Cliente.vazio());
+  const [clientes, setClientes] = useState<Cliente[]>([]);
 
-  const clientes = [
-    new Cliente('Ana', 34, '1'),
-    new Cliente('Bia', 45, '2'),
-    new Cliente('Carlos', 23, '3'),
-    new Cliente('Pedro', 54, '4'),
-  ];
+  useEffect(obterClientes, []);
+
+  function obterClientes() {
+    apiClientes.obterTodos().then(resp => {
+      setClientes(resp.data);
+      setVisivel('tabela');
+    });
+  }
 
   function clienteSelecionado(cliente: Cliente) {
     setCliente(cliente);
@@ -29,11 +35,15 @@ const Home: NextPage = () => {
     setVisivel('form');
   }
 
-  function salvarCliente(cliente: Cliente) {
-    setVisivel('tabela');
+  async function salvarCliente(cliente: Cliente) {
+    await apiClientes.salvar(cliente);
+    obterClientes();
   }
 
-  function clienteExcluido(cliente: Cliente) {}
+  async function clienteExcluido(cliente: Cliente) {
+    await apiClientes.excluir(cliente);
+    obterClientes();
+  }
 
   return (
     <div className='flex h-screen justify-center items-center bg-gradient-to-r from-blue-500 to-purple-500 text-white'>

@@ -75,7 +75,7 @@ app.delete('/cliente/:id', async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM cliente WHERE codigo = $1', [id]);
 
-    res.status(200).send('Cliente excluído com sucesso');
+    res.status(200).json('Cliente excluído com sucesso');
   } catch (error) {
     res.status(400).json({ error });
   }
