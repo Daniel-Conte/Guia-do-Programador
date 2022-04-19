@@ -1,8 +1,10 @@
-import { json, Express } from 'express';
+import { json } from 'express';
 import cors from 'cors';
 
-// Para usar a cadeia de middlewares no consign, deve-se exportar(padrão) uma função que recebe o app e adicionar as funções middlewares
-export default (app: Express) => {
+import { ExpressConsign } from '../types';
+
+// Para usar a cadeia de middlewares no consign, deve-se exportar uma função que recebe o app e adicionar as funções middlewares
+module.exports = (app: ExpressConsign) => {
   app.use(cors());
   app.use(json());
 };
