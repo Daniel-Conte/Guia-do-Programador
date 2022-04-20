@@ -1,7 +1,16 @@
 import express from 'express';
 const consign = require('consign'); // Só funciona com require e não tem @types
 
-const app = express();
+const db: Knex = require('./config/db');
+
+import type { Knex } from 'knex';
+import type { ExpressConsign } from './types';
+
+const app = express() as ExpressConsign;
+
+// Permite acessar as funções do knex para manipular o banco de dentro do app
+app.db = db;
+
 // Consign serve basicamente pra deixar o index mais "limpo", organizando as importações e middlewares
 // Passando o "app" de parâmetro para a função com os middlewares sendo exportados no arquivo
 // Todos arquivos que exportam uma função recebem o app de parametro, o consign carrega a função dentro do app
