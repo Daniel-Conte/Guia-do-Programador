@@ -1,4 +1,4 @@
-import { ApiUserKeys, ExpressCallback, ExpressConsignFunc } from '../types';
+import type { ApiUserKeys, ExpressCallback, ExpressConsignFunc } from '../types';
 
 const apiUsers: ExpressConsignFunc<ApiUserKeys> = app => {
   const save: ExpressCallback = (req, res) => {

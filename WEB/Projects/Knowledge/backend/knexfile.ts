@@ -1,9 +1,9 @@
-// Update with your config settings.
+import type { Knex } from 'knex';
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-module.exports = {
+const knexConfig: Knex.Config = {
   client: 'postgresql',
   connection: {
     database: 'knowledge',
@@ -18,3 +18,5 @@ module.exports = {
     tableName: 'knex_migrations',
   },
 };
+
+export default knexConfig;

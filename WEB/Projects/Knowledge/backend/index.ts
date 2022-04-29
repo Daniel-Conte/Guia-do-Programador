@@ -1,9 +1,7 @@
 import express from 'express';
 const consign = require('consign'); // Só funciona com require e não tem @types
+import db from './config/db';
 
-const db: Knex = require('./config/db');
-
-import type { Knex } from 'knex';
 import type { ExpressConsign } from './types';
 
 const app = express() as ExpressConsign;
