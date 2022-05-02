@@ -19,4 +19,10 @@ const knexConfig: Knex.Config = {
   },
 };
 
+// Comandos CMD
+
+// Rodar migrações
+// "knex migrate:latest" - Executa todas as migrações(funções "up"), dá primeira à última
+// "knex migrate:rollback" - Volta todas as migrações(funções "down")
+
 export default knexConfig;
