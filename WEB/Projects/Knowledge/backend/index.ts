@@ -14,7 +14,12 @@ app.db = db;
 // Todos arquivos que exportam uma função recebem o app de parametro, o consign carrega a função dentro do app
 // Consign pega a pasta "api" que foi carregada e joga ela dentro do app, podendo ser acessada (app.api.user)
 // Todos arquivos que forem carregados DEVEM exportar a função pelo module.exports (export default não funciona)
-consign().then('./config/middlewares.ts').then('./api').then('./config/routes.ts').into(app);
+consign()
+  .then('./config/middlewares.ts')
+  .then('./api/validation.ts')
+  .then('./api/user.ts')
+  .then('./config/routes.ts')
+  .into(app);
 
 app.listen(3000, () => {
   console.log('Server executando...');
