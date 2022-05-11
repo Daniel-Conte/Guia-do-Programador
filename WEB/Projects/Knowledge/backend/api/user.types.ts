@@ -2,7 +2,8 @@ import type { ExpressCallback, IdParams, SomePartial } from '../types';
 
 export interface UserApi {
   save: ExpressCallback<IdParams, UserRequest>;
-  get: ExpressCallback<any, any, UserListItem[]>;
+  get: ExpressCallback<void, void, UserMini[]>;
+  getById: ExpressCallback<IdParams, void, UserMini>;
 }
 
 export type User = {
@@ -17,4 +18,4 @@ export type UserRequest = SomePartial<Omit<User, 'admin'>, 'id'> & {
   confirmPassword?: string;
 };
 
-export type UserListItem = Omit<User, 'password'>;
+export type UserMini = Omit<User, 'password'>;

@@ -60,6 +60,17 @@ const apiUsers: ExpressConsignFunc<UserApi> = app => {
         .then(users => res.json(users))
         .catch(err => res.status(500).send(err));
     },
+
+    getById: (req, res) => {
+      const id = req.params.id;
+      app
+        .db<User>('users')
+        .select('id', 'name', 'email', 'admin')
+        .where({ id })
+        .first()
+        .then(user => res.json(user))
+        .catch(err => res.status(500).send(err));
+    },
   };
 };
 
