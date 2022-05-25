@@ -16,7 +16,7 @@ const apiUsers: ExpressConsignFunc<UserApi> = app => {
   return {
     save: async (req, res) => {
       const user = { ...req.body };
-      if (req.params.id) user.id = req.params.id;
+      if (req.params.id) user.id = Number(req.params.id);
 
       try {
         existsOrError(user.name, 'Nome não informado');
@@ -62,7 +62,7 @@ const apiUsers: ExpressConsignFunc<UserApi> = app => {
     },
 
     getById: (req, res) => {
-      const id = req.params.id;
+      const id = Number(req.params.id);
       app
         .db<User>('users')
         .select('id', 'name', 'email', 'admin')

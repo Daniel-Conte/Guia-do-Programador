@@ -18,6 +18,7 @@ consign()
   .then('./config/middlewares.ts')
   .then('./api/validation.ts')
   .then('./api/user.ts')
+  .then('./api/category.ts')
   .then('./config/routes.ts')
   .into(app);
 
