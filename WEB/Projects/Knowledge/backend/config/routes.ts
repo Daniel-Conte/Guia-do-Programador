@@ -1,5 +1,5 @@
 import type { ExpressConsign } from '../types';
-import { RoutesCategories, RoutesUsers } from './routes.types';
+import { RoutesArticles, RoutesCategories, RoutesUsers } from './routes.types';
 
 module.exports = (app: ExpressConsign) => {
   app.route<RoutesUsers>('/users').post(app.api.user.save).get(app.api.user.get);
@@ -12,4 +12,12 @@ module.exports = (app: ExpressConsign) => {
     .get(app.api.category.getById)
     .put(app.api.category.save)
     .delete(app.api.category.remove);
+
+  app.route<RoutesArticles>('/articles').get(app.api.article.get).post(app.api.article.save);
+  app
+    .route<RoutesArticles>('/articles/:id')
+    .get(app.api.article.getById)
+    .put(app.api.article.save)
+    .delete(app.api.article.remove);
+  app.route<RoutesArticles>('/categories/:id/articles').get(app.api.article.getByCategory);
 };
