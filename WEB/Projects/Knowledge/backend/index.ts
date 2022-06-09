@@ -15,6 +15,7 @@ app.db = db;
 // Consign pega a pasta "api" que foi carregada e joga ela dentro do app, podendo ser acessada (app.api.user)
 // Todos arquivos que forem carregados DEVEM exportar a função pelo module.exports (export default não funciona)
 consign()
+  .include('./config/passport.ts')
   .then('./config/middlewares.ts')
   .then('./api/validation.ts')
   .then('./api/auth.ts')

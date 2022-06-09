@@ -19,7 +19,7 @@ type AuthSigninResponse = AuthDecodedToken & {
   token: string;
 };
 
-type AuthDecodedToken = UserMini & {
+export type AuthDecodedToken = UserMini & {
   iat: number;
   exp: number;
 };

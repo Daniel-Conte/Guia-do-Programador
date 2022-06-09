@@ -5,6 +5,7 @@ import type { AuthApi } from './api/auth.types';
 import type { CategoryApi } from './api/category.types';
 import type { UserApi } from './api/user.types';
 import type { ValidationApi } from './api/validation.types';
+import type { PassportMiddleware } from './config/passport.types';
 
 export type ExpressConsignFunc<Api> = (app: ExpressConsign) => Api;
 
@@ -16,6 +17,9 @@ export interface ExpressConsign extends Express {
     category: CategoryApi;
     article: ArticleApi;
     validation: ValidationApi;
+  };
+  config: {
+    passport: PassportMiddleware;
   };
 }
 
