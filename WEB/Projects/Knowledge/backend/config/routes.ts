@@ -1,7 +1,11 @@
 import type { ExpressConsign } from '../types';
-import { RoutesArticles, RoutesCategories, RoutesUsers } from './routes.types';
+import { RoutesArticles, RoutesAuth, RoutesCategories, RoutesUsers } from './routes.types';
 
 module.exports = (app: ExpressConsign) => {
+  app.route<RoutesAuth>('/signup').post(app.api.user.save);
+  app.route<RoutesAuth>('/signin').post(app.api.auth.signin);
+  app.route<RoutesAuth>('/validateToken').post(app.api.auth.validateToken);
+
   app.route<RoutesUsers>('/users').post(app.api.user.save).get(app.api.user.get);
   app.route<RoutesUsers>('/users/:id').put(app.api.user.save).get(app.api.user.getById);
 
