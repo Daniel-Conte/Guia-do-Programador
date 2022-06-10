@@ -2,11 +2,11 @@ import jwt from 'jwt-simple';
 import bcrypt from 'bcrypt-nodejs';
 
 const { authSecret } = require('../.env');
-import type { ExpressConsignFunc } from '../types';
+import type { Api } from '../types';
 import type { AuthApi } from './auth.types';
 import type { User } from './user.types';
 
-const authApi: ExpressConsignFunc<AuthApi> = app => {
+const authApi: Api<AuthApi> = app => {
   return {
     signin: async (req, res) => {
       const { email, password } = req.body;

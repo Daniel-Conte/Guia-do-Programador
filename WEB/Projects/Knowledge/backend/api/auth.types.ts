@@ -1,9 +1,9 @@
-import type { ExpressCallback } from '../types';
+import type { Middleware } from '../types';
 import type { User, UserMini } from './user.types';
 
 export interface AuthApi {
-  signin: ExpressCallback<void, AuthSigninRequest, string | AuthSigninResponse>;
-  validateToken: ExpressCallback<void, AuthValidateTokenRequest, boolean>;
+  signin: Middleware<void, AuthSigninRequest, string | AuthSigninResponse>;
+  validateToken: Middleware<void, AuthValidateTokenRequest, boolean>;
 }
 
 type AuthSigninRequest = {

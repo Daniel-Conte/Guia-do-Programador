@@ -1,9 +1,9 @@
 import queries from './queries';
-import type { ExpressConsignFunc } from '../types';
+import type { Api } from '../types';
 import type { Article, ArticleApi } from './article.types';
-import { CategoryRaw } from './category.types';
+import type { CategoryRaw } from './category.types';
 
-const apiArticles: ExpressConsignFunc<ArticleApi> = app => {
+const articlesApi: Api<ArticleApi> = app => {
   const { existsOrError } = app.api.validation;
 
   const limit = 10;
@@ -105,4 +105,4 @@ const apiArticles: ExpressConsignFunc<ArticleApi> = app => {
   };
 };
 
-module.exports = apiArticles;
+module.exports = articlesApi;

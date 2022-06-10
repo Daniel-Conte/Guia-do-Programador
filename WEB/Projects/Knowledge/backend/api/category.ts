@@ -1,7 +1,7 @@
-import { ExpressConsignFunc } from '../types';
-import { Category, CategoryApi, CategoryRaw, CategoryTree } from './category.types';
+import type { Api } from '../types';
+import type { Category, CategoryApi, CategoryRaw, CategoryTree } from './category.types';
 
-const apiCategories: ExpressConsignFunc<CategoryApi> = app => {
+const categoriesApi: Api<CategoryApi> = app => {
   const { existsOrError, notExistsOrError } = app.api.validation;
 
   const withPath = (categories: CategoryRaw[]): Category[] => {
@@ -120,4 +120,4 @@ const apiCategories: ExpressConsignFunc<CategoryApi> = app => {
   };
 };
 
-module.exports = apiCategories;
+module.exports = categoriesApi;

@@ -1,11 +1,11 @@
-import { ExpressCallback, IdParams, ListParams, ListResponse, SomePartial } from '../types';
+import { Middleware, IdParams, ListParams, ListResponse, SomePartial } from '../types';
 
 export interface ArticleApi {
-  save: ExpressCallback<IdParams, ArticleRequest>;
-  remove: ExpressCallback<IdParams>;
-  get: ExpressCallback<ListParams, void, ListResponse<ArticleMini>>;
-  getById: ExpressCallback<IdParams, void, Article>;
-  getByCategory: ExpressCallback<IdParams & ListParams, void>;
+  save: Middleware<IdParams, ArticleRequest>;
+  remove: Middleware<IdParams>;
+  get: Middleware<ListParams, void, ListResponse<ArticleMini>>;
+  getById: Middleware<IdParams, void, Article>;
+  getByCategory: Middleware<IdParams & ListParams, void>;
 }
 
 export type Article = {

@@ -1,9 +1,9 @@
-import type { ExpressCallback, IdParams, SomePartial } from '../types';
+import type { Middleware, IdParams, SomePartial } from '../types';
 
 export interface UserApi {
-  save: ExpressCallback<IdParams, UserRequest>;
-  get: ExpressCallback<void, void, UserMini[]>;
-  getById: ExpressCallback<IdParams, void, UserMini>;
+  save: Middleware<IdParams, UserRequest>;
+  get: Middleware<void, void, UserMini[]>;
+  getById: Middleware<IdParams, void, UserMini>;
 }
 
 export type User = {

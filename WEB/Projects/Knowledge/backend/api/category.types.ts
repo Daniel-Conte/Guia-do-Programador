@@ -1,11 +1,11 @@
-import type { ExpressCallback, IdParams, SomePartial } from '../types';
+import type { Middleware, IdParams, SomePartial } from '../types';
 
 export interface CategoryApi {
-  save: ExpressCallback<IdParams, CategoryRequest>;
-  remove: ExpressCallback<IdParams>;
-  get: ExpressCallback<void, void, Category[]>;
-  getById: ExpressCallback<IdParams, void, CategoryRaw>;
-  getTree: ExpressCallback<void, void, CategoryTree[]>;
+  save: Middleware<IdParams, CategoryRequest>;
+  remove: Middleware<IdParams>;
+  get: Middleware<void, void, Category[]>;
+  getById: Middleware<IdParams, void, CategoryRaw>;
+  getTree: Middleware<void, void, CategoryTree[]>;
 }
 
 export type Category = CategoryRaw & {

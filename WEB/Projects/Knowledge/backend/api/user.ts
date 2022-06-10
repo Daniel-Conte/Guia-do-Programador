@@ -1,9 +1,9 @@
 import bcrypt from 'bcrypt-nodejs';
 
-import type { ExpressConsignFunc } from '../types';
+import type { Api } from '../types';
 import type { User, UserApi } from './user.types';
 
-const apiUsers: ExpressConsignFunc<UserApi> = app => {
+const usersApi: Api<UserApi> = app => {
   const { equalsOrError, existsOrError, notExistsOrError } = app.api.validation;
 
   const encryptPassword = (password: string) => {
@@ -74,4 +74,4 @@ const apiUsers: ExpressConsignFunc<UserApi> = app => {
   };
 };
 
-module.exports = apiUsers;
+module.exports = usersApi;

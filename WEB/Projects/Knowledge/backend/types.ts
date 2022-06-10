@@ -7,7 +7,7 @@ import type { UserApi } from './api/user.types';
 import type { ValidationApi } from './api/validation.types';
 import type { PassportMiddleware } from './config/passport.types';
 
-export type ExpressConsignFunc<Api> = (app: ExpressConsign) => Api;
+export type Api<ApiType> = (app: ExpressConsign) => ApiType;
 
 export interface ExpressConsign extends Express {
   db: Knex;
@@ -23,7 +23,7 @@ export interface ExpressConsign extends Express {
   };
 }
 
-export type ExpressCallback<Params = any, ReqBody = any, ResBody = any> = (
+export type Middleware<Params = any, ReqBody = any, ResBody = any> = (
   req: Request<Params, ResBody, ReqBody>,
   res: Response<ResBody>,
   next: NextFunction
