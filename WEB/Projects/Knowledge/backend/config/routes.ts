@@ -1,7 +1,13 @@
 import admin from './admin';
 
 import type { ExpressConsign } from '../types';
-import type { RoutesArticles, RoutesAuth, RoutesCategories, RoutesUsers } from './routes.types';
+import type {
+  RoutesArticles,
+  RoutesAuth,
+  RoutesCategories,
+  RoutesStats,
+  RoutesUsers,
+} from './routes.types';
 
 module.exports = (app: ExpressConsign) => {
   app.route<RoutesAuth>('/signup').post(app.api.user.save);
@@ -50,4 +56,6 @@ module.exports = (app: ExpressConsign) => {
     .route<RoutesArticles>('/categories/:id/articles')
     .all(app.config.passport.authenticate())
     .get(app.api.article.getByCategory);
+
+  app.route<RoutesStats>('/stats').all(app.config.passport.authenticate()).get(app.api.stat.get);
 };

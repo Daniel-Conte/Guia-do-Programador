@@ -25,6 +25,7 @@ consign()
   .then('./api/user.ts')
   .then('./api/category.ts')
   .then('./api/article.ts')
+  .then('./api/stat.ts')
   .then('./config/routes.ts')
   .into(app);
 

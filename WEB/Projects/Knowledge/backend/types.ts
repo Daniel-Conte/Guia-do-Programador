@@ -4,6 +4,7 @@ import type { Mongoose } from 'mongoose';
 import type { ArticleApi } from './api/article.types';
 import type { AuthApi } from './api/auth.types';
 import type { CategoryApi } from './api/category.types';
+import type { StatApi } from './api/stat.types';
 import type { UserApi } from './api/user.types';
 import type { ValidationApi } from './api/validation.types';
 import type { PassportMiddleware } from './config/passport.types';
@@ -19,6 +20,7 @@ export interface ExpressConsign extends Express {
     category: CategoryApi;
     article: ArticleApi;
     validation: ValidationApi;
+    stat: StatApi;
   };
   config: {
     passport: PassportMiddleware;
