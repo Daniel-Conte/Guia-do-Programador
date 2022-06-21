@@ -1,5 +1,6 @@
 import type { Express, NextFunction, Request, Response } from 'express';
 import type { Knex } from 'knex';
+import type { Mongoose } from 'mongoose';
 import type { ArticleApi } from './api/article.types';
 import type { AuthApi } from './api/auth.types';
 import type { CategoryApi } from './api/category.types';
@@ -11,6 +12,7 @@ export type Api<ApiType> = (app: ExpressConsign) => ApiType;
 
 export interface ExpressConsign extends Express {
   db: Knex;
+  mongoose: Mongoose;
   api: {
     auth: AuthApi;
     user: UserApi;
