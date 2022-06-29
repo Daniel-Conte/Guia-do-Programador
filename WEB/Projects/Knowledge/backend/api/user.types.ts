@@ -4,6 +4,7 @@ export interface UserApi {
   save: Middleware<IdParams, UserRequest>;
   get: Middleware<void, void, UserMini[]>;
   getById: Middleware<IdParams, void, UserMini>;
+  remove: Middleware<IdParams, void>;
 }
 
 export type User = {
@@ -12,10 +13,11 @@ export type User = {
   email: string;
   password: string;
   admin: boolean;
+  deletedAt?: Date;
 };
 
-export type UserRequest = SomePartial<Omit<User, 'admin'>, 'id'> & {
+export type UserRequest = SomePartial<Omit<User, 'admin' | 'deletedAt'>, 'id'> & {
   confirmPassword?: string;
 };
 
-export type UserMini = Omit<User, 'password'>;
+export type UserMini = Omit<User, 'password' | 'deletedAt'>;

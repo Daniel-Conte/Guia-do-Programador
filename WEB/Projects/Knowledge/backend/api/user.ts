@@ -1,6 +1,7 @@
 import bcrypt from 'bcrypt-nodejs';
 
 import type { Api } from '../types';
+import type { Article } from './article.types';
 import type { User, UserApi } from './user.types';
 
 const usersApi: Api<UserApi> = app => {
@@ -42,6 +43,7 @@ const usersApi: Api<UserApi> = app => {
           .db<User>('users')
           .update(user)
           .where({ id: user.id })
+          .whereNull('deletedAt')
           .then(() => res.status(204).send())
           .catch(err => res.status(500).send(err));
       } else {
@@ -57,6 +59,7 @@ const usersApi: Api<UserApi> = app => {
       app
         .db<User>('users')
         .select('id', 'name', 'email', 'admin')
+        .whereNull('deletedAt')
         .then(users => res.json(users))
         .catch(err => res.status(500).send(err));
     },
@@ -67,9 +70,26 @@ const usersApi: Api<UserApi> = app => {
         .db<User>('users')
         .select('id', 'name', 'email', 'admin')
         .where({ id })
+        .whereNull('deletedAt')
         .first()
         .then(user => res.json(user))
         .catch(err => res.status(500).send(err));
+    },
+    remove: async (req, res) => {
+      try {
+        const articles = await app.db<Article>('articles').where({ userId: Number(req.params.id) });
+        notExistsOrError(articles, 'Usuário possui artigos.');
+
+        const rowsUpdated = await app
+          .db<User>('users')
+          .update({ deletedAt: new Date() })
+          .where({ id: Number(req.params.id) });
+        existsOrError(rowsUpdated, 'Usuário não foi encontrado.');
+
+        res.status(204).send();
+      } catch (msg) {
+        res.status(400).send(msg);
+      }
     },
   };
 };
