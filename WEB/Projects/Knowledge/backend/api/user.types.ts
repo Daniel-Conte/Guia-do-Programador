@@ -16,7 +16,7 @@ export type User = {
   deletedAt?: Date;
 };
 
-export type UserRequest = SomePartial<Omit<User, 'admin' | 'deletedAt'>, 'id'> & {
+export type UserRequest = SomePartial<Omit<User, 'deletedAt'>, 'id' | 'admin'> & {
   confirmPassword?: string;
 };
 

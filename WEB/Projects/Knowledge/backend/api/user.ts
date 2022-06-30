@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt-nodejs';
 
 import type { Api } from '../types';
 import type { Article } from './article.types';
+import type { AuthDecodedToken } from './auth.types';
 import type { User, UserApi } from './user.types';
 
 const usersApi: Api<UserApi> = app => {
@@ -18,6 +19,9 @@ const usersApi: Api<UserApi> = app => {
     save: async (req, res) => {
       const user = { ...req.body };
       if (req.params.id) user.id = Number(req.params.id);
+
+      if (!req.originalUrl.startsWith('/users')) user.admin = false;
+      if (!req.user || !(req.user as AuthDecodedToken)?.admin) user.admin = false;
 
       try {
         existsOrError(user.name, 'Nome não informado');
