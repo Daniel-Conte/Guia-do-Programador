@@ -1,14 +1,16 @@
 import type { Knex } from 'knex';
 
+const { db } = require('./.env');
+
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 const knexConfig: Knex.Config = {
   client: 'postgresql',
   connection: {
-    database: 'knowledge',
-    user: 'postgres',
-    password: 'masterkey',
+    database: db.database,
+    user: db.user,
+    password: db.password,
   },
   pool: {
     min: 2,
