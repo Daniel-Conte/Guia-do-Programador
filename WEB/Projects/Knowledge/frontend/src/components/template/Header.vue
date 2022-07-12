@@ -6,17 +6,21 @@
     <h1 class="title">
       {{ title }}
     </h1>
+    <UserDropdown v-if="!hideUserDropdown" />
   </header>
 </template>
 
 <script>
 import { mapState, mapMutations } from 'vuex';
+import UserDropdown from './UserDropdown.vue';
 
 export default {
   name: 'MainHeader',
+  components: { UserDropdown },
   props: {
     title: String,
     hideToggle: Boolean,
+    hideUserDropdown: Boolean,
   },
   computed: {
     // "mapState(<state[]>)" mapeia o state da store e retorna somente os states passados no array

@@ -9,6 +9,10 @@ export default new Vuex.Store({
   // state armazena o initial values da store
   state: {
     isMenuVisible: true,
+    user: {
+      name: 'Usuário Mock',
+      email: 'mock@mock.com.br',
+    },
   },
   // mutations funciona como o reducer do Redux
   mutations: {
