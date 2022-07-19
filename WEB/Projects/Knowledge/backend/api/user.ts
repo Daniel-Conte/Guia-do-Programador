@@ -22,6 +22,7 @@ const usersApi: Api<UserApi> = app => {
 
       if (!req.originalUrl.startsWith('/users')) user.admin = false;
       if (!req.user || !(req.user as AuthDecodedToken)?.admin) user.admin = false;
+      if (user.admin === null) user.admin = false;
 
       try {
         existsOrError(user.name, 'Nome não informado');
