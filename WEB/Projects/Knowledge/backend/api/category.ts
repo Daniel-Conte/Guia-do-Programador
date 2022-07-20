@@ -49,7 +49,11 @@ const categoriesApi: Api<CategoryApi> = app => {
 
   return {
     save: (req, res) => {
-      const category = { ...req.body };
+      const category = {
+        id: req.body.id,
+        name: req.body.name,
+        parentId: req.body.parentId,
+      };
 
       if (req.params.id) category.id = Number(req.params.id);
 
