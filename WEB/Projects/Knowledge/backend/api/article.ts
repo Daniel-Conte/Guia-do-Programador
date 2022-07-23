@@ -6,7 +6,7 @@ import type { CategoryRaw } from './category.types';
 const articlesApi: Api<ArticleApi> = app => {
   const { existsOrError } = app.api.validation;
 
-  const limit = 10;
+  const limit = 3;
 
   return {
     save: (req, res) => {
@@ -58,7 +58,7 @@ const articlesApi: Api<ArticleApi> = app => {
     },
 
     get: async (req, res) => {
-      const page = Number(req.params.page) || 1;
+      const page = Number(req.query.page) || 1;
 
       const result: any = await app.db<Article>('articles').count('id').first();
       const count = Number(result.count);
