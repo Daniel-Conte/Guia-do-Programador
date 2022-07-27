@@ -27,8 +27,8 @@ export interface ExpressConsign extends Express {
   };
 }
 
-export type Middleware<Params = any, ReqBody = any, ResBody = any> = (
-  req: Request<Params, ResBody, ReqBody>,
+export type Middleware<Params = any, ReqBody = any, ResBody = any, ReqQuery = any> = (
+  req: Request<Params, ResBody, ReqBody, ReqQuery>,
   res: Response<ResBody>,
   next: NextFunction
 ) => void;

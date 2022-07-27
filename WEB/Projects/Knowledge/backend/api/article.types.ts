@@ -5,7 +5,7 @@ export interface ArticleApi {
   remove: Middleware<IdParams>;
   get: Middleware<ListParams, void, ListResponse<ArticleMini>>;
   getById: Middleware<IdParams, void, Article>;
-  getByCategory: Middleware<IdParams & ListParams, void>;
+  getByCategory: Middleware<IdParams, void, Article[], ListParams>;
 }
 
 export type Article = {

@@ -87,9 +87,9 @@ const articlesApi: Api<ArticleApi> = app => {
 
     getByCategory: async (req, res) => {
       const categoryId = req.params.id;
-      const page = req.params.page || 1;
-      const categories: CategoryRaw[] = await app.db.raw(queries.categoryWithChildren, categoryId);
-      const ids = categories.map(categ => categ.id);
+      const page = req.query.page || 1;
+      const categories = await app.db.raw(queries.categoryWithChildren, categoryId);
+      const ids = categories.rows.map((categ: CategoryRaw) => categ.id);
 
       app
         .db({ a: 'articles', u: 'users' })

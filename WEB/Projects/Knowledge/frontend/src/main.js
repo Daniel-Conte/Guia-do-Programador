@@ -12,7 +12,7 @@ Vue.config.productionTip = false;
 
 // TEMP
 require('axios').defaults.headers.common['Authorization'] =
-  'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkRhbmllbCBDIiwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjU4NjAxMjk4LCJleHAiOjE2NTg4NjA0OTh9.hqjHWP3t2ExrhM2giGiY65FvzIMXFlLlqqAGGxG4B7E';
+  'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkRhbmllbCBDIiwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjU4ODg5NTk1LCJleHAiOjE2NTkxNDg3OTV9.lMoakEwjlLx223KcAywV-Y9QX8sjsknJS_pahF5ziXI';
 
 new Vue({
   store,
