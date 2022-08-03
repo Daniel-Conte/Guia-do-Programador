@@ -5,6 +5,8 @@ import App from './App.vue';
 
 import './config/bootstrap';
 import './config/msgs';
+import './config/axios';
+
 import store from './config/store';
 import router from './config/router';
 
