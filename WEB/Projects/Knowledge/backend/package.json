@@ -33,7 +33,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "jwt-simple": "^0.5.6",
-    "knex": "^1.0.5",
+    "knex": "^2.4.0",
     "moment": "^2.29.2",
     "mongoose": "^6.2.10",
     "node-schedule": "^2.1.0",
